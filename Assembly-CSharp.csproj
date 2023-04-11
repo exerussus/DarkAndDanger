@@ -46,8 +46,10 @@
      <Compile Include="Assets\Scripts\Sounds\CharacterSound.cs" />
      <Compile Include="Assets\Scripts\Sounds\InteractionSound.cs" />
      <Compile Include="Assets\Scripts\Perk\Perk.cs" />
+     <Compile Include="Assets\Scripts\Sounds\PlaySound.cs" />
      <Compile Include="Assets\Scripts\Item\Weapon.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerResourcesBar.cs" />
+     <Compile Include="Assets\Scripts\Player\ColliderObserver.cs" />
      <Compile Include="Assets\Scripts\Damage\PhysicalDamage.cs" />
      <Compile Include="Assets\Scripts\Item\Item.cs" />
      <Compile Include="Assets\Scripts\Interaction\InteractionObject.cs" />
@@ -55,6 +57,7 @@
      <Compile Include="Assets\Scripts\Player\AttackController.cs" />
      <Compile Include="Assets\Scripts\Player\Attack.cs" />
      <Compile Include="Assets\Scripts\Perk\Perks.cs" />
+     <Compile Include="Assets\Scripts\Player\StepObserver.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Managers\UserCharactersData.cs" />
      <Compile Include="Assets\Scripts\Movement\IMove.cs" />
@@ -62,6 +65,7 @@
      <Compile Include="Assets\Scripts\Character\CharactersParameterData.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
+     <Compile Include="Assets\Scripts\Player\SpeedChanger.cs" />
      <Compile Include="Assets\Scripts\Character\CharactersData.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundSO.cs" />
      <Compile Include="Assets\Scripts\Destructible\DestructibleObject.cs" />
@@ -76,14 +80,10 @@
      <Compile Include="Assets\Scripts\Player\Vision.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventories.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
+     <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundsSO.cs" />
      <Compile Include="Assets\Scripts\Interaction\Interaction.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerKeyboardController.cs" />
-     <Compile Include="Assets\Scripts\Player\ColliderObserver.cs" />
-     <Compile Include="Assets\Scripts\Player\StepObserver.cs" />
-     <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />
-     <Compile Include="Assets\Scripts\Sounds\PlaySound.cs" />
-     <Compile Include="Assets\Scripts\Player\SpeedChanger.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Items\Weapons" />
      <Folder Include="Assets\Sounds\Steps" />
@@ -91,6 +91,7 @@
      <Folder Include="Assets\Scripts\Movement" />
      <Folder Include="Assets\Managers" />
      <Folder Include="Assets\Scripts\Destructible" />
+     <Folder Include="Assets\Sounds\Steps\Sprinting" />
      <Folder Include="Assets\Sounds\Character" />
      <Folder Include="Assets\Scripts\Perk" />
      <Folder Include="Assets\Sprites\UI" />
@@ -99,6 +100,7 @@
      <Folder Include="Assets\Sprites" />
      <Folder Include="Assets\Scripts\Damage" />
      <Folder Include="Assets\Scripts\Item" />
+     <Folder Include="Assets\Sounds\Steps\Crouching" />
      <Folder Include="Assets\Sprites\Weapon" />
      <Folder Include="Assets\Items" />
      <Folder Include="Assets\Scripts\Managers" />
@@ -107,6 +109,7 @@
      <Folder Include="Assets\Scripts\Inventory" />
      <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\Animations\Weapon\TwoHandsSword" />
+     <Folder Include="Assets\Sounds\Steps\Moving" />
      <Folder Include="Assets\Scripts\Character" />
      <Folder Include="Assets\Scripts\Camera" />
      <Folder Include="Assets\Scripts\Sounds" />

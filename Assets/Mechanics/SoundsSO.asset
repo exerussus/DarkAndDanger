@@ -14,26 +14,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundList:
   - Name: 0
-    Sound: {fileID: 8300000, guid: d6963c926c622f148acb1df79232d1d0, type: 3}
+    Sounds: []
   - Name: 1
-    Sound: {fileID: 8300000, guid: f4f2427499ecd944db2dfb0217301fd3, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: f4f2427499ecd944db2dfb0217301fd3, type: 3}
   - Name: 2
-    Sound: {fileID: 8300000, guid: 4597989c6831d68439a42a62487e43e1, type: 3}
+    Sounds: []
   - Name: 3
-    Sound: {fileID: 8300000, guid: d6ae3a8ffd057c34ab7e7058d9db37e6, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: d6ae3a8ffd057c34ab7e7058d9db37e6, type: 3}
   - Name: 4
-    Sound: {fileID: 8300000, guid: 76e4768b74f9b11438fe54252c77b5fd, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: 76e4768b74f9b11438fe54252c77b5fd, type: 3}
   - Name: 6
-    Sound: {fileID: 8300000, guid: 5eb2a00391d88c148a1185e588ca658b, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: 5eb2a00391d88c148a1185e588ca658b, type: 3}
   - Name: 7
-    Sound: {fileID: 8300000, guid: bcc5d55ea431c5a4ab45b1bf50c1e67d, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: bcc5d55ea431c5a4ab45b1bf50c1e67d, type: 3}
   - Name: 8
-    Sound: {fileID: 8300000, guid: bd49269010204a741aa26004e4637228, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: b7dd2bf06cf960847a8f814d81136e3a, type: 3}
+    - {fileID: 8300000, guid: 90eb47fe005e10f4e95e066311ce160a, type: 3}
+    - {fileID: 8300000, guid: e7cb8dd9612022a468a53393ee3aa56c, type: 3}
+    - {fileID: 8300000, guid: 028335275c4ae0b439e3b3b97c6839be, type: 3}
+    - {fileID: 8300000, guid: e60bb2dfded27164ab273b912c3d1bab, type: 3}
   - Name: 9
-    Sound: {fileID: 8300000, guid: bd49269010204a741aa26004e4637228, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: 927dce6376e51bf42995669ca5bb998c, type: 3}
+    - {fileID: 8300000, guid: 6a8dea189d786404ebbecc9c7f28977e, type: 3}
   - Name: 10
-    Sound: {fileID: 8300000, guid: bd49269010204a741aa26004e4637228, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: b7dd2bf06cf960847a8f814d81136e3a, type: 3}
   - Name: 11
-    Sound: {fileID: 8300000, guid: 05cc1fd8d42f3a34f81744b35ba38e51, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: 05cc1fd8d42f3a34f81744b35ba38e51, type: 3}
   - Name: 12
-    Sound: {fileID: 8300000, guid: 88ed8ba439f87fc42976ccb2127facdd, type: 3}
+    Sounds:
+    - {fileID: 8300000, guid: 88ed8ba439f87fc42976ccb2127facdd, type: 3}

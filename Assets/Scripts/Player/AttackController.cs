@@ -14,13 +14,20 @@ public class AttackController : MonoBehaviour
     private const float StartingDamageDenominator = 90f;
     private const float EndingDamageDenominator = 30f;
 
+    private const string Blocking = "Blocking";
+    private const string ThirdAttack = "ThirdAttack";
+    private const string FirstAttack = "FirstAttack";
+    private const string SecondAttack = "SecondAttack";
+    private const string Idle = "Idle";
+    private const string StopBlocking = "StopBlocking";
+    
     private void OnEnable()
     {
-        weaponAttack.OnThirdAttack += ThirdAttack;
-        weaponAttack.OnFirstAttack += FirstAttack;
-        weaponAttack.OnSecondAttack += SecondAttack;
-        weaponAttack.OnAttackEnd += Idle;
-        weaponAttack.OnStopParry += StopBlock;
+        weaponAttack.OnThirdAttack += PlayThirdAttack;
+        weaponAttack.OnFirstAttack += PlayFirstAttack;
+        weaponAttack.OnSecondAttack += PlaySecondAttack;
+        weaponAttack.OnAttackEnd += PlayIdle;
+        weaponAttack.OnStopParry += PlayStopBlock;
         weaponAttack.OnStartParry += Parry;
         weaponAttack.OnStartingWeakDamage += SetStartingWeakDamage;
         weaponAttack.OnFullDamage += SetFullDamage;
@@ -30,11 +37,11 @@ public class AttackController : MonoBehaviour
 
     private void OnDisable()
     {
-        weaponAttack.OnThirdAttack -= ThirdAttack;
-        weaponAttack.OnFirstAttack -= FirstAttack;
-        weaponAttack.OnSecondAttack -= SecondAttack;
-        weaponAttack.OnAttackEnd -= Idle;
-        weaponAttack.OnStopParry -= StopBlock;
+        weaponAttack.OnThirdAttack -= PlayThirdAttack;
+        weaponAttack.OnFirstAttack -= PlayFirstAttack;
+        weaponAttack.OnSecondAttack -= PlaySecondAttack;
+        weaponAttack.OnAttackEnd -= PlayIdle;
+        weaponAttack.OnStopParry -= PlayStopBlock;
         weaponAttack.OnStartParry -= Parry;
         weaponAttack.OnStartingWeakDamage -= SetStartingWeakDamage;
         weaponAttack.OnFullDamage -= SetFullDamage;
@@ -79,39 +86,39 @@ public class AttackController : MonoBehaviour
         return null;
     }
     
-    private void Parry() {weaponAnimator.Play("Blocking"); }
+    private void Parry() {weaponAnimator.Play(Blocking); }
 
-    private void ThirdAttack()
+    private void PlayThirdAttack()
     {
         weaponAttack.attackType = weaponAttack.WeaponPattern.ThirdAttack;
         weaponAnimator.speed = GetAttackSpeed();
-        weaponAnimator.Play("ThirdAttack");
+        weaponAnimator.Play(ThirdAttack);
     }
 
-    private void FirstAttack() 
+    private void PlayFirstAttack() 
     { 
         weaponAttack.attackType = weaponAttack.WeaponPattern.FirstAttack;
         weaponAnimator.speed = GetAttackSpeed();
-        weaponAnimator.Play("FirstAttack"); 
+        weaponAnimator.Play(FirstAttack); 
     }
 
-    private void SecondAttack() 
+    private void PlaySecondAttack() 
     { 
         weaponAttack.attackType = weaponAttack.WeaponPattern.SecondAttack;
         weaponAnimator.speed = GetAttackSpeed();
-        weaponAnimator.Play("SecondAttack"); 
+        weaponAnimator.Play(SecondAttack); 
     }
 
-    private void Idle() 
+    private void PlayIdle() 
     {
         weaponAnimator.speed = MinAnimationSpeed;
-        weaponAnimator.Play("Idle"); 
+        weaponAnimator.Play(Idle); 
     }
     
-    private void StopBlock() 
+    private void PlayStopBlock() 
     { 
         weaponAnimator.speed = MinAnimationSpeed;
-        weaponAnimator.Play("StopBlocking"); 
+        weaponAnimator.Play(StopBlocking); 
     }
 
     private float GetAttackSpeed()

@@ -50,11 +50,11 @@ public class AnimationController : MonoBehaviour
             return MoveForward;
         
         if (resultDirection is { x: < -0.5f, y: > 0.5f } or { x: < -0.5f, y: < -0.5f } or 
-            { x: < -0.5f, y: < 0.5f and > -0.5f } or { x: < 0.5f and > -0.5f, y: < -1.1f })
+            { x: > 0.5f, y: < 0.5f and > -0.5f } or { x: < 0.5f and > -0.5f, y: > 1.1f })
             return MoveLeft;
         
-        if (resultDirection is { x: > 0.5f, y: > 0.5f } or { x: > 0.5f, y: < -0.5f } or 
-            { x: > 0.5f, y: < 0.5f and > -0.5f } or { x: < 0.5f and > -0.5f, y: > 1.1f })
+        if (resultDirection is { x: > 0.5f, y: > 0.5f } or { x: > 0.5f, y: < -0.5f } or
+            { x: < -0.5f, y: < 0.5f and > -0.5f } or { x: < 0.5f and > -0.5f, y: < -1.1f })
             return MoveRight;
         
         return MoveForward;
@@ -78,7 +78,7 @@ public class AnimationController : MonoBehaviour
 
     private void Sprinting()
     {
-        playerAnimator.SetTrigger(GetMovingAnimation());
+        playerAnimator.SetBool(GetMovingAnimation(), true);
         playerAnimator.speed = normalAnimationSpeed * playerMovement.CurrentSpeed;
         stayTimer = 0f;
         isStaying = false;
@@ -86,7 +86,7 @@ public class AnimationController : MonoBehaviour
 
     private void Crouching()
     {
-        playerAnimator.Play(GetMovingAnimation());
+        playerAnimator.SetBool(GetMovingAnimation(), true);
         playerAnimator.speed = normalAnimationSpeed * playerMovement.CurrentSpeed;
         stayTimer = 0f;
         isStaying = false;

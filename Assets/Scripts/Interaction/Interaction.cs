@@ -51,12 +51,10 @@ public class Interaction : MonoBehaviour
             _interactTime = _interactionObject.TimeCost * 100f / character.Parameter.actionSpeed;
             OnInteraction?.Invoke();
             playerMovement.isEnableToRotation = false;
-
         }
         else
         {
             Debug.DrawRay(playerTransform.position, playerTransform.up * interactionDistance, Color.yellow);
-            
             isInteracting = false;
         }
         

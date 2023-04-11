@@ -5,6 +5,8 @@ public class PlaySound : MonoBehaviour
 {
     [SerializeField] protected SoundsSO sounds;
     [SerializeField] protected AudioSource audioSource;
+    private int _lastSoundIndex;
+    
     
     protected void PlayAudio(SoundSO.SoundName soundName)
     {
@@ -16,9 +18,27 @@ public class PlaySound : MonoBehaviour
     {
         foreach (var nameAndSound in sounds.SoundList)
         {
-            if (nameAndSound.Name == soundName) return nameAndSound.Sound;
+            if (nameAndSound.Name == soundName)
+            {
+                return nameAndSound.Sounds[GetNextClip(nameAndSound)];
+            }
         }
-
         return null;
+    }
+
+    private int GetNextClip(SoundSO sounds)
+    {
+        var listCount = sounds.Sounds.Count;
+        if (listCount == 1) return 0;
+        
+        _lastSoundIndex = GetNex(listCount);
+        return _lastSoundIndex;
+    }
+
+    private int GetNex(int listCount)
+    {
+        var newIndex = _lastSoundIndex + 1;
+        if (newIndex <= listCount - 1) return newIndex;
+        return 0;
     }
 }

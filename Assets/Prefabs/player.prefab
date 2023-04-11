@@ -147,6 +147,7 @@ MonoBehaviour:
   sounds: {fileID: 11400000, guid: 64580d8bea29bc84c8264db94eccb5f0, type: 2}
   audioSource: {fileID: 2474252926579962488}
   stepObserver: {fileID: 1184122939}
+  playerMovement: {fileID: 6404306332229754903}
 --- !u!114 &7989666373386598071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -676,7 +677,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 6404306332229754903}
   playerAnimator: {fileID: 6404306331620189709}
-  animatorSpeedNormalizer: 101
+  resultDirection: {x: 0, y: 0, z: 0}
+  animationSpeedNormalizer: 100
 --- !u!114 &1184122939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -927,6 +929,8 @@ MonoBehaviour:
   isStaminaEnough: 1
   isParring: 0
   isBlocking: 0
+  attackCooldownTimer: 0
+  parryCooldownTimer: 0
 --- !u!70 &6404306331838828532
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1256,8 +1260,8 @@ MonoBehaviour:
   keyboardController: {fileID: 3991527420401088533}
   _transform: {fileID: 6404306332229754896}
   _rigidbody: {fileID: 6404306332229754901}
-  isStaminaEnough: 0
   isEnableToRotation: 1
+  isStaminaEnough: 0
 --- !u!114 &6404306332229754907
 MonoBehaviour:
   m_ObjectHideFlags: 0

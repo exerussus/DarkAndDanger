@@ -1,7 +1,6 @@
 ﻿
 using UnityEngine;
 using System;
-using UnityEngine.Rendering;
 
 public class Character : MonoBehaviour
 {
@@ -15,8 +14,7 @@ public class Character : MonoBehaviour
 
     [SerializeField] private float currentHealth;
     [SerializeField] private float currentStamina;
-    
-        
+
     private float timeAfterDrainStaminaTimer;
 
     public Action OnTakeDamage;
@@ -27,7 +25,10 @@ public class Character : MonoBehaviour
     public Action OnRestoreMana;
     public Action OnDead;
 
-
+    public float Health => _currentHealth.Value;
+    public float Stamina => _currentStamina.Value;
+    public float Mana => _currentMana.Value;
+    
     private void Awake()
     {
         parameter = UserCharactersData.GetUserParameter(userID);
@@ -35,11 +36,9 @@ public class Character : MonoBehaviour
 
     private void OnEnable()
     {
-        
         _currentHealth = new CharacterResource(parameter.health);
         _currentStamina = new CharacterResource(parameter.stamina);
         _currentMana = new CharacterResource(parameter.mana);
-        
         Tick.OnTick += StaminaRegeneration;
     }
 
@@ -47,11 +46,6 @@ public class Character : MonoBehaviour
     {
         Tick.OnTick -= StaminaRegeneration;
     }
-
-    public float Health => _currentHealth.Value;
-    public float Stamina => _currentStamina.Value;
-    public float Mana => _currentMana.Value;
-
 
     private void Start()
     {
@@ -61,13 +55,10 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(PhysicalDamage damage)
     {
-
         _currentHealth.Value -= damage.Blunt + damage.Pierce + damage.Slash;
         _isAlive = _currentHealth.Value > 0;
         if(!_isAlive) Dead();
         OnTakeDamage?.Invoke();
-        
-
         currentHealth = Health;
     }
     
@@ -78,7 +69,6 @@ public class Character : MonoBehaviour
             timeAfterDrainStaminaTimer = Time.time;
             RestoreStamina(parameter.staminaRegeneration);
         }
-        
         currentStamina = Stamina;
     }
     
@@ -133,14 +123,11 @@ public class Character : MonoBehaviour
     {
         OnDead?.Invoke();
     }
-    
 }
 
 public struct CharacterResource
 {
-
     private float _value;
-
     public float Value
     {
         get => _value;
@@ -149,7 +136,6 @@ public struct CharacterResource
             if (value < 0) _value = 0;
             else _value = value;
         }
-        
     }
 
     public CharacterResource(float value)

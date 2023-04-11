@@ -1,16 +1,14 @@
 ﻿
-
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
 public class SoundSO
 {
     public SoundName Name;
-    public AudioClip Sound;
-    
-    
-    
+    public List<AudioClip> Sounds;
+
     public enum SoundName
     {
         OneHandSwordAttack,
