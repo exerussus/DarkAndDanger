@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a81967fbe41004888db209a7756e8d, type: 3}
+  m_Name: Inventories
+  m_EditorClassIdentifier: 
+  InventoriesList:
+  - UserID: 0
+    Weapon:
+      WeaponName: 
+      Level: 0
+      AttackPatternType: 0
+      ItemParameter:
+        sellCost: 0
+        HoldingSpace: 0
+        Image: {fileID: 0}
+        Parameter:
+          Health: 0
+          Stamina: 0
+          Mana: 0
+          StaminaAttackCost: 0
+          StaminaMissAttackCost: 0
+          StaminaCrouchCost: 0
+          StaminaRunCost: 0
+          CriticalDamageMultiply: 0
+          CriticalChance: 0
+          WeakSpotChance: 0
+          BackStabMultiply: 0
+          AttackSpeed: 0
+          RechargeAttackSpeed: 0
+          RechargeMissAttackSpeed: 0
+          MoveSpeed: 0
+          ActionSpeed: 0
+          PirceDamage: 0
+          BluntDamage: 0
+          SlashDamage: 0
+          PirceResist: 0
+          BluntResist: 0
+          SlashResist: 0
+          FireDamage: 0
+          IceDamage: 0
+          ArcaneDamage: 0
+          HolyDamage: 0
+          FireResist: 0
+          IceResist: 0
+          ArcaneResist: 0
+          HolyResist: 0
+          VisionRadius: 0
+          StepNoise: 0
+          StepNoiseCrouchMultiply: 0
+          CrouchSpeedMultiply: 0
+          MagicCastSpeed: 0
+          memory: 0
+      Prefab: {fileID: 0}

@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d64e39ae0cb420fa0d02bf01f073a82, type: 3}
+  m_Name: CharactersParameterData
+  m_EditorClassIdentifier: 
+  characterParameter:
+  - userID: 0
+    parameter:
+      health: 100
+      stamina: 100
+      mana: 100
+      staminaRegeneration: 15
+      staminaAttackCost: 3
+      staminaWeaponWeightMultiply: 2
+      staminaMissAttackCost: 3
+      staminaCrouchCost: 5
+      staminaSprintCost: 5
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 1.5
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 100
+      rechargeAttackSpeed: 1
+      rechargeSpeedAfterHitCollision: 0.5
+      rechargeSpeedAfterHitPhysicalObject: 1
+      rechargeSpeedAfterMissAttack: 0.7
+      weaponWeightMultiply: 2
+      moveSpeed: 200
+      sprintSpeedMultiply: 1.3
+      crouchSpeedMultiply: 0.5
+      actionSpeed: 200
+      rotationSpeed: 400
+      minRotationSpeed: 110
+      pierceDamage: 7
+      bluntDamage: 5
+      slashDamage: 12
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      iceDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      fireResist: 0
+      iceResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      visionRadius: 80
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - userID: 1
+    parameter:
+      health: 100
+      stamina: 30
+      mana: 0
+      staminaRegeneration: 3
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 2
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: 0
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      iceDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      fireResist: 0
+      iceResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0

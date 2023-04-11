@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f6b8b7fc5d360e4fb0791f766a8a331, type: 3}
+  m_Name: Perks
+  m_EditorClassIdentifier: 
+  perkList:
+  - PerkName: "\u041B\u043E\u0432\u043A\u0438\u0435 \u0440\u0443\u043A\u0438"
+    PerkDescription: 
+    Image: {fileID: 0}
+    Parameter:
+      Health: 0
+      Stamina: 0
+      Mana: 0
+      StaminaAttackCost: 0
+      StaminaMissAttackCost: 0
+      StaminaCrouchCost: 0
+      StaminaRunCost: 0
+      CriticalDamageMultiply: 0
+      CriticalChance: 0
+      WeakSpotChance: 0
+      BackStabMultiply: 0
+      AttackSpeed: 0
+      RechargeAttackSpeed: 0
+      RechargeMissAttackSpeed: 0
+      WeaponWeightMultiply: 0
+      MoveSpeed: 0
+      ActionSpeed: 0
+      PirceDamage: 0
+      BluntDamage: 0
+      SlashDamage: 0
+      PirceResist: 0
+      BluntResist: 0
+      SlashResist: 0
+      FireDamage: 0
+      IceDamage: 0
+      ArcaneDamage: 0
+      HolyDamage: 0
+      FireResist: 0
+      IceResist: 0
+      ArcaneResist: 0
+      HolyResist: 0
+      VisionRadius: 0
+      StepNoise: 0
+      StepNoiseCrouchMultiply: 0
+      CrouchSpeedMultiply: 0
+      MagicCastSpeed: 0
+      memory: 0
+  - PerkName: "\u0425\u043E\u0440\u043E\u0448\u0430\u044F \u043F\u0430\u043C\u044F\u0442\u044C"
+    PerkDescription: 
+    Image: {fileID: 0}
+    Parameter:
+      Health: 0
+      Stamina: 0
+      Mana: 0
+      StaminaAttackCost: 0
+      StaminaMissAttackCost: 0
+      StaminaCrouchCost: 0
+      StaminaRunCost: 0
+      CriticalDamageMultiply: 0
+      CriticalChance: 0
+      WeakSpotChance: 0
+      BackStabMultiply: 0
+      AttackSpeed: 0
+      RechargeAttackSpeed: 0
+      RechargeMissAttackSpeed: 0
+      WeaponWeightMultiply: 0
+      MoveSpeed: 0
+      ActionSpeed: 0
+      PirceDamage: 0
+      BluntDamage: 0
+      SlashDamage: 0
+      PirceResist: 0
+      BluntResist: 0
+      SlashResist: 0
+      FireDamage: 0
+      IceDamage: 0
+      ArcaneDamage: 0
+      HolyDamage: 0
+      FireResist: 0
+      IceResist: 0
+      ArcaneResist: 0
+      HolyResist: 0
+      VisionRadius: 0
+      StepNoise: 0
+      StepNoiseCrouchMultiply: 0
+      CrouchSpeedMultiply: 0
+      MagicCastSpeed: 0
+      memory: 0
+  - PerkName: "\u0411\u0435\u0441\u0441\u0435\u0440\u0434\u0435\u0447\u043D\u044B\u0439"
+    PerkDescription: 
+    Image: {fileID: 0}
+    Parameter:
+      Health: 0
+      Stamina: 0
+      Mana: 0
+      StaminaAttackCost: 0
+      StaminaMissAttackCost: 0
+      StaminaCrouchCost: 0
+      StaminaRunCost: 0
+      CriticalDamageMultiply: 0
+      CriticalChance: 0
+      WeakSpotChance: 0
+      BackStabMultiply: 0
+      AttackSpeed: 0
+      RechargeAttackSpeed: 0
+      RechargeMissAttackSpeed: 0
+      WeaponWeightMultiply: 0
+      MoveSpeed: 0
+      ActionSpeed: 0
+      PirceDamage: 0
+      BluntDamage: 0
+      SlashDamage: 0
+      PirceResist: 0
+      BluntResist: 0
+      SlashResist: 0
+      FireDamage: 0
+      IceDamage: 0
+      ArcaneDamage: 0
+      HolyDamage: 0
+      FireResist: 0
+      IceResist: 0
+      ArcaneResist: 0
+      HolyResist: 0
+      VisionRadius: 0
+      StepNoise: 0
+      StepNoiseCrouchMultiply: 0
+      CrouchSpeedMultiply: 0
+      MagicCastSpeed: 0
+      memory: 0

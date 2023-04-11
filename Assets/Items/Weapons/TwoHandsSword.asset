@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358078e2ca141874891d5250db2f8305, type: 3}
+  m_Name: TwoHandsSword
+  m_EditorClassIdentifier: 
+  weaponName: TwoHandsSword
+  weight: 1.6
+  level: 1
+  handType: 2
+  firstAttack: 2
+  secondAttack: 2
+  thirdAttack: 0
+  item:
+    sellCost: 0
+    HoldingSpace: 0
+    Image: {fileID: 0}
+    Parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: 0
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 12
+      bluntResist: 3
+      slashResist: 25
+      fireDamage: 0
+      iceDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      fireResist: 0
+      iceResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
