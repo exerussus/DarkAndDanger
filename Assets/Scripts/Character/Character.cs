@@ -6,8 +6,8 @@ public class Character : MonoBehaviour
 {
     private bool _isAlive = true;
     [SerializeField] private int userID;
-    [SerializeField] private Parameter parameter;
-    public Parameter Parameter => parameter;
+    [SerializeField] private Personality personality;
+    public Parameter Parameter => personality.parameter;
     private CharacterResource _currentHealth;
     private CharacterResource _currentStamina;
     private CharacterResource _currentMana;
@@ -28,18 +28,15 @@ public class Character : MonoBehaviour
     public float Health => _currentHealth.Value;
     public float Stamina => _currentStamina.Value;
     public float Mana => _currentMana.Value;
-    
+
     private void Awake()
     {
-        parameter = UserCharactersData.GetUserParameter(userID);
+        personality ??= GetComponent<Personality>();
     }
 
     private void OnEnable()
     {
-        _currentHealth = new CharacterResource(parameter.health);
-        _currentStamina = new CharacterResource(parameter.stamina);
-        _currentMana = new CharacterResource(parameter.mana);
-        Tick.OnTick += StaminaRegeneration;
+        Tick.OnTick  += StaminaRegeneration;
     }
 
     private void OnDisable()
@@ -49,10 +46,18 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
+        Init();
+    }
+
+    private void Init()
+    {
+        _currentHealth = new CharacterResource(Parameter.health);
+        _currentStamina = new CharacterResource(Parameter.stamina);
+        _currentMana = new CharacterResource(Parameter.mana);
         currentHealth = Health;
         currentStamina = Stamina;
     }
-
+    
     public void TakeDamage(PhysicalDamage damage)
     {
         _currentHealth.Value -= damage.Blunt + damage.Pierce + damage.Slash;
@@ -64,10 +69,10 @@ public class Character : MonoBehaviour
     
     private void StaminaRegeneration()
     {
-        if (Time.time - timeAfterDrainStaminaTimer > parameter.timeAfterDrainStaminaCount)
+        if (Time.time - timeAfterDrainStaminaTimer > Parameter.timeAfterDrainStaminaCount)
         {
             timeAfterDrainStaminaTimer = Time.time;
-            RestoreStamina(parameter.staminaRegeneration);
+            RestoreStamina(Parameter.staminaRegeneration);
         }
         currentStamina = Stamina;
     }
@@ -75,7 +80,7 @@ public class Character : MonoBehaviour
     public void RestoreStamina(float value)
     {
         if(value > 0) _currentStamina.Value += value;
-        if (_currentStamina.Value > parameter.stamina) _currentStamina.Value = parameter.stamina;
+        if (_currentStamina.Value > Parameter.stamina) _currentStamina.Value = Parameter.stamina;
         OnRestoreStamina?.Invoke();
         currentStamina = Stamina;
     }
@@ -83,7 +88,7 @@ public class Character : MonoBehaviour
     public void RestoreHealth(float value)
     {
         if(value > 0) _currentHealth.Value += value;
-        if (_currentHealth.Value > parameter.health) _currentHealth.Value = parameter.health;
+        if (_currentHealth.Value > Parameter.health) _currentHealth.Value = Parameter.health;
         OnRestoreHealth?.Invoke();
         currentHealth = Health;
     }
@@ -91,7 +96,7 @@ public class Character : MonoBehaviour
     public void RestoreMana(float value)
     {
         if(value > 0) _currentMana.Value += value;
-        if (_currentMana.Value > parameter.mana) _currentMana.Value = parameter.mana;
+        if (_currentMana.Value > Parameter.mana) _currentMana.Value = Parameter.mana;
         OnRestoreMana?.Invoke();
     }
     

@@ -68,13 +68,11 @@
      <Compile Include="Assets\Scripts\Destructible\DestructibleObject.cs" />
      <Compile Include="Assets\Scripts\Damage\HitsObserver.cs" />
      <Compile Include="Assets\Scripts\Damage\PhysicalDamage.cs" />
-     <Compile Include="Assets\Scripts\Managers\UserCharactersData.cs" />
      <Compile Include="Assets\Scripts\Player\StepObserver.cs" />
      <Compile Include="Assets\Scripts\Sounds\MovementSound.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundSO.cs" />
      <Compile Include="Assets\Scripts\Player\ColliderObserver.cs" />
      <Compile Include="Assets\Scripts\FOV\FieldOfView.cs" />
-     <Compile Include="Assets\Scripts\Character\CharactersParameterData.cs" />
      <Compile Include="Assets\Scripts\Player\Vision.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
      <Compile Include="Assets\Scripts\Parameter\Parameter.cs" />
@@ -84,11 +82,11 @@
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Movement\IMove.cs" />
      <Compile Include="Assets\Scripts\Interaction\InteractionObject.cs" />
+     <Compile Include="Assets\Scripts\Character\Personality.cs" />
      <Compile Include="Assets\Scripts\Perk\Perks.cs" />
      <Compile Include="Assets\Scripts\Sounds\PlaySound.cs" />
      <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundsSO.cs" />
-     <Compile Include="Assets\Scripts\Character\CharactersData.cs" />
      <Compile Include="Assets\Scripts\Interaction\Interaction.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Items\Weapons" />
@@ -118,6 +116,7 @@
      <Folder Include="Assets\Scripts\Managers" />
      <Folder Include="Assets\Scripts\Parameter" />
      <Folder Include="Assets\Scripts\Interaction" />
+     <Folder Include="Assets\Mechanics\Personalities" />
      <Folder Include="Assets\Scripts\Inventory" />
      <Folder Include="Assets\Prefabs" />
      <Folder Include="Assets\Materials" />

@@ -11,36 +11,54 @@ public class PlayerResourceController : MonoBehaviour
     [SerializeField] private StepObserver stepObserver;
     [SerializeField] private HitsObserver hitObserver;
 
+    private void Start()
+    {
+        if (playerMovement == null && stepObserver != null) Debug.LogError("Missed playerMovement component or there is an extra stepObserver component");
+        if (stepObserver == null && playerMovement != null) Debug.LogError("Missed stepObserver component");
+    }
+
     private void OnEnable()
     {
-        weaponAttack.OnStartAttack += DrainStaminaToAttack;
-        weaponAttack.OnTouchPhysicalObject += DrainStaminaToTouchWall;
-        weaponAttack.OnTryAttack += AttackStaminaIsEnough;
-        hitObserver.OnTakingPhysicalDamage += TakePhysicalDamage;
-        weaponAttack.BeforeParryStart += CheckAndDrainStaminaBeforeParry;
-        playerMovement.OnTrySprinting += IsStaminaEnoughForSprint;
-        playerMovement.OnTryCrouching += IsStaminaEnoughForCrouch;
-        playerMovement.OnStartSprinting += Sprinting;
-        playerMovement.OnStartCrouching += Crouching;
-        playerMovement.OnEndSprinting += StopToSprint;
-        playerMovement.OnEndCrouching += StopToCrouch;
-        weaponAttack.OnStartParry += DrainStaminaToStartParry;
+        if (weaponAttack != null)
+        {
+            weaponAttack.OnStartAttack += DrainStaminaToAttack;
+            weaponAttack.OnTouchPhysicalObject += DrainStaminaToTouchWall;
+            weaponAttack.OnTryAttack += AttackStaminaIsEnough;
+            weaponAttack.BeforeParryStart += CheckAndDrainStaminaBeforeParry;
+            weaponAttack.OnStartParry += DrainStaminaToStartParry;
+        }
+        if (playerMovement != null)
+        {
+            playerMovement.OnTrySprinting += IsStaminaEnoughForSprint;
+            playerMovement.OnTryCrouching += IsStaminaEnoughForCrouch;
+            playerMovement.OnStartSprinting += Sprinting;
+            playerMovement.OnStartCrouching += Crouching;
+            playerMovement.OnEndSprinting += StopToSprint;
+            playerMovement.OnEndCrouching += StopToCrouch;
+        }
+        if (hitObserver != null) hitObserver.OnTakingPhysicalDamage += TakePhysicalDamage;
     }
 
     private void OnDisable()
     {
-        weaponAttack.OnStartAttack -= DrainStaminaToAttack;
-        weaponAttack.OnTouchPhysicalObject -= DrainStaminaToTouchWall;
-        weaponAttack.OnTryAttack -= AttackStaminaIsEnough;
-        hitObserver.OnTakingPhysicalDamage -= TakePhysicalDamage;
-        weaponAttack.BeforeParryStart -= CheckAndDrainStaminaBeforeParry;
-        playerMovement.OnTrySprinting -= IsStaminaEnoughForSprint;
-        playerMovement.OnTryCrouching -= IsStaminaEnoughForCrouch;
-        playerMovement.OnStartSprinting -= Sprinting;
-        playerMovement.OnStartCrouching -= Crouching;
-        playerMovement.OnEndSprinting -= StopToSprint;
-        playerMovement.OnEndCrouching -= StopToCrouch;
-        weaponAttack.OnStartParry -= DrainStaminaToStartParry;
+        if (weaponAttack != null)
+        {
+            weaponAttack.OnStartAttack -= DrainStaminaToAttack;
+            weaponAttack.OnTouchPhysicalObject -= DrainStaminaToTouchWall;
+            weaponAttack.OnTryAttack -= AttackStaminaIsEnough;
+            weaponAttack.BeforeParryStart -= CheckAndDrainStaminaBeforeParry;
+            weaponAttack.OnStartParry -= DrainStaminaToStartParry;
+        }
+        if (playerMovement != null)
+        {
+            playerMovement.OnTrySprinting -= IsStaminaEnoughForSprint;
+            playerMovement.OnTryCrouching -= IsStaminaEnoughForCrouch;
+            playerMovement.OnStartSprinting -= Sprinting;
+            playerMovement.OnStartCrouching -= Crouching;
+            playerMovement.OnEndSprinting -= StopToSprint;
+            playerMovement.OnEndCrouching -= StopToCrouch;
+        }
+        if (hitObserver != null) hitObserver.OnTakingPhysicalDamage -= TakePhysicalDamage;
     }
     
     

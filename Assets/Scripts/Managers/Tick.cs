@@ -29,6 +29,5 @@ public class Tick : MonoBehaviour
             _tickTimer = 0f;
         }
         else _tickTimer += Time.fixedDeltaTime;
-        
     }
 }

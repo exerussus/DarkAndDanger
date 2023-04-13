@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56038447c8a043d9872e6a37eba8ade1, type: 3}
+  m_Name: Enemy
+  m_EditorClassIdentifier: 
+  userID: 0
+  characterName: Billy Herrington
+  parameter:
+    health: 100
+    stamina: 100
+    mana: 100
+    staminaRegeneration: 15
+    staminaAttackCost: 5
+    staminaWeaponWeightMultiply: 2
+    staminaMissAttackCost: 5
+    staminaCrouchCost: 3
+    staminaSprintCost: 5
+    staminaParryCost: 5
+    timeAfterDrainStaminaCount: 2
+    criticalDamageMultiply: 0
+    criticalChance: 0
+    weakSpotChance: 0
+    backStabMultiply: 0
+    attackSpeed: 200
+    rechargeAttackSpeed: 1
+    rechargeSpeedAfterHitCollision: 1
+    rechargeSpeedAfterHitPhysicalObject: 1
+    rechargeSpeedAfterMissAttack: 1
+    weaponWeightMultiply: 1
+    moveSpeed: 300
+    sprintSpeedMultiply: 1.3
+    crouchSpeedMultiply: 0.5
+    actionSpeed: 200
+    rotationSpeed: 300
+    minRotationSpeed: 100
+    pierceDamage: 2
+    bluntDamage: 5
+    slashDamage: 2
+    pierceResist: 3
+    bluntResist: 2
+    slashResist: 5
+    fireDamage: 0
+    iceDamage: 0
+    arcaneDamage: 0
+    holyDamage: 0
+    fireResist: 0
+    iceResist: 0
+    arcaneResist: 0
+    holyResist: 0
+    visionRadius: 25
+    stepNoise: 0
+    stepNoiseCrouchMultiply: 0
+    magicCastSpeed: 0
+    memory: 0
