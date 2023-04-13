@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Player
   m_EditorClassIdentifier: 
   UserID: 0
-  CharacterName: 
+  CharacterName: Taranis Jones
   parameter:
-    health: 111
+    health: 0
     stamina: 0
     mana: 0
     staminaRegeneration: 0
@@ -30,13 +30,13 @@ MonoBehaviour:
     criticalChance: 0
     weakSpotChance: 0
     backStabMultiply: 0
-    attackSpeed: 200
+    attackSpeed: 0
     rechargeAttackSpeed: 0
     rechargeSpeedAfterHitCollision: 0
     rechargeSpeedAfterHitPhysicalObject: 0
     rechargeSpeedAfterMissAttack: 0
     weaponWeightMultiply: 0
-    moveSpeed: 200
+    moveSpeed: 0
     sprintSpeedMultiply: 0
     crouchSpeedMultiply: 0
     actionSpeed: 0
@@ -61,7 +61,5 @@ MonoBehaviour:
     stepNoiseCrouchMultiply: 0
     magicCastSpeed: 0
     memory: 0
-  strength: 0
-  dexterity: 0
-  intelligence: 0
-  constitution: 0
+  StandardParameter: {fileID: 11400000, guid: 06e90d689df1aa94db8521e0f196e08e, type: 2}
+  characterAttributes: {fileID: 11400000, guid: 107f596d31ef17442b67987b57ffc1fc, type: 2}

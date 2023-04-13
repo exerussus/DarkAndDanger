@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\Item\Items.cs" />
      <Compile Include="Assets\Scripts\Interaction\ReplacementObject.cs" />
      <Compile Include="Assets\Scripts\Perk\Perk.cs" />
+     <Compile Include="Assets\Scripts\Parameter\StandardParameter.cs" />
      <Compile Include="Assets\Scripts\Destructible\DestructibleObject.cs" />
      <Compile Include="Assets\Scripts\Damage\HitsObserver.cs" />
      <Compile Include="Assets\Scripts\Damage\PhysicalDamage.cs" />
@@ -80,6 +81,7 @@
      <Compile Include="Assets\Scripts\Interaction\InteractionBar.cs" />
      <Compile Include="Assets\Scripts\Item\Item.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Parameter\AttributesScalingParameter.cs" />
      <Compile Include="Assets\Scripts\Movement\IMove.cs" />
      <Compile Include="Assets\Scripts\Interaction\InteractionObject.cs" />
      <Compile Include="Assets\Scripts\Character\Personality.cs" />
@@ -97,7 +99,9 @@
      <Folder Include="Assets\Managers" />
      <Folder Include="Assets\Scripts\Destructible" />
      <Folder Include="Assets\Sounds\Steps\Sprinting" />
+     <Folder Include="Assets\Mechanics\Attributes\Players" />
      <Folder Include="Assets\Sounds\Character" />
+     <Folder Include="Assets\Mechanics\Attributes" />
      <Folder Include="Assets\Scripts\Perk" />
      <Folder Include="Assets\Sprites\UI" />
      <Folder Include="Assets\Scenes" />
@@ -127,6 +131,7 @@
      <Folder Include="Assets\Scripts\Camera" />
      <Folder Include="Assets\Scripts\Sounds" />
      <Folder Include="Assets\Sounds" />
+     <Folder Include="Assets\Mechanics\Attributes\ParameterScaling" />
      <Folder Include="Assets\Sounds\Weapon" />
      <Folder Include="Assets\Scripts\FOV" />
      <Folder Include="Assets\Scripts\Player" />

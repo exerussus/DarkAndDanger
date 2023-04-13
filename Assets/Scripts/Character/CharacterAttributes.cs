@@ -3,6 +3,7 @@
 [CreateAssetMenu(menuName = "Parameter/Attributes", fileName = "Attributes", order = 51)]
 public class CharacterAttributes : ScriptableObject
 {
+    [SerializeField] private AttributesScalingParameter attributesScalingParameter;
     
     [SerializeField] private int strength;
     public int Strength
@@ -10,14 +11,14 @@ public class CharacterAttributes : ScriptableObject
         get => strength;
         set => strength = value >= 0 ? value : 0;
     }
-    
+
     [SerializeField] private int dexterity;
     public int Dexterity
     {
         get => dexterity;
         set => dexterity = value >= 0 ? value : 0;
     }
-    
+
     [SerializeField] private int intelligence;
     public int Intelligence
     {
@@ -32,18 +33,13 @@ public class CharacterAttributes : ScriptableObject
         set => constitution = value >= 0 ? value : 0;
     }
 
-    [SerializeField] private Parameter strengthParameterScale;
-    [SerializeField] private Parameter dexterityParameterScale;
-    [SerializeField] private Parameter intelligenceParameterScale;
-    [SerializeField] private Parameter constitutionParameterScale;
-    
     public Parameter GetParameter()
     {
         var parameter = new Parameter();
-        parameter += intelligenceParameterScale * intelligence;
-        parameter += strengthParameterScale * strength;
-        parameter += dexterityParameterScale * dexterity;
-        parameter += constitutionParameterScale * constitution;
+        parameter += attributesScalingParameter.IntelligenceParameterScale * intelligence;
+        parameter += attributesScalingParameter.StrengthParameterScale * strength;
+        parameter += attributesScalingParameter.DexterityParameterScale * dexterity;
+        parameter += attributesScalingParameter.ConstitutionParameterScale * constitution;
         return parameter;
     }
 }

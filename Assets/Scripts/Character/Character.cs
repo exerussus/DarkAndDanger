@@ -32,6 +32,7 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         personality ??= GetComponent<Personality>();
+        personality.RecalculateParameter();
     }
 
     private void OnEnable()

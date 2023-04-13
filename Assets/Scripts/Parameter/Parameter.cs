@@ -96,38 +96,110 @@ public class Parameter
             else memory = Mathf.Floor(value); 
         }
     }
-    public static Parameter operator +(Parameter p1, Parameter p2)
+    public static Parameter operator +(Parameter a, Parameter b)
     {
-        Type type = typeof(Parameter);
         Parameter result = new Parameter();
-        PropertyInfo[] properties = type.GetProperties();
-
-        foreach (PropertyInfo property in properties)
-        {
-            if (property.PropertyType == typeof(float))
-            {
-                float value1 = (float)property.GetValue(p1);
-                float value2 = (float)property.GetValue(p2);
-                property.SetValue(result, value1 + value2);
-            }
-        }
-
+        
+        result.health = a.health + b.health;
+        result.stamina = a.stamina + b.stamina;
+        result.mana = a.mana + b.mana;
+        result.staminaRegeneration = a.staminaRegeneration + b.staminaRegeneration;
+        result.staminaAttackCost = a.staminaAttackCost + b.staminaAttackCost;
+        result.staminaWeaponWeightMultiply = a.staminaWeaponWeightMultiply + b.staminaWeaponWeightMultiply;
+        result.staminaMissAttackCost = a.staminaMissAttackCost + b.staminaMissAttackCost;
+        result.staminaCrouchCost = a.staminaCrouchCost + b.staminaCrouchCost;
+        result.staminaSprintCost = a.staminaSprintCost + b.staminaSprintCost;
+        result.staminaParryCost = a.staminaParryCost + b.staminaParryCost;
+        result.timeAfterDrainStaminaCount = a.timeAfterDrainStaminaCount + b.timeAfterDrainStaminaCount;
+        result.criticalDamageMultiply = a.criticalDamageMultiply + b.criticalDamageMultiply;
+        result.criticalChance = a.criticalChance + b.criticalChance;
+        result.weakSpotChance = a.weakSpotChance + b.weakSpotChance;
+        result.backStabMultiply = a.backStabMultiply + b.backStabMultiply;
+        result.attackSpeed = a.attackSpeed + b.attackSpeed;
+        result.rechargeAttackSpeed = a.rechargeAttackSpeed + b.rechargeAttackSpeed;
+        result.rechargeSpeedAfterHitCollision = a.rechargeSpeedAfterHitCollision + b.rechargeSpeedAfterHitCollision;
+        result.rechargeSpeedAfterHitPhysicalObject = a.rechargeSpeedAfterHitPhysicalObject + b.rechargeSpeedAfterHitPhysicalObject;
+        result.rechargeSpeedAfterMissAttack = a.rechargeSpeedAfterMissAttack + b.rechargeSpeedAfterMissAttack;
+        result.weaponWeightMultiply = a.weaponWeightMultiply + b.weaponWeightMultiply;
+        result.moveSpeed = a.moveSpeed + b.moveSpeed;
+        result.sprintSpeedMultiply = a.sprintSpeedMultiply + b.sprintSpeedMultiply;
+        result.crouchSpeedMultiply = a.crouchSpeedMultiply + b.crouchSpeedMultiply;
+        result.actionSpeed = a.actionSpeed + b.actionSpeed;
+        result.rotationSpeed = a.rotationSpeed + b.rotationSpeed;
+        result.minRotationSpeed = a.minRotationSpeed + b.minRotationSpeed;
+        result.pierceDamage = a.pierceDamage + b.pierceDamage;
+        result.bluntDamage = a.bluntDamage + b.bluntDamage;
+        result.slashDamage = a.slashDamage + b.slashDamage;
+        result.pierceResist = a.pierceResist + b.pierceResist;
+        result.bluntResist = a.bluntResist + b.bluntResist;
+        result.slashResist = a.slashResist + b.slashResist;
+        result.fireDamage = a.fireDamage + b.fireDamage;
+        result.iceDamage = a.iceDamage + b.iceDamage;
+        result.arcaneDamage = a.arcaneDamage + b.arcaneDamage;
+        result.holyDamage = a.holyDamage + b.holyDamage;
+        result.fireResist = a.fireResist + b.fireResist;
+        result.iceResist = a.iceResist + b.iceResist;
+        result.arcaneResist = a.arcaneResist + b.arcaneResist;
+        result.holyResist = a.holyResist + b.holyResist;
+        result.visionRadius = a.visionRadius + b.visionRadius;
+        result.stepNoise = a.stepNoise + b.stepNoise;
+        result.stepNoiseCrouchMultiply = a.stepNoiseCrouchMultiply + b.stepNoiseCrouchMultiply;
+        result.magicCastSpeed = a.magicCastSpeed + b.magicCastSpeed;
+        result.memory = a.memory + b.memory;
+        
         return result;
     }
-    public static Parameter operator *(Parameter parameter, float multiply)
-    {
-        Type type = typeof(Parameter);
-        Parameter result = new Parameter();
-        PropertyInfo[] properties = type.GetProperties();
 
-        foreach (PropertyInfo property in properties)
-        {
-            if (property.PropertyType == typeof(float))
-            {
-                float value1 = (float)property.GetValue(parameter);
-                property.SetValue(result, value1 * multiply);
-            }
-        }
+    public static Parameter operator *(Parameter a, float multiply)
+    {
+        Parameter result = new Parameter();
+
+        result.health = a.health * multiply;
+        result.stamina = a.stamina * multiply;
+        result.mana = a.mana * multiply;
+        result.staminaRegeneration = a.staminaRegeneration * multiply;
+        result.staminaAttackCost = a.staminaAttackCost * multiply;
+        result.staminaWeaponWeightMultiply = a.staminaWeaponWeightMultiply * multiply;
+        result.staminaMissAttackCost = a.staminaMissAttackCost * multiply;
+        result.staminaCrouchCost = a.staminaCrouchCost * multiply;
+        result.staminaSprintCost = a.staminaSprintCost * multiply;
+        result.staminaParryCost = a.staminaParryCost * multiply;
+        result.timeAfterDrainStaminaCount = a.timeAfterDrainStaminaCount * multiply;
+        result.criticalDamageMultiply = a.criticalDamageMultiply * multiply;
+        result.criticalChance = a.criticalChance * multiply;
+        result.weakSpotChance = a.weakSpotChance * multiply;
+        result.backStabMultiply = a.backStabMultiply * multiply;
+        result.attackSpeed = a.attackSpeed * multiply;
+        result.rechargeAttackSpeed = a.rechargeAttackSpeed * multiply;
+        result.rechargeSpeedAfterHitCollision = a.rechargeSpeedAfterHitCollision * multiply;
+        result.rechargeSpeedAfterHitPhysicalObject = a.rechargeSpeedAfterHitPhysicalObject * multiply;
+        result.rechargeSpeedAfterMissAttack = a.rechargeSpeedAfterMissAttack * multiply;
+        result.weaponWeightMultiply = a.weaponWeightMultiply * multiply;
+        result.moveSpeed = a.moveSpeed * multiply;
+        result.sprintSpeedMultiply = a.sprintSpeedMultiply * multiply;
+        result.crouchSpeedMultiply = a.crouchSpeedMultiply * multiply;
+        result.actionSpeed = a.actionSpeed * multiply;
+        result.rotationSpeed = a.rotationSpeed * multiply;
+        result.minRotationSpeed = a.minRotationSpeed * multiply;
+        result.pierceDamage = a.pierceDamage * multiply;
+        result.bluntDamage = a.bluntDamage * multiply;
+        result.slashDamage = a.slashDamage * multiply;
+        result.pierceResist = a.pierceResist * multiply;
+        result.bluntResist = a.bluntResist * multiply;
+        result.slashResist = a.slashResist * multiply;
+        result.fireDamage = a.fireDamage * multiply;
+        result.iceDamage = a.iceDamage * multiply;
+        result.arcaneDamage = a.arcaneDamage * multiply;
+        result.holyDamage = a.holyDamage * multiply;
+        result.fireResist = a.fireResist * multiply;
+        result.iceResist = a.iceResist * multiply;
+        result.arcaneResist = a.arcaneResist * multiply;
+        result.holyResist = a.holyResist * multiply;
+        result.visionRadius = a.visionRadius * multiply;
+        result.stepNoise = a.stepNoise * multiply;
+        result.stepNoiseCrouchMultiply = a.stepNoiseCrouchMultiply * multiply;
+        result.magicCastSpeed = a.magicCastSpeed * multiply;
+        result.memory = a.memory * multiply;
 
         return result;
     }

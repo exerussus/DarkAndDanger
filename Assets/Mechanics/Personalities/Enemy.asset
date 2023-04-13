@@ -61,7 +61,5 @@ MonoBehaviour:
     stepNoiseCrouchMultiply: 0
     magicCastSpeed: 0
     memory: 0
-  strength: 0
-  dexterity: 0
-  intelligence: 0
-  constitution: 0
+  StandardParameter: {fileID: 11400000, guid: 06e90d689df1aa94db8521e0f196e08e, type: 2}
+  characterAttributes: {fileID: 11400000, guid: 864090b7967675848b4c3012a255f03d, type: 2}
