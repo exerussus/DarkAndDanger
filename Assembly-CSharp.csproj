@@ -88,6 +88,7 @@
      <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundsSO.cs" />
      <Compile Include="Assets\Scripts\Interaction\Interaction.cs" />
+     <Compile Include="Assets\Scripts\Character\CharacterAttributes.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Items\Weapons" />
      <Folder Include="Assets\Sounds\Steps" />

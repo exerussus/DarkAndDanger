@@ -114,4 +114,21 @@ public class Parameter
 
         return result;
     }
+    public static Parameter operator *(Parameter parameter, float multiply)
+    {
+        Type type = typeof(Parameter);
+        Parameter result = new Parameter();
+        PropertyInfo[] properties = type.GetProperties();
+
+        foreach (PropertyInfo property in properties)
+        {
+            if (property.PropertyType == typeof(float))
+            {
+                float value1 = (float)property.GetValue(parameter);
+                property.SetValue(result, value1 * multiply);
+            }
+        }
+
+        return result;
+    }
 }
