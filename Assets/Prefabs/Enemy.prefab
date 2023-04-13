@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &651038942
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -107,7 +107,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &651038941
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,12 +121,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f751f4bd15aede4eb5677109041cd76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardController: {fileID: 0}
   colliderObserver: {fileID: 1470231204}
   weapon: {fileID: 11400000, guid: 5adc23a2a4d0c2540ae38f2aa61af2ef, type: 2}
   attackType: 0
   isStaminaEnough: 1
   isParring: 0
   isBlocking: 0
+  attackCooldownTimer: 0
+  parryCooldownTimer: 0
 --- !u!70 &651038940
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -136,6 +140,25 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -216,7 +239,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -320,6 +343,25 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -451,9 +493,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5107532d6d3483fb109e27abe2900bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 3998674688275430129}
   sounds: {fileID: 11400000, guid: 64580d8bea29bc84c8264db94eccb5f0, type: 2}
   audioSource: {fileID: 5174532800212925013}
+  character: {fileID: 3998674688275430129}
 --- !u!114 &942238880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -469,6 +511,7 @@ MonoBehaviour:
   character: {fileID: 3998674688275430129}
   weaponAttack: {fileID: 651038941}
   playerMovement: {fileID: 942238882}
+  stepObserver: {fileID: 0}
 --- !u!114 &942238881
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,9 +524,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05cce16f30a54b66892b25c710480dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 651038941}
   sounds: {fileID: 11400000, guid: 64580d8bea29bc84c8264db94eccb5f0, type: 2}
   audioSource: {fileID: 5174532800212925013}
+  attack: {fileID: 651038941}
 --- !u!114 &942238882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,10 +539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c0995e197989974a93c9f1cc68953ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keyboardController: {fileID: 0}
   _transform: {fileID: 3998674688275430135}
   _rigidbody: {fileID: 0}
-  currentSpeed: 0
-  isCrouching: 0
-  isSprinting: 0
-  rotationSpeed: 0
   isEnableToRotation: 1
+  isStaminaEnough: 0

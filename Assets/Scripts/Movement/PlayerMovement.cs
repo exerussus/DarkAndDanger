@@ -60,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
     public Action OnStandardMoving;
     public Action OnSetAttackRotation;
     public Action OnResetRotation;
-    private bool ismainNotNull;
+    private bool _isMainNotNull;
 
     private void OnEnable()
     {
@@ -93,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        ismainNotNull = Camera.main != null;
+        _isMainNotNull = Camera.main != null;
         _transform = _transform == null ? GetComponent<Transform>() : _transform;
         _rigidbody = _rigidbody == null ? GetComponent<Rigidbody2D>() : _rigidbody;
         OnResetRotation?.Invoke();
@@ -181,7 +181,7 @@ public class PlayerMovement : MonoBehaviour
     public void Rotation()
     {
         if (!isEnableToRotation) return;
-        if (ismainNotNull) _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        if (_isMainNotNull) _mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         _characterPosition = transform.position;
         float angle = Mathf.Atan2(_mousePosition.y - _characterPosition.y, _mousePosition.x - _characterPosition.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle - 90)), RotationSpeed * Time.deltaTime);
