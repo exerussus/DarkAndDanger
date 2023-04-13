@@ -1,6 +1,6 @@
 using System;
+using System.Reflection;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [Serializable]
 public class Parameter
@@ -76,36 +76,42 @@ public class Parameter
     [Tooltip("")] public float holyResist;
 
     [Header("Обзор")]
-    [Tooltip("")] public int visionRadius;
+    [Tooltip("")] public float visionRadius;
     
     [Header("Стелс")]
-    [Tooltip("")] public int stepNoise;
+    [Tooltip("")] public float stepNoise;
     [Tooltip("")] public float stepNoiseCrouchMultiply;
     
     [Header("Магия и способности")]
     [Tooltip("")] public float magicCastSpeed;
-    [Tooltip("")] [SerializeField] private int memory;
+    [Tooltip("")] [SerializeField] private float memory;
 
-    public int Memory
+    public float Memory
     {
-        get
-        {
-            return memory;
-        }
+        get => memory;
         set
         {
-            if (value < 0)
+            if (value < 0) memory = 0;
+            else if(value > 10) memory = 10;
+            else memory = Mathf.Floor(value); 
+        }
+    }
+    public static Parameter operator +(Parameter p1, Parameter p2)
+    {
+        Type type = typeof(Parameter);
+        Parameter result = new Parameter();
+        PropertyInfo[] properties = type.GetProperties();
+
+        foreach (PropertyInfo property in properties)
+        {
+            if (property.PropertyType == typeof(float))
             {
-                memory = 0;
-            }
-            else if(value > 10)
-            {
-                memory = 10;
-            }
-            else
-            {
-                memory = (int)Mathf.Floor(value);
+                float value1 = (float)property.GetValue(p1);
+                float value2 = (float)property.GetValue(p2);
+                property.SetValue(result, value1 + value2);
             }
         }
+
+        return result;
     }
 }
