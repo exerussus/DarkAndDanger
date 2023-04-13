@@ -30,7 +30,6 @@ public class Attack : MonoBehaviour
     public Action OnTouchPhysicalObject;
     public Action OnTouchDestructibleObject;
     public Action OnTouchEnemy;
-    public Action<PhysicalDamage, float> OnTakingPhysicalDamage;
     public Action OnGetHitInBlock;
     public Action OnStartParry;
     public Action OnStopParry;
@@ -194,11 +193,6 @@ public class Attack : MonoBehaviour
     {
         OnGetHitInParry?.Invoke();
     }
-    
-    public void TryToHit(PhysicalDamage damage, float weaponWeight)
-    {
-        OnTakingPhysicalDamage?.Invoke(damage, weaponWeight);
-    }
 
     private void TouchPhysicalObject()
     {
@@ -245,8 +239,8 @@ public class Attack : MonoBehaviour
     {
         if (_isParryProcessing) return;
         colliderObserver.DeactivateCollider();
-        Attack enemyAttackSystem = touchedCollider.gameObject.GetComponentInChildren<Attack>();
-        enemyAttackSystem.TryToHit(Damage, Weapon.Weight);
+        var enemyAttackSystem = touchedCollider.gameObject.GetComponent<HitsObserver>();
+        enemyAttackSystem.PhysicalHit(Damage, Weapon.Weight);
         OnTouchEnemy?.Invoke();
         AttackEnd();
     }

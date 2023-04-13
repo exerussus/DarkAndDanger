@@ -9,18 +9,15 @@ public class PlayerResourceController : MonoBehaviour
     [SerializeField] private Attack weaponAttack;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private StepObserver stepObserver;
+    [SerializeField] private HitsObserver hitObserver;
 
     private void OnEnable()
     {
         weaponAttack.OnStartAttack += DrainStaminaToAttack;
-        weaponAttack.OnStartAttack += AttackRotationSlowdown;
-        weaponAttack.OnAttackEnd += AttackRotationReset;
         weaponAttack.OnTouchPhysicalObject += DrainStaminaToTouchWall;
         weaponAttack.OnTryAttack += AttackStaminaIsEnough;
-        weaponAttack.OnTakingPhysicalDamage += TakePhysicalDamage;
+        hitObserver.OnTakingPhysicalDamage += TakePhysicalDamage;
         weaponAttack.BeforeParryStart += CheckAndDrainStaminaBeforeParry;
-        playerMovement.OnResetRotation += ResetRotation;
-        playerMovement.OnSetAttackRotation += SetAttackRotationSpeed;
         playerMovement.OnTrySprinting += IsStaminaEnoughForSprint;
         playerMovement.OnTryCrouching += IsStaminaEnoughForCrouch;
         playerMovement.OnStartSprinting += Sprinting;
@@ -33,14 +30,10 @@ public class PlayerResourceController : MonoBehaviour
     private void OnDisable()
     {
         weaponAttack.OnStartAttack -= DrainStaminaToAttack;
-        weaponAttack.OnStartAttack -= AttackRotationSlowdown;
-        weaponAttack.OnAttackEnd -= AttackRotationReset;
         weaponAttack.OnTouchPhysicalObject -= DrainStaminaToTouchWall;
         weaponAttack.OnTryAttack -= AttackStaminaIsEnough;
-        weaponAttack.OnTakingPhysicalDamage -= TakePhysicalDamage;
+        hitObserver.OnTakingPhysicalDamage -= TakePhysicalDamage;
         weaponAttack.BeforeParryStart -= CheckAndDrainStaminaBeforeParry;
-        playerMovement.OnResetRotation -= ResetRotation;
-        playerMovement.OnSetAttackRotation -= SetAttackRotationSpeed;
         playerMovement.OnTrySprinting -= IsStaminaEnoughForSprint;
         playerMovement.OnTryCrouching -= IsStaminaEnoughForCrouch;
         playerMovement.OnStartSprinting -= Sprinting;
@@ -71,31 +64,12 @@ public class PlayerResourceController : MonoBehaviour
     {
         character.DrainStamina(weaponAttack.Weapon.Weight);
     }
-    
-    private void SetAttackRotationSpeed()
-    {
-        playerMovement.RotationSpeed = character.Parameter.minRotationSpeed;
-    }
-    
-    private void ResetRotation()
-    {
-        playerMovement.RotationSpeed = character.Parameter.rotationSpeed;
-    }
-    
+
     private void AttackStaminaIsEnough()
     {
         weaponAttack.isStaminaEnough = character.isEnoughStamina(weaponAttack.Weapon.Weight * character.Parameter.staminaAttackCost);
     }
 
-    private void AttackRotationReset()
-    {
-        playerMovement.ResetRotationSpeed();
-    }
-    
-    private void AttackRotationSlowdown()
-    {
-        playerMovement.SetAttackRotationSpeed(character.Parameter.minRotationSpeed);
-    }
 
     private void StopToCrouch()
     {

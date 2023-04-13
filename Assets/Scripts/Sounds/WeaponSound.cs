@@ -7,7 +7,7 @@ public class WeaponSound : PlaySound
 
     private void OnEnable()
     {
-        attack.OnTakingPhysicalDamage += Hit;
+        attack.OnTouchEnemy += Hit;
         attack.OnTouchPhysicalObject += WallTouch;
         attack.OnTouchDestructibleObject += DestructibleObjectTouch;
         attack.OnStartingWeakDamage += Attack;
@@ -16,7 +16,7 @@ public class WeaponSound : PlaySound
 
     private void OnDisable()
     {
-        attack.OnTakingPhysicalDamage -= Hit;
+        attack.OnTouchEnemy -= Hit;
         attack.OnTouchPhysicalObject -= WallTouch;
         attack.OnTouchDestructibleObject -= DestructibleObjectTouch;
         attack.OnStartingWeakDamage -= Attack;
@@ -43,7 +43,7 @@ public class WeaponSound : PlaySound
         PlayAudio(SoundSO.SoundName.WallTouch);
     }
 
-    private void Hit(PhysicalDamage a, float b)
+    private void Hit()
     {
         PlayAudio(SoundSO.SoundName.HitTouch);
     }

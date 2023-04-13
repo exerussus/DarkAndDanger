@@ -66,6 +66,7 @@
      <Compile Include="Assets\Scripts\Interaction\ReplacementObject.cs" />
      <Compile Include="Assets\Scripts\Perk\Perk.cs" />
      <Compile Include="Assets\Scripts\Destructible\DestructibleObject.cs" />
+     <Compile Include="Assets\Scripts\Damage\HitsObserver.cs" />
      <Compile Include="Assets\Scripts\Damage\PhysicalDamage.cs" />
      <Compile Include="Assets\Scripts\Managers\UserCharactersData.cs" />
      <Compile Include="Assets\Scripts\Player\StepObserver.cs" />
@@ -128,7 +129,6 @@
      <Folder Include="Assets\Sounds" />
      <Folder Include="Assets\Sounds\Weapon" />
      <Folder Include="Assets\Scripts\FOV" />
-     <Folder Include="Assets\Prefabs\Rooms" />
      <Folder Include="Assets\Scripts\Player" />
      <Folder Include="Assets\Animations\Weapon" />
      <Folder Include="Assets\Mechanics" />
