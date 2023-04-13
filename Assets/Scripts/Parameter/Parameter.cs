@@ -5,7 +5,6 @@ using UnityEngine;
 [Serializable]
 public class Parameter
 {
-    
     [Header("Ресурсы")]
     
     [Tooltip("Здоровье")] 
@@ -201,6 +200,59 @@ public class Parameter
         result.magicCastSpeed = a.magicCastSpeed * multiply;
         result.memory = a.memory * multiply;
 
+        return result;
+    }
+        public static Parameter operator -(Parameter a, Parameter b)
+    {
+        Parameter result = new Parameter();
+        
+        result.health = a.health - b.health;
+        result.stamina = a.stamina - b.stamina;
+        result.mana = a.mana - b.mana;
+        result.staminaRegeneration = a.staminaRegeneration - b.staminaRegeneration;
+        result.staminaAttackCost = a.staminaAttackCost - b.staminaAttackCost;
+        result.staminaWeaponWeightMultiply = a.staminaWeaponWeightMultiply - b.staminaWeaponWeightMultiply;
+        result.staminaMissAttackCost = a.staminaMissAttackCost - b.staminaMissAttackCost;
+        result.staminaCrouchCost = a.staminaCrouchCost - b.staminaCrouchCost;
+        result.staminaSprintCost = a.staminaSprintCost - b.staminaSprintCost;
+        result.staminaParryCost = a.staminaParryCost - b.staminaParryCost;
+        result.timeAfterDrainStaminaCount = a.timeAfterDrainStaminaCount - b.timeAfterDrainStaminaCount;
+        result.criticalDamageMultiply = a.criticalDamageMultiply - b.criticalDamageMultiply;
+        result.criticalChance = a.criticalChance - b.criticalChance;
+        result.weakSpotChance = a.weakSpotChance - b.weakSpotChance;
+        result.backStabMultiply = a.backStabMultiply - b.backStabMultiply;
+        result.attackSpeed = a.attackSpeed - b.attackSpeed;
+        result.rechargeAttackSpeed = a.rechargeAttackSpeed - b.rechargeAttackSpeed;
+        result.rechargeSpeedAfterHitCollision = a.rechargeSpeedAfterHitCollision - b.rechargeSpeedAfterHitCollision;
+        result.rechargeSpeedAfterHitPhysicalObject = a.rechargeSpeedAfterHitPhysicalObject - b.rechargeSpeedAfterHitPhysicalObject;
+        result.rechargeSpeedAfterMissAttack = a.rechargeSpeedAfterMissAttack - b.rechargeSpeedAfterMissAttack;
+        result.weaponWeightMultiply = a.weaponWeightMultiply - b.weaponWeightMultiply;
+        result.moveSpeed = a.moveSpeed - b.moveSpeed;
+        result.sprintSpeedMultiply = a.sprintSpeedMultiply - b.sprintSpeedMultiply;
+        result.crouchSpeedMultiply = a.crouchSpeedMultiply - b.crouchSpeedMultiply;
+        result.actionSpeed = a.actionSpeed - b.actionSpeed;
+        result.rotationSpeed = a.rotationSpeed - b.rotationSpeed;
+        result.minRotationSpeed = a.minRotationSpeed - b.minRotationSpeed;
+        result.pierceDamage = a.pierceDamage - b.pierceDamage;
+        result.bluntDamage = a.bluntDamage - b.bluntDamage;
+        result.slashDamage = a.slashDamage - b.slashDamage;
+        result.pierceResist = a.pierceResist - b.pierceResist;
+        result.bluntResist = a.bluntResist - b.bluntResist;
+        result.slashResist = a.slashResist - b.slashResist;
+        result.fireDamage = a.fireDamage - b.fireDamage;
+        result.iceDamage = a.iceDamage - b.iceDamage;
+        result.arcaneDamage = a.arcaneDamage - b.arcaneDamage;
+        result.holyDamage = a.holyDamage - b.holyDamage;
+        result.fireResist = a.fireResist - b.fireResist;
+        result.iceResist = a.iceResist - b.iceResist;
+        result.arcaneResist = a.arcaneResist - b.arcaneResist;
+        result.holyResist = a.holyResist - b.holyResist;
+        result.visionRadius = a.visionRadius - b.visionRadius;
+        result.stepNoise = a.stepNoise - b.stepNoise;
+        result.stepNoiseCrouchMultiply = a.stepNoiseCrouchMultiply - b.stepNoiseCrouchMultiply;
+        result.magicCastSpeed = a.magicCastSpeed - b.magicCastSpeed;
+        result.memory = a.memory - b.memory;
+        
         return result;
     }
 }

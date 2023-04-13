@@ -13,6 +13,7 @@ public class FogOfWar : MonoBehaviour
     private Vector3[] vertices;
     private Color[] colors;
     
+    
     void Start()
     {
         Initialize();

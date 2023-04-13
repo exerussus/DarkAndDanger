@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 
 public class Vision : MonoBehaviour
@@ -10,6 +11,8 @@ public class Vision : MonoBehaviour
     [SerializeField] private Vector3 offset;
     [SerializeField] private int distance;
 
+    public Action OnHitFOG;
+    
     private void Start()
     {
         visibleLayer = LayerMask.GetMask("VisibleObject");

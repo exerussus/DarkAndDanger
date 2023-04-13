@@ -28,5 +28,9 @@ public class Personality : ScriptableObject
     {
         this.parameter = this.parameter + parameter;
     }
+    public void SubtractParameterFromCharacter(Parameter parameter)
+    {
+        this.parameter = this.parameter - parameter;
+    }
 
 }
