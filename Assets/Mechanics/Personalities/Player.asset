@@ -15,51 +15,51 @@ MonoBehaviour:
   UserID: 0
   CharacterName: Taranis Jones
   parameter:
-    health: 0
-    stamina: 0
-    mana: 0
-    staminaRegeneration: 0
-    staminaAttackCost: 0
-    staminaWeaponWeightMultiply: 0
-    staminaMissAttackCost: 0
-    staminaCrouchCost: 0
-    staminaSprintCost: 0
-    staminaParryCost: 0
-    timeAfterDrainStaminaCount: 0
-    criticalDamageMultiply: 0
-    criticalChance: 0
-    weakSpotChance: 0
-    backStabMultiply: 0
-    attackSpeed: 0
+    health: 72.25
+    stamina: 61
+    mana: 17.5
+    staminaRegeneration: 12
+    staminaAttackCost: 5
+    staminaWeaponWeightMultiply: 1
+    staminaMissAttackCost: 5
+    staminaCrouchCost: 0.5
+    staminaSprintCost: 5
+    staminaParryCost: 5
+    timeAfterDrainStaminaCount: 2
+    criticalDamageMultiply: 1.62
+    criticalChance: 5.08
+    weakSpotChance: 3.08
+    backStabMultiply: 10.5
+    attackSpeed: 141
     rechargeAttackSpeed: 0
     rechargeSpeedAfterHitCollision: 0
     rechargeSpeedAfterHitPhysicalObject: 0
     rechargeSpeedAfterMissAttack: 0
-    weaponWeightMultiply: 0
-    moveSpeed: 0
-    sprintSpeedMultiply: 0
-    crouchSpeedMultiply: 0
-    actionSpeed: 0
-    rotationSpeed: 0
-    minRotationSpeed: 0
-    pierceDamage: 0
-    bluntDamage: 0
-    slashDamage: 0
+    weaponWeightMultiply: 1
+    moveSpeed: 206
+    sprintSpeedMultiply: 1.99
+    crouchSpeedMultiply: 0.32999998
+    actionSpeed: 116
+    rotationSpeed: 408
+    minRotationSpeed: 204
+    pierceDamage: 7.2000003
+    bluntDamage: 7.2000003
+    slashDamage: 7.2000003
     pierceResist: 0
-    bluntResist: 0
+    bluntResist: 4.2000003
     slashResist: 0
-    fireDamage: 0
-    iceDamage: 0
-    arcaneDamage: 0
-    holyDamage: 0
+    fireDamage: 1.5
+    iceDamage: 1.5
+    arcaneDamage: 1.5
+    holyDamage: 1.5
     fireResist: 0
     iceResist: 0
     arcaneResist: 0
     holyResist: 0
-    visionRadius: 0
+    visionRadius: 15
     stepNoise: 0
     stepNoiseCrouchMultiply: 0
     magicCastSpeed: 0
-    memory: 0
+    memory: 1.25
   StandardParameter: {fileID: 11400000, guid: 06e90d689df1aa94db8521e0f196e08e, type: 2}
   characterAttributes: {fileID: 11400000, guid: 107f596d31ef17442b67987b57ffc1fc, type: 2}
