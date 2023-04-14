@@ -6,20 +6,18 @@ public class VisionRayDirection : MonoBehaviour
 {
     [SerializeField] public Character character;
     [SerializeField] public int rayCount = 160;
-    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Transform unitTransform;
+    public Transform UnitTransform => unitTransform;
 
     public Action<Vector2> OnGetDirection;
     
     private void Start()
     {
-        playerTransform = playerTransform == null ? GetComponent<Transform>() : playerTransform;
+        unitTransform = unitTransform == null ? GetComponent<Transform>() : unitTransform;
     }
 
     private void RayToScan()
     {
-        bool result = false;
-        bool a = false;
-        bool b = false;
         float j = 0;
 
         for (int i = 0; i < rayCount; i++)
