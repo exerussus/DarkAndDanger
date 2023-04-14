@@ -19,11 +19,6 @@ public class PhysicalDamage
         _slash = slash;
     }
 
-    public void Clear()
-    {
-        _blunt = _pierce = _slash = 0f;
-    }
-
     public void SetDamage(PhysicalDamage physicalDamage)
     {
         _blunt = physicalDamage.Blunt;
