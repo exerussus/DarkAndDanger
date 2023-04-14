@@ -71,6 +71,7 @@
      <Compile Include="Assets\Scripts\Destructible\DestructibleObject.cs" />
      <Compile Include="Assets\Scripts\Spell\SpellEffectHandler.cs" />
      <Compile Include="Assets\Scripts\Damage\HitsObserver.cs" />
+     <Compile Include="Assets\Scripts\Damage\MagicalDamage.cs" />
      <Compile Include="Assets\Scripts\Damage\PhysicalDamage.cs" />
      <Compile Include="Assets\Scripts\Player\StepObserver.cs" />
      <Compile Include="Assets\Scripts\Sounds\MovementSound.cs" />

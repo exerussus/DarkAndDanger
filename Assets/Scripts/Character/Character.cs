@@ -58,8 +58,17 @@ public class Character : MonoBehaviour
         currentHealth = Health;
         currentStamina = Stamina;
     }
+        
+    public void TakeMagicalDamage(PhysicalDamage damage)
+    {
+        _currentHealth.Value -= damage.Blunt + damage.Pierce + damage.Slash;
+        _isAlive = _currentHealth.Value > 0;
+        if(!_isAlive) Dead();
+        OnTakeDamage?.Invoke();
+        currentHealth = Health;
+    }
     
-    public void TakeDamage(PhysicalDamage damage)
+    public void TakePhysicalDamage(PhysicalDamage damage)
     {
         _currentHealth.Value -= damage.Blunt + damage.Pierce + damage.Slash;
         _isAlive = _currentHealth.Value > 0;
