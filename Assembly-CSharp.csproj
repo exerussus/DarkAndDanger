@@ -62,7 +62,6 @@
      <Compile Include="Assets\Scripts\Player\SpeedChanger.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Interaction\SpriteChanger.cs" />
-     <Compile Include="Assets\Scripts\Player\VisibleObject.cs" />
      <Compile Include="Assets\Scripts\Player\AttackController.cs" />
      <Compile Include="Assets\Scripts\Item\Items.cs" />
      <Compile Include="Assets\Scripts\Interaction\ReplacementObject.cs" />
@@ -75,14 +74,16 @@
      <Compile Include="Assets\Scripts\Damage\PhysicalDamage.cs" />
      <Compile Include="Assets\Scripts\Player\StepObserver.cs" />
      <Compile Include="Assets\Scripts\Sounds\MovementSound.cs" />
+     <Compile Include="Assets\Scripts\Vision\VisionRayDirection.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundSO.cs" />
      <Compile Include="Assets\Scripts\Player\ColliderObserver.cs" />
      <Compile Include="Assets\FogWar\Scripts\FogOfWar.cs" />
-     <Compile Include="Assets\Scripts\Player\Vision.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
      <Compile Include="Assets\Scripts\Parameter\Parameter.cs" />
      <Compile Include="Assets\Scripts\Managers\Tick.cs" />
+     <Compile Include="Assets\Scripts\Vision\Vision.cs" />
      <Compile Include="Assets\Scripts\Interaction\InteractionBar.cs" />
+     <Compile Include="Assets\Scripts\Vision\VisibleObject.cs" />
      <Compile Include="Assets\Scripts\Spell\Spell.cs" />
      <Compile Include="Assets\Scripts\Item\Item.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
@@ -109,6 +110,7 @@
      <Folder Include="Assets\Sounds\Steps\Sprinting" />
      <Folder Include="Assets\Mechanics\Attributes\Players" />
      <Folder Include="Assets\Sounds\Character" />
+     <Folder Include="Assets\Scripts\Vision" />
      <Folder Include="Assets\Mechanics\Attributes" />
      <Folder Include="Assets\Scripts\Perk" />
      <Folder Include="Assets\Sprites\UI" />
