@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
      <Compile Include="Assets\Scripts\Character\WeaponParameter.cs" />
      <Compile Include="Assets\Scripts\Sounds\CharacterSound.cs" />
+     <Compile Include="Assets\Scripts\Spell\SpellCaster.cs" />
      <Compile Include="Assets\Scripts\Sounds\WeaponSound.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventories.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
@@ -68,6 +69,7 @@
      <Compile Include="Assets\Scripts\Perk\Perk.cs" />
      <Compile Include="Assets\Scripts\Parameter\StandardParameter.cs" />
      <Compile Include="Assets\Scripts\Destructible\DestructibleObject.cs" />
+     <Compile Include="Assets\Scripts\Spell\SpellEffectHandler.cs" />
      <Compile Include="Assets\Scripts\Damage\HitsObserver.cs" />
      <Compile Include="Assets\Scripts\Damage\PhysicalDamage.cs" />
      <Compile Include="Assets\Scripts\Player\StepObserver.cs" />
@@ -121,6 +123,7 @@
      <Folder Include="Assets\Sprites\Map\Materials" />
      <Folder Include="Assets\Sprites\Weapon" />
      <Folder Include="Assets\FogWar" />
+     <Folder Include="Assets\Mechanics\Spells" />
      <Folder Include="Assets\Items" />
      <Folder Include="Assets\Scripts\Managers" />
      <Folder Include="Assets\Scripts\Parameter" />
