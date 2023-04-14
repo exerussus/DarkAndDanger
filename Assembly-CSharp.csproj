@@ -80,8 +80,10 @@
      <Compile Include="Assets\Scripts\Parameter\Parameter.cs" />
      <Compile Include="Assets\Scripts\Managers\Tick.cs" />
      <Compile Include="Assets\Scripts\Interaction\InteractionBar.cs" />
+     <Compile Include="Assets\Scripts\Spell\Spell.cs" />
      <Compile Include="Assets\Scripts\Item\Item.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\Spell\SpellTick.cs" />
      <Compile Include="Assets\Scripts\Parameter\AttributesScalingParameter.cs" />
      <Compile Include="Assets\Scripts\Movement\IMove.cs" />
      <Compile Include="Assets\Scripts\Interaction\InteractionObject.cs" />
@@ -136,6 +138,7 @@
      <Folder Include="Assets\Sounds" />
      <Folder Include="Assets\Mechanics\Attributes\ParameterScaling" />
      <Folder Include="Assets\Sounds\Weapon" />
+     <Folder Include="Assets\Scripts\Spell" />
      <Folder Include="Assets\Scripts\Player" />
      <Folder Include="Assets\Animations\Weapon" />
      <Folder Include="Assets\Mechanics" />
