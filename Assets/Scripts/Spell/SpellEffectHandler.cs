@@ -70,9 +70,30 @@ public class SpellEffectHandler : MonoBehaviour
         if(spellTick.RestoreHealth > 0) character.RestoreHealth(spellTick.RestoreHealth);
         if(spellTick.RestoreStamina > 0) character.RestoreStamina(spellTick.RestoreStamina);
         if(spellTick.RestoreMana > 0) character.RestoreMana(spellTick.RestoreMana);
+
+        var magicDamage = new MagicalDamage(
+            fire: character.Parameter.fireResist,
+            water: character.Parameter.waterResist,
+            air: character.Parameter.airResist,
+            earth: character.Parameter.earthResist,
+            poison:character.Parameter.poisonResist,
+            holy: character.Parameter.holyResist,
+            necro: character.Parameter.necroResist,
+            arcane:character.Parameter.arcaneResist
+        );
         
-        // To do: add magic damage calculation
+        var magicResistance = new MagicalDamage(
+            fire: spellTick.Fire,
+            water: spellTick.Water,
+            air: spellTick.Air,
+            earth: spellTick.Earth,
+            poison: spellTick.Poison,
+            holy: spellTick.Holy,
+            necro: spellTick.Necro,
+            arcane: spellTick.Arcane
+        );
         
+        character.TakeMagicalDamage(magicDamage.GetDamageWithResistance(magicResistance));
         character.Personality.AddParameterToCharacter(spellTick.Parameter);
         
     }

@@ -63,7 +63,6 @@ public class Vision : MonoBehaviour
                 if (GetRaycast(dir)) b = true;
             }
         }
-
         if (a || b) result = true;
         return result;
     }

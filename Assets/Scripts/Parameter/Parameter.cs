@@ -70,9 +70,14 @@ public class Parameter
     
     [Header("Магическая защита")]
     [Tooltip("")] public float fireResist;
-    [Tooltip("")] public float iceResist;
     [Tooltip("")] public float arcaneResist;
     [Tooltip("")] public float holyResist;
+    [Tooltip("")] public float waterResist;
+    [Tooltip("")] public float airResist;
+    [Tooltip("")] public float earthResist;
+    [Tooltip("")] public float poisonResist;
+    [Tooltip("")] public float necroResist;
+
 
     [Header("Обзор")]
     [Tooltip("")] public float visionRadius;
@@ -137,7 +142,11 @@ public class Parameter
         result.arcaneDamage = a.arcaneDamage + b.arcaneDamage;
         result.holyDamage = a.holyDamage + b.holyDamage;
         result.fireResist = a.fireResist + b.fireResist;
-        result.iceResist = a.iceResist + b.iceResist;
+        result.waterResist = a.waterResist + b.waterResist;
+        result.airResist = a.airResist + b.airResist;
+        result.earthResist = a.earthResist + b.earthResist;
+        result.poisonResist = a.poisonResist + b.poisonResist;
+        result.necroResist = a.necroResist + b.necroResist;
         result.arcaneResist = a.arcaneResist + b.arcaneResist;
         result.holyResist = a.holyResist + b.holyResist;
         result.visionRadius = a.visionRadius + b.visionRadius;
@@ -191,7 +200,11 @@ public class Parameter
         result.arcaneDamage = a.arcaneDamage * multiply;
         result.holyDamage = a.holyDamage * multiply;
         result.fireResist = a.fireResist * multiply;
-        result.iceResist = a.iceResist * multiply;
+        result.waterResist = a.waterResist * multiply;
+        result.airResist = a.airResist * multiply;
+        result.earthResist = a.earthResist * multiply;
+        result.poisonResist = a.poisonResist * multiply;
+        result.necroResist = a.necroResist * multiply;
         result.arcaneResist = a.arcaneResist * multiply;
         result.holyResist = a.holyResist * multiply;
         result.visionRadius = a.visionRadius * multiply;
@@ -244,7 +257,11 @@ public class Parameter
         result.arcaneDamage = a.arcaneDamage - b.arcaneDamage;
         result.holyDamage = a.holyDamage - b.holyDamage;
         result.fireResist = a.fireResist - b.fireResist;
-        result.iceResist = a.iceResist - b.iceResist;
+        result.waterResist = a.waterResist - b.waterResist;
+        result.airResist = a.airResist - b.airResist;
+        result.earthResist = a.earthResist - b.earthResist;
+        result.poisonResist = a.poisonResist - b.poisonResist;
+        result.necroResist = a.necroResist - b.necroResist;
         result.arcaneResist = a.arcaneResist - b.arcaneResist;
         result.holyResist = a.holyResist - b.holyResist;
         result.visionRadius = a.visionRadius - b.visionRadius;
