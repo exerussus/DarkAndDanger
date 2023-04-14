@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     private bool _isAlive = true;
     [SerializeField] private int userID;
     [SerializeField] private Personality personality;
+    public Personality Personality => personality;
     public Parameter Parameter => personality.Parameter;
     private CharacterResource _currentHealth;
     private CharacterResource _currentStamina;

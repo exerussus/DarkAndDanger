@@ -37,7 +37,9 @@ public class SpellEffectHandler : MonoBehaviour
 
     public void AddSpell(Spell spell)
     {
-        spellList.Add(new SpellAndCount(spell:spell, count: spell.SpellTicks.Count));
+        var spellAndCount = new SpellAndCount(spell: spell, count: spell.SpellTicks.Count);
+        DoEffect(spellAndCount);
+        spellList.Add(spellAndCount);
     }
     
     private void DoEffectOnTick()
@@ -51,32 +53,40 @@ public class SpellEffectHandler : MonoBehaviour
             if (spellAndCount.Count != 0)
             {
                 DoEffect(spellAndCount);
-                spellAndCount.Count -= 1;
             }
             else
             {
-                EndEffect(spellAndCount);
-                spellList.RemoveAt(i);
+                RemoveSpell(spellAndCount, i);
             }
-
-
         }
     }
 
     private void DoEffect(SpellAndCount spellAndCount)
     {
-        EndEffect(spellAndCount);
         SpellTick spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.Count];
+        if (spellAndCount.Count != spellAndCount.Spell.SpellTicks.Count) EndEffect(spellAndCount);
+        spellAndCount.Count -= 1;
         
         if(spellTick.RestoreHealth > 0) character.RestoreHealth(spellTick.RestoreHealth);
         if(spellTick.RestoreStamina > 0) character.RestoreStamina(spellTick.RestoreStamina);
         if(spellTick.RestoreMana > 0) character.RestoreMana(spellTick.RestoreMana);
+        
+        // To do: add magic damage calculation
+        
+        character.Personality.AddParameterToCharacter(spellTick.Parameter);
         
     }
 
     private void EndEffect(SpellAndCount spellAndCount)
     {
         var spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.Count];
+        character.Personality.SubtractParameterFromCharacter(spellTick.Parameter);
+        
     }
-    
+
+    private void RemoveSpell(SpellAndCount spellAndCount, int index)
+    {
+        EndEffect(spellAndCount);
+        spellList.RemoveAt(index);
+    }
 }
