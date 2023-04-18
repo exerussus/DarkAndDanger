@@ -5,8 +5,8 @@ public static class SpellCaster
 {
     public static void CastSpell(GameObject caster, Spell spell)
     {
-        if (spell.Distance == 0) CastToSelf(caster, spell);
-        else if (spell.ProjectileSpeed > 0) CastProjectile(spell);
+        if (spell.CastingType == Spell.CastType.Self) CastToSelf(caster, spell);
+        else if (spell.CastingType == Spell.CastType.Projectile) CastProjectile(spell);
         else CastRaycast(caster, spell);
     }
     
