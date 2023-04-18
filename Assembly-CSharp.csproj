@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\Player\SpeedChanger.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
      <Compile Include="Assets\Scripts\Interaction\SpriteChanger.cs" />
+     <Compile Include="Assets\Scripts\Interaction\IActionAfterInterection.cs" />
      <Compile Include="Assets\Scripts\Player\AttackController.cs" />
      <Compile Include="Assets\Scripts\Item\Items.cs" />
      <Compile Include="Assets\Scripts\Interaction\ReplacementObject.cs" />
@@ -79,6 +80,7 @@
      <Compile Include="Assets\Scripts\Player\ColliderObserver.cs" />
      <Compile Include="Assets\FogWar\Scripts\FogOfWar.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
+     <Compile Include="Assets\Scripts\Interaction\ActionAfterInteraction\DoorActionInteraction.cs" />
      <Compile Include="Assets\Scripts\Parameter\Parameter.cs" />
      <Compile Include="Assets\Scripts\Managers\Tick.cs" />
      <Compile Include="Assets\Scripts\Vision\Vision.cs" />
@@ -93,6 +95,7 @@
      <Compile Include="Assets\Scripts\Interaction\InteractionObject.cs" />
      <Compile Include="Assets\Scripts\Character\Personality.cs" />
      <Compile Include="Assets\Scripts\Perk\Perks.cs" />
+     <Compile Include="Assets\Scripts\Interaction\ActionAfterInteraction\ChestActionInteraction.cs" />
      <Compile Include="Assets\Scripts\Sounds\PlaySound.cs" />
      <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundsSO.cs" />
@@ -125,6 +128,7 @@
      <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Sprites\Map\Materials" />
      <Folder Include="Assets\Sprites\Weapon" />
+     <Folder Include="Assets\Scripts\Interaction\ActionAfterInteraction" />
      <Folder Include="Assets\FogWar" />
      <Folder Include="Assets\Mechanics\Spells" />
      <Folder Include="Assets\Items" />
