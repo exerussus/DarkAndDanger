@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpellProjectile : MonoBehaviour
 {
-    private GameObject _caster;
     private Spell _spell;
     private Vector3 _direction;
     private bool _isActivated;
@@ -13,7 +12,6 @@ public class SpellProjectile : MonoBehaviour
 
     public SpellProjectile(GameObject caster, Spell spell)
     {
-        _caster = caster;
         _spell = spell;
     }
 
@@ -21,12 +19,7 @@ public class SpellProjectile : MonoBehaviour
     {
         _spell = spell;
     }
-    
-    public void SetCaster(GameObject caster)
-    {
-        _caster = caster;
-    }
-    
+
     public void Activate()
     {
         _isActivated = true;

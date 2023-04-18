@@ -7,7 +7,6 @@ public class CastingProjectile : MonoBehaviour
     {
         var projectile = Instantiate(spell.ProjectilePrefab);
         var spellProjectile = projectile.GetComponent<SpellProjectile>();
-        spellProjectile.SetCaster(caster);
         spellProjectile.SetSpell(spell);
         spellProjectile.Activate();
     }
