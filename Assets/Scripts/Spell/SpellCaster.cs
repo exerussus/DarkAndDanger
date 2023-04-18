@@ -6,13 +6,13 @@ public static class SpellCaster
     public static void CastSpell(GameObject caster, Spell spell)
     {
         if (spell.CastingType == Spell.CastType.Self) CastToSelf(caster, spell);
-        else if (spell.CastingType == Spell.CastType.Projectile) CastProjectile(spell);
+        else if (spell.CastingType == Spell.CastType.Projectile) CastProjectile(caster, spell);
         else CastRaycast(caster, spell);
     }
     
-    private static void CastProjectile(Spell spell)
+    private static void CastProjectile(GameObject caster, Spell spell)
     {
-        CastingProjectile.Cast(spell);
+        CastingProjectile.Cast(caster, spell);
     }
 
     private static void CastRaycast(GameObject caster, Spell spell)

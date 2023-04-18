@@ -9,8 +9,9 @@ public class SpellProjectile : MonoBehaviour
     private bool _isActivated;
     private bool _isTouched;
     private List<Collider2D> _detectedCollidersList;
+    [SerializeField] private GameObject projectilePrefab;
 
-    public SpellProjectile(GameObject caster, Spell spell)
+    public SpellProjectile(Spell spell)
     {
         _spell = spell;
     }
@@ -22,35 +23,35 @@ public class SpellProjectile : MonoBehaviour
 
     public void Activate()
     {
+        _detectedCollidersList = new List<Collider2D>();
         _isActivated = true;
     }
 
     private void FixedUpdate()
     {
         if (!_isActivated || _isTouched) return;
-        
-        var movingDistance = _spell.Distance / _spell.ProjectileSpeed * Time.fixedTime;
+        var movingDistance = _spell.Distance / _spell.ProjectileSpeed * Time.fixedDeltaTime;
         transform.Translate(new Vector3(0f, movingDistance, 0f));
     }
 
-    private bool IsTouchingObjects(Collision2D collision)
+    private bool IsTouchingObjects(Collider2D collider)
     {
-        if (collision.gameObject.CompareTag("HitBox") ||
-            collision.gameObject.CompareTag("PhysicalObject") ||
-            collision.gameObject.CompareTag("DestructibleObject"))
+        if (collider.gameObject.CompareTag("HitBox") ||
+            collider.gameObject.CompareTag("PhysicalObject") ||
+            collider.gameObject.CompareTag("DestructibleObject"))
             return true;
         return false;
     }
     
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (_isTouched) return;
-        if (IsTouchingObjects(collision))
+        if (IsTouchingObjects(collider))
         {
             _isTouched = true;
             GetDirection();
             AddSpellEffects();
-            Destroy(this);
+            Destroy(projectilePrefab.gameObject);
         }
     }
 
@@ -89,6 +90,7 @@ public class SpellProjectile : MonoBehaviour
 
     private void AddSpellEffects()
     {
+        if (_detectedCollidersList.Count == 0) return;
         foreach (var collider in _detectedCollidersList)
         {
             var spellEffectHandler = collider.GetComponent<SpellEffectHandler>();

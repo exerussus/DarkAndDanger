@@ -1,5 +1,4 @@
 
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ public class Spell : ScriptableObject
 
     [SerializeField] private CastType castType;
     [SerializeField] private int area;
-    [SerializeField] private int projectileSpeed;
+    [SerializeField] private float projectileSpeed;
     [SerializeField] private int distance;
     [SerializeField] private float healthCost;
     [SerializeField] private float staminaCost;
@@ -26,7 +25,7 @@ public class Spell : ScriptableObject
     public string Description => description;
     public CastType CastingType => castType;
     public int Area => area;
-    public int ProjectileSpeed => projectileSpeed;    
+    public float ProjectileSpeed => projectileSpeed;    
     public int Distance => distance;    
     public float HealthCost => healthCost;
     public float StaminaCost => staminaCost;

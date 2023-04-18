@@ -80,6 +80,7 @@
      <Compile Include="Assets\Scripts\Vision\VisionRayDirection.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundSO.cs" />
      <Compile Include="Assets\Scripts\Player\ColliderObserver.cs" />
+     <Compile Include="Assets\Scripts\Spell\TestingSpellCasting.cs" />
      <Compile Include="Assets\FogWar\Scripts\FogOfWar.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
      <Compile Include="Assets\Scripts\Interaction\ActionAfterInteraction\DoorActionInteraction.cs" />

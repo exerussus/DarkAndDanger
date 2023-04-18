@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpellEffectHandler : MonoBehaviour
 {
     [SerializeField] private Character character;
-    private List<SpellAndCount> spellList;
+    private List<SpellAndCount> spellList = new List<SpellAndCount>();
 
     public struct SpellAndCount
     {
@@ -44,7 +44,6 @@ public class SpellEffectHandler : MonoBehaviour
     private void DoEffectOnTick()
     {
         if (spellList.Count == 0) return;
-
 
         for (int i = spellList.Count; i > 0; i--)
         {
