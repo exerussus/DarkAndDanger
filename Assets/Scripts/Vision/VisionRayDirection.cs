@@ -5,7 +5,7 @@ using UnityEngine;
 public class VisionRayDirection : MonoBehaviour
 {
     [SerializeField] public Character character;
-    [SerializeField] public int rayCount = 160;
+    [SerializeField] public int rayCount = 16;
     [SerializeField] private Transform unitTransform;
     public Transform UnitTransform => unitTransform;
 
