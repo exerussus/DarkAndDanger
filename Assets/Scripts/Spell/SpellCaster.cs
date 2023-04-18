@@ -1,27 +1,28 @@
 ﻿
 
-public class SpellCaster
-{
+using UnityEngine;
 
-    public static void Cast(Spell spell)
+public static class SpellCaster
+{
+    public static void CastSpell(GameObject caster, Spell spell)
     {
-        if (spell.ProjectileSpeed > 0) Projectile(spell);
-        else Raycast(spell);
+        if (spell.Distance == 0) CastToSelf(caster, spell);
+        else if (spell.ProjectileSpeed > 0) CastProjectile(caster, spell);
+        else CastRaycast(caster, spell);
     }
     
-    private static void Projectile(Spell spell)
+    private static void CastProjectile(GameObject caster, Spell spell)
     {
-        
+        CastingProjectile.Cast(caster, spell);
     }
 
-    private static void Raycast(Spell spell)
+    private static void CastRaycast(GameObject caster, Spell spell)
     {
-        
+        CastingRaycast.Cast(caster, spell);
     }
 
-    public enum SpellCastType
+    private static void CastToSelf(GameObject caster, Spell spell)
     {
-        Projectile,
-        Raycast
+        CastingToSelf.Cast(caster, spell);
     }
 }

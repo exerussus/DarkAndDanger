@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,9 +11,12 @@ public class Spell : ScriptableObject
     [SerializeField] private string description;
     [SerializeField] private int area;
     [SerializeField] private int projectileSpeed;
+    [SerializeField] private int distance;
     [SerializeField] private float healthCost;
     [SerializeField] private float staminaCost;
-    [SerializeField] private float manaCost;  
+    [SerializeField] private float manaCost;
+    [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private List<LayerMask> layerTargets;
     [SerializeField] private List<SpellTick> spellTicks;
 
 
@@ -20,8 +24,11 @@ public class Spell : ScriptableObject
     public string Description => description;
     public int Area => area;
     public int ProjectileSpeed => projectileSpeed;    
+    public int Distance => distance;    
     public float HealthCost => healthCost;
     public float StaminaCost => staminaCost;
     public float ManaCost => manaCost;
+    public GameObject ProjectilePrefab => projectilePrefab;
+    public List<LayerMask> LayerTargets => layerTargets;
     public List<SpellTick> SpellTicks => spellTicks;
 }
