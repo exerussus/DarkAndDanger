@@ -11,6 +11,7 @@ public class InteractionObject : MonoBehaviour
     private void Start()
     {
         gameObject = gameObject == null ? GetComponent<GameObject>() : gameObject;
+        actionInteraction = actionInteraction == null ? GetComponent<IActionAfterInterection>() : actionInteraction;
     }
 
     public void InteractionCompleted()
