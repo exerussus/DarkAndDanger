@@ -329,7 +329,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6404306330373969541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.178, y: 0.076, z: 1}
+  m_LocalPosition: {x: 0.178, y: 0.076, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -660,7 +660,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6404306331556804272}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.154, y: 0.064, z: 1}
+  m_LocalPosition: {x: -0.154, y: 0.064, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1592,6 +1592,7 @@ MonoBehaviour:
   spell: {fileID: 11400000, guid: 643022cdbddc13a449cdc65ab51ef4a7, type: 2}
   caster: {fileID: 6404306331663602763}
   casterTransform: {fileID: 6404306332229754896}
+  casterSpellEffectHandler: {fileID: 1141744452875636148}
 --- !u!114 &2381389391042735736
 MonoBehaviour:
   m_ObjectHideFlags: 0

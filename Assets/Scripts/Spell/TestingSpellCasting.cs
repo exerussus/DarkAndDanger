@@ -7,6 +7,7 @@ public class TestingSpellCasting : MonoBehaviour
     [SerializeField] private Spell spell;
     [SerializeField] private Character caster;
     [SerializeField] private Transform casterTransform;
+    [SerializeField] private SpellEffectHandler casterSpellEffectHandler;
 
     public void OnEnable()
     {
@@ -20,6 +21,6 @@ public class TestingSpellCasting : MonoBehaviour
     
     public void Cast()
     {
-        SpellCaster.CastSpell(casterTransform, caster, spell);
+        SpellCaster.CastSpell(casterTransform, caster, spell, casterSpellEffectHandler);
     }
 }
