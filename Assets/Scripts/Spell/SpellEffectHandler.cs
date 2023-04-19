@@ -1,5 +1,4 @@
 ﻿
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,7 +22,6 @@ public class SpellEffectHandler : MonoBehaviour
     {
         var spellAndCount = new SpellAndCount(spell: spell, actuallyIndex: spell.SpellTicks.Count, casterParameter);
         DoEffect(spellAndCount);
-        Debug.Log("AddSpell.spellAndCount.ActuallyIndex: " + spellAndCount.ActuallyIndex);
         if(spellAndCount.ActuallyIndex > 0) spellList.Add(spellAndCount);
         else EndEffect(spellAndCount);
     }
@@ -36,7 +34,6 @@ public class SpellEffectHandler : MonoBehaviour
         {
             var index = i - 1;
             SpellAndCount spellAndCount = spellList[index];
-            Debug.Log("spellAndCount.ActuallyIndex: " + spellAndCount.ActuallyIndex);
             if (!spellAndCount.GetIsEnd())
             {
                 DoEffect(spellAndCount);
@@ -44,8 +41,6 @@ public class SpellEffectHandler : MonoBehaviour
             else
             {
                 RemoveSpell(spellAndCount, index);
-                Debug.Log("Spell удалён");
-                Debug.Log("spellList.Count: " + spellList.Count);
             }
         }
     }
@@ -137,5 +132,4 @@ public class SpellAndCount
     {
         return count;
     }
-    
 }
