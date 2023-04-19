@@ -11,7 +11,6 @@ public class SpellProjectile : MonoBehaviour
     private bool _isActivated;
     private bool _isTouched;
     private List<Collider2D> _detectedCollidersList;
-    [SerializeField] private LayerMask layerTarget;
     [SerializeField] private GameObject projectilePrefab;
 
     private Vector2 debugPosition;
@@ -71,9 +70,11 @@ public class SpellProjectile : MonoBehaviour
     private void DebugDraw(Vector2 point, bool isHit)
     {
         debugPosition = transform.position;
-        if(isHit) Debug.DrawLine(debugPosition, point, Color.green, duration:10f, false);
-        else Debug.DrawRay(debugPosition, debugDirection * _spell.Area, Color.red, duration:10f);
-        Debug.Log("DebugDraw");
+        if(isHit)
+        {
+            Debug.DrawLine(debugPosition, point, Color.red, duration: 1f);
+        }
+        else Debug.DrawRay(debugPosition, debugDirection * _spell.Area, Color.yellow, duration:1f);
     }
     
     private void GetDirection()
@@ -104,15 +105,15 @@ public class SpellProjectile : MonoBehaviour
     
     private void DetectObjects(Vector2 direction)
     {
-        foreach (var layerTarget in _spell.LayerTargets)
-        {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, _spell.Area, layerTarget);
-            DebugDraw(hit.point, hit.collider != null);
-            if (hit.collider == null) return;
-            if(!_detectedCollidersList.Contains(hit.collider)) _detectedCollidersList.Add(hit.collider);
-            OnDetected?.Invoke(hit.collider);
-            break;
-        }
+        // foreach (var layerTarget in _spell.LayerTargets)
+        // {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, _spell.Area, _spell.LayerTargets);
+        DebugDraw(hit.point, hit.collider != null);
+        if (hit.collider == null) return;
+        if(!_detectedCollidersList.Contains(hit.collider)) _detectedCollidersList.Add(hit.collider);
+        OnDetected?.Invoke(hit.collider);
+        // break;
+        // }
     }
 
     private void AddSpellEffects()
@@ -120,10 +121,10 @@ public class SpellProjectile : MonoBehaviour
         if (_detectedCollidersList.Count == 0) return;
         foreach (var collider in _detectedCollidersList)
         {
+            Debug.Log("Один попался под спел");
             var spellEffectHandler = collider.GetComponent<SpellEffectHandler>();
             OnAddSpellToHandler?.Invoke(_caster, spellEffectHandler, _spell);
             spellEffectHandler.AddSpell(_spell);
-            Debug.Log("Один попался под спел");
         }
         
     }

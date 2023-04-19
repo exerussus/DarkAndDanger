@@ -1,29 +1,13 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SpellEffectHandler : MonoBehaviour
 {
-    [SerializeField] private Character character;
+    [SerializeField] private Character character; 
     private List<SpellAndCount> spellList = new List<SpellAndCount>();
 
-    public struct SpellAndCount
-    {
-        public Spell Spell { get; }
-        private int count;
-        public int Count
-        {
-            get => count;
-            set => count = value >= 0 ? value : 0;
-        }
-
-        public SpellAndCount(Spell spell, int count)
-        {
-            Spell = spell;
-            this.count = count;
-        }
-    }
-    
     private void OnEnable()
     {
         Tick.OnTick += DoEffectOnTick;
@@ -36,7 +20,7 @@ public class SpellEffectHandler : MonoBehaviour
 
     public void AddSpell(Spell spell)
     {
-        var spellAndCount = new SpellAndCount(spell: spell, count: spell.SpellTicks.Count);
+        var spellAndCount = new SpellAndCount(spell: spell, actuallyIndex: spell.SpellTicks.Count);
         DoEffect(spellAndCount);
         spellList.Add(spellAndCount);
     }
@@ -44,27 +28,25 @@ public class SpellEffectHandler : MonoBehaviour
     private void DoEffectOnTick()
     {
         if (spellList.Count == 0) return;
-
+        
         for (int i = spellList.Count; i > 0; i--)
         {
-            SpellAndCount spellAndCount = spellList[i];
-            if (spellAndCount.Count != 0)
-            {
-                DoEffect(spellAndCount);
-            }
-            else
-            {
-                RemoveSpell(spellAndCount, i);
-            }
+            var index = i - 1;
+            SpellAndCount spellAndCount = spellList[index];
+            Debug.Log("spellAndCount.Count: " + spellAndCount.ActuallyIndex);
+            if (!spellAndCount.GetIsEnd()) DoEffect(spellAndCount);
+            else RemoveSpell(spellAndCount, index);
         }
     }
 
     private void DoEffect(SpellAndCount spellAndCount)
     {
-        SpellTick spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.Count];
-        if (spellAndCount.Count != spellAndCount.Spell.SpellTicks.Count) EndEffect(spellAndCount);
-        spellAndCount.Count -= 1;
+        Debug.Log("spellAndCount.Spell.SpellTicks.Count: " + spellAndCount.Spell.SpellTicks.Count);
+        Debug.Log("spellAndCount.ActuallyIndex: " + spellAndCount.ActuallyIndex);
+        if (!GetIsFirstTick(spellAndCount)) EndEffect(spellAndCount);
         
+        SpellTick spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.ActuallyIndex];
+
         if(spellTick.RestoreHealth > 0) character.RestoreHealth(spellTick.RestoreHealth);
         if(spellTick.RestoreStamina > 0) character.RestoreStamina(spellTick.RestoreStamina);
         if(spellTick.RestoreMana > 0) character.RestoreMana(spellTick.RestoreMana);
@@ -93,12 +75,17 @@ public class SpellEffectHandler : MonoBehaviour
         
         character.TakeMagicalDamage(magicDamage.GetDamageWithResistance(magicResistance));
         character.Personality.AddParameterToCharacter(spellTick.Parameter);
-        
+        spellAndCount.NextIndex();
     }
 
+    private bool GetIsFirstTick(SpellAndCount spellAndCount)
+    {
+        return spellAndCount.ActuallyIndex == spellAndCount.Spell.SpellTicks.Count -1;
+    }
+    
     private void EndEffect(SpellAndCount spellAndCount)
     {
-        var spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.Count];
+        var spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.ActuallyIndex];
         character.Personality.SubtractParameterFromCharacter(spellTick.Parameter);
         
     }
@@ -108,4 +95,32 @@ public class SpellEffectHandler : MonoBehaviour
         EndEffect(spellAndCount);
         spellList.RemoveAt(index);
     }
+}
+
+public class SpellAndCount
+{
+    public Spell Spell { get; }
+    public int ActuallyIndex { get; private set; }
+
+    public SpellAndCount(Spell spell, int actuallyIndex)
+    {
+        Spell = spell;
+        ActuallyIndex = SetIndexFromCount(actuallyIndex);
+    }
+
+    public bool GetIsEnd()
+    {
+        return ActuallyIndex <= 1;
+    }
+    
+    public void NextIndex()
+    {
+        ActuallyIndex -= 1;
+    }
+    
+    public int SetIndexFromCount(int count)
+    {
+        return count;
+    }
+    
 }

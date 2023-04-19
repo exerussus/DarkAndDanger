@@ -17,7 +17,7 @@ public class Spell : ScriptableObject
     [SerializeField] private float staminaCost;
     [SerializeField] private float manaCost;
     [SerializeField] private GameObject projectilePrefab;
-    [SerializeField] private List<LayerMask> layerTargets;
+    [SerializeField] private LayerMask layerTargets;
     [SerializeField] private List<SpellTick> spellTicks;
 
 
@@ -31,7 +31,7 @@ public class Spell : ScriptableObject
     public float StaminaCost => staminaCost;
     public float ManaCost => manaCost;
     public GameObject ProjectilePrefab => projectilePrefab;
-    public List<LayerMask> LayerTargets => layerTargets;
+    public LayerMask LayerTargets => layerTargets;
     public List<SpellTick> SpellTicks => spellTicks;
 
     public enum CastType
