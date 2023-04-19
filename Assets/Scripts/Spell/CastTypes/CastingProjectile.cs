@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class CastingProjectile : MonoBehaviour
 {
-    public static void Cast(GameObject caster, Spell spell)
+    public static void Cast(Transform casterTransform, Character caster, Spell spell)
     {
         var projectile = Instantiate(spell.ProjectilePrefab);
-        projectile.transform.SetPositionAndRotation(caster.transform.position, caster.transform.rotation);
+        projectile.transform.SetPositionAndRotation(caster.transform.position, casterTransform.rotation);
         projectile.transform.localPosition += caster.transform.TransformDirection(new Vector3(0f, 1f, 0f));
         var spellProjectile = projectile.GetComponent<SpellProjectile>();
         spellProjectile.SetCaster(caster);

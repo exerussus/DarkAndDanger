@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpellProjectile : MonoBehaviour
 {
-    private GameObject _caster;
+    private Character _caster;
     private Spell _spell;
     private Vector3 _direction;
     private bool _isActivated;
@@ -18,15 +18,15 @@ public class SpellProjectile : MonoBehaviour
 
     public Action<Vector2> OnGetDirection;
     public Action<Collider2D> OnDetected;
-    public Action<GameObject, SpellEffectHandler, Spell> OnAddSpellToHandler;
+    public Action<Character, SpellEffectHandler, Spell> OnAddSpellToHandler;
     
-    public SpellProjectile(GameObject caster, Spell spell)
+    public SpellProjectile(Character caster, Spell spell)
     {
         _caster = caster;
         _spell = spell;
     }
     
-    public void SetCaster(GameObject caster)
+    public void SetCaster(Character caster)
     {
         _caster = caster;
     }
@@ -124,7 +124,7 @@ public class SpellProjectile : MonoBehaviour
             Debug.Log("Один попался под спел");
             var spellEffectHandler = collider.GetComponent<SpellEffectHandler>();
             OnAddSpellToHandler?.Invoke(_caster, spellEffectHandler, _spell);
-            spellEffectHandler.AddSpell(_spell);
+            spellEffectHandler.AddSpell(_spell, _caster.Parameter);
         }
         
     }

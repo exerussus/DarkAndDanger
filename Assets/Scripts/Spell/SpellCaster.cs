@@ -3,24 +3,24 @@ using UnityEngine;
 
 public static class SpellCaster
 {
-    public static void CastSpell(GameObject caster, Spell spell)
+    public static void CastSpell(Transform casterTransform, Character caster, Spell spell)
     {
         if (spell.CastingType == Spell.CastType.Self) CastToSelf(caster, spell);
-        else if (spell.CastingType == Spell.CastType.Projectile) CastProjectile(caster, spell);
-        else CastRaycast(caster, spell);
+        else if (spell.CastingType == Spell.CastType.Projectile) CastProjectile(casterTransform, caster, spell);
+        else CastRaycast(casterTransform, caster, spell);
     }
     
-    private static void CastProjectile(GameObject caster, Spell spell)
+    private static void CastProjectile(Transform casterTransform, Character caster, Spell spell)
     {
-        CastingProjectile.Cast(caster, spell);
+        CastingProjectile.Cast(casterTransform, caster, spell);
     }
 
-    private static void CastRaycast(GameObject caster, Spell spell)
+    private static void CastRaycast(Transform casterTransform, Character caster, Spell spell)
     {
-        CastingRaycast.Cast(caster, spell);
+        CastingRaycast.Cast(casterTransform, caster, spell);
     }
 
-    private static void CastToSelf(GameObject caster, Spell spell)
+    private static void CastToSelf(Character caster, Spell spell)
     {
         CastingToSelf.Cast(caster, spell);
     }

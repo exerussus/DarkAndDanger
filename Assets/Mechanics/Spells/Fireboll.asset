@@ -20,7 +20,7 @@ MonoBehaviour:
   distance: 5
   healthCost: 0
   staminaCost: 0
-  manaCost: 0
+  manaCost: 15
   projectilePrefab: {fileID: 5593806421433547110, guid: 1309a26d1f916744aa46ceefe4882014, type: 3}
   layerTargets:
     serializedVersion: 2
@@ -29,7 +29,7 @@ MonoBehaviour:
   - restoreHealth: 0
     restoreStamina: 0
     restoreMana: 0
-    fire: 0
+    fire: 15
     water: 0
     air: 0
     earth: 0
@@ -59,7 +59,7 @@ MonoBehaviour:
       rechargeSpeedAfterHitPhysicalObject: 0
       rechargeSpeedAfterMissAttack: 0
       weaponWeightMultiply: 0
-      moveSpeed: 0
+      moveSpeed: -98.2
       sprintSpeedMultiply: 0
       crouchSpeedMultiply: 0
       actionSpeed: 0
@@ -72,9 +72,13 @@ MonoBehaviour:
       bluntResist: 0
       slashResist: 0
       fireDamage: 0
-      iceDamage: 0
       arcaneDamage: 0
       holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
       fireResist: 0
       arcaneResist: 0
       holyResist: 0
@@ -91,7 +95,7 @@ MonoBehaviour:
   - restoreHealth: 0
     restoreStamina: 0
     restoreMana: 0
-    fire: 0
+    fire: 3
     water: 0
     air: 0
     earth: 0
@@ -121,7 +125,7 @@ MonoBehaviour:
       rechargeSpeedAfterHitPhysicalObject: 0
       rechargeSpeedAfterMissAttack: 0
       weaponWeightMultiply: 0
-      moveSpeed: 0
+      moveSpeed: -98.2
       sprintSpeedMultiply: 0
       crouchSpeedMultiply: 0
       actionSpeed: 0
@@ -134,9 +138,541 @@ MonoBehaviour:
       bluntResist: 0
       slashResist: 0
       fireDamage: 0
-      iceDamage: 0
       arcaneDamage: 0
       holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
+      fireResist: 0
+      arcaneResist: 0
+      holyResist: 0
+      waterResist: 0
+      airResist: 0
+      earthResist: 0
+      poisonResist: 0
+      necroResist: 0
+      visionRadius: 0
+      stepNoise: 0
+      stepNoiseCrouchMultiply: 0
+      magicCastSpeed: 0
+      memory: 0
+  - restoreHealth: 0
+    restoreStamina: 0
+    restoreMana: 0
+    fire: 3
+    water: 0
+    air: 0
+    earth: 0
+    poison: 0
+    holy: 0
+    necro: 0
+    arcane: 0
+    parameter:
+      health: 0
+      stamina: 0
+      mana: 0
+      staminaRegeneration: 0
+      staminaAttackCost: 0
+      staminaWeaponWeightMultiply: 0
+      staminaMissAttackCost: 0
+      staminaCrouchCost: 0
+      staminaSprintCost: 0
+      staminaParryCost: 0
+      timeAfterDrainStaminaCount: 0
+      criticalDamageMultiply: 0
+      criticalChance: 0
+      weakSpotChance: 0
+      backStabMultiply: 0
+      attackSpeed: 0
+      rechargeAttackSpeed: 0
+      rechargeSpeedAfterHitCollision: 0
+      rechargeSpeedAfterHitPhysicalObject: 0
+      rechargeSpeedAfterMissAttack: 0
+      weaponWeightMultiply: 0
+      moveSpeed: -98.2
+      sprintSpeedMultiply: 0
+      crouchSpeedMultiply: 0
+      actionSpeed: 0
+      rotationSpeed: 0
+      minRotationSpeed: 0
+      pierceDamage: 0
+      bluntDamage: 0
+      slashDamage: 0
+      pierceResist: 0
+      bluntResist: 0
+      slashResist: 0
+      fireDamage: 0
+      arcaneDamage: 0
+      holyDamage: 0
+      waterDamage: 0
+      airDamage: 0
+      earthDamage: 0
+      poisonDamage: 0
+      necroDamage: 0
       fireResist: 0
       arcaneResist: 0
       holyResist: 0

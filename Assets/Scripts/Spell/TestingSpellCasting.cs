@@ -5,7 +5,8 @@ public class TestingSpellCasting : MonoBehaviour
 {
     [SerializeField] private KeyboardController keyboardController;
     [SerializeField] private Spell spell;
-    [SerializeField] private GameObject caster;
+    [SerializeField] private Character caster;
+    [SerializeField] private Transform casterTransform;
 
     public void OnEnable()
     {
@@ -19,6 +20,6 @@ public class TestingSpellCasting : MonoBehaviour
     
     public void Cast()
     {
-        SpellCaster.CastSpell(caster, spell);
+        SpellCaster.CastSpell(casterTransform, caster, spell);
     }
 }
