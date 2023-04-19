@@ -9,6 +9,7 @@ public class CastingProjectile : MonoBehaviour
         projectile.transform.SetPositionAndRotation(caster.transform.position, caster.transform.rotation);
         projectile.transform.localPosition += caster.transform.TransformDirection(new Vector3(0f, 1f, 0f));
         var spellProjectile = projectile.GetComponent<SpellProjectile>();
+        spellProjectile.SetCaster(caster);
         spellProjectile.SetSpell(spell);
         spellProjectile.Activate();
     }
