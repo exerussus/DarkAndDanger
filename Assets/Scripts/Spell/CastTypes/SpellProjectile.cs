@@ -105,15 +105,11 @@ public class SpellProjectile : MonoBehaviour
     
     private void DetectObjects(Vector2 direction)
     {
-        // foreach (var layerTarget in _spell.LayerTargets)
-        // {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, _spell.Area, _spell.LayerTargets);
         DebugDraw(hit.point, hit.collider != null);
         if (hit.collider == null) return;
         if(!_detectedCollidersList.Contains(hit.collider)) _detectedCollidersList.Add(hit.collider);
         OnDetected?.Invoke(hit.collider);
-        // break;
-        // }
     }
 
     private void AddSpellEffects()
@@ -121,7 +117,6 @@ public class SpellProjectile : MonoBehaviour
         if (_detectedCollidersList.Count == 0) return;
         foreach (var collider in _detectedCollidersList)
         {
-            Debug.Log("Один попался под спел");
             var spellEffectHandler = collider.GetComponent<SpellEffectHandler>();
             OnAddSpellToHandler?.Invoke(_caster, spellEffectHandler, _spell);
             spellEffectHandler.AddSpell(_spell, _caster.Parameter);
