@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7036bcf45ee94efbab98933c95968eee, type: 3}
   m_Name: Fireboll
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - {fileID: 8300000, guid: e0b72fef0901da3459d723b511e938b9, type: 3}
+  - {fileID: 8300000, guid: 052af9c2b6d6d9345ae7c0a1558c4f8d, type: 3}

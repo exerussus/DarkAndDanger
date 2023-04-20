@@ -129,6 +129,7 @@
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Sprites" />
      <Folder Include="Assets\Scripts\Damage" />
+     <Folder Include="Assets\Mechanics\Effects\Sounds" />
      <Folder Include="Assets\Light2D" />
      <Folder Include="Assets\Scripts\Item" />
      <Folder Include="Assets\Sounds\Steps\Crouching" />
@@ -143,6 +144,7 @@
      <Folder Include="Assets\Scripts\Managers" />
      <Folder Include="Assets\Mechanics\Effects\MainEffects" />
      <Folder Include="Assets\Scripts\Parameter" />
+     <Folder Include="Assets\Sounds\Effects" />
      <Folder Include="Assets\Scripts\Interaction" />
      <Folder Include="Assets\Mechanics\Personalities" />
      <Folder Include="Assets\Scripts\Inventory" />
@@ -156,6 +158,7 @@
      <Folder Include="Assets\Sounds\Steps\Moving" />
      <Folder Include="Assets\Scripts\Character" />
      <Folder Include="Assets\Mechanics\Effects\AdditionalEffects" />
+     <Folder Include="Assets\Sounds\Effects\fireball" />
      <Folder Include="Assets\Scripts\Camera" />
      <Folder Include="Assets\Scripts\Sounds" />
      <Folder Include="Assets\Sounds" />
