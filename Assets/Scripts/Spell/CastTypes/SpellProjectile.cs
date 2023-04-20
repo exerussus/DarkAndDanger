@@ -9,7 +9,7 @@ public class SpellProjectile : MonoBehaviour
     private Spell _spell;
     private Vector3 _direction;
     private bool _isActivated;
-    private bool _isTouched;
+    private bool _isProjectileLifeEnd;
     private List<Collider2D> _detectedCollidersList;
     [SerializeField] private GameObject projectilePrefab;
 
@@ -19,6 +19,8 @@ public class SpellProjectile : MonoBehaviour
     public Action<Vector2> OnGetDirection;
     public Action<Collider2D> OnDetected;
     public Action<Character, SpellEffectHandler, Spell> OnAddSpellToHandler;
+
+    private float timeLife;
     
     public SpellProjectile(Character caster, Spell spell)
     {
@@ -40,13 +42,15 @@ public class SpellProjectile : MonoBehaviour
     {
         _detectedCollidersList = new List<Collider2D>();
         _isActivated = true;
+        timeLife = _spell.Distance / _spell.ProjectileSpeed + Time.fixedTime;
     }
 
     private void FixedUpdate()
     {
-        if (!_isActivated || _isTouched) return;
-        var movingDistance = _spell.Distance / _spell.ProjectileSpeed * Time.fixedDeltaTime;
+        if (!_isActivated || _isProjectileLifeEnd) return;
+        var movingDistance = _spell.ProjectileSpeed * Time.fixedDeltaTime;
         transform.Translate(new Vector3(0f, movingDistance, 0f));
+        if (timeLife < Time.fixedTime) BlowUpProjectile();
     }
 
     private bool IsTouchingObjects(Collider2D collider)
@@ -56,15 +60,20 @@ public class SpellProjectile : MonoBehaviour
                collider.gameObject.CompareTag("PhysicalObject") ||
                collider.gameObject.CompareTag("DestructibleObject");
     }
-    
-    private void OnTriggerEnter2D(Collider2D collider)
+
+    private void BlowUpProjectile()
     {
-        if (_isTouched) return;
-        if (!IsTouchingObjects(collider)) return;
-        _isTouched = true;
+        _isProjectileLifeEnd = true;
         GetDirection();
         AddSpellEffects();
         Destroy(projectilePrefab.gameObject);
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (_isProjectileLifeEnd) return;
+        if (!IsTouchingObjects(collider)) return;
+        BlowUpProjectile();
     }
 
     private void DebugDraw(Vector2 point, bool isHit)
