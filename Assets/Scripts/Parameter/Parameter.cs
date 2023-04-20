@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [Serializable]
 public class Parameter
@@ -64,15 +65,24 @@ public class Parameter
     
     [Header("Магическая атака")]
     [Tooltip("")] public float fireDamage;
-    [Tooltip("")] public float iceDamage;
     [Tooltip("")] public float arcaneDamage;
     [Tooltip("")] public float holyDamage;
+    [Tooltip("")] public float waterDamage;
+    [Tooltip("")] public float airDamage;
+    [Tooltip("")] public float earthDamage;
+    [Tooltip("")] public float poisonDamage;
+    [Tooltip("")] public float necroDamage;
     
     [Header("Магическая защита")]
     [Tooltip("")] public float fireResist;
-    [Tooltip("")] public float iceResist;
     [Tooltip("")] public float arcaneResist;
     [Tooltip("")] public float holyResist;
+    [Tooltip("")] public float waterResist;
+    [Tooltip("")] public float airResist;
+    [Tooltip("")] public float earthResist;
+    [Tooltip("")] public float poisonResist;
+    [Tooltip("")] public float necroResist;
+
 
     [Header("Обзор")]
     [Tooltip("")] public float visionRadius;
@@ -133,11 +143,19 @@ public class Parameter
         result.bluntResist = a.bluntResist + b.bluntResist;
         result.slashResist = a.slashResist + b.slashResist;
         result.fireDamage = a.fireDamage + b.fireDamage;
-        result.iceDamage = a.iceDamage + b.iceDamage;
+        result.waterDamage = a.waterDamage + b.waterDamage;
+        result.airDamage = a.airDamage + b.airDamage;
+        result.earthDamage = a.earthDamage + b.earthDamage;
+        result.poisonDamage = a.poisonDamage + b.poisonDamage;
+        result.necroDamage = a.necroDamage + b.necroDamage;
         result.arcaneDamage = a.arcaneDamage + b.arcaneDamage;
         result.holyDamage = a.holyDamage + b.holyDamage;
         result.fireResist = a.fireResist + b.fireResist;
-        result.iceResist = a.iceResist + b.iceResist;
+        result.waterResist = a.waterResist + b.waterResist;
+        result.airResist = a.airResist + b.airResist;
+        result.earthResist = a.earthResist + b.earthResist;
+        result.poisonResist = a.poisonResist + b.poisonResist;
+        result.necroResist = a.necroResist + b.necroResist;
         result.arcaneResist = a.arcaneResist + b.arcaneResist;
         result.holyResist = a.holyResist + b.holyResist;
         result.visionRadius = a.visionRadius + b.visionRadius;
@@ -187,11 +205,19 @@ public class Parameter
         result.bluntResist = a.bluntResist * multiply;
         result.slashResist = a.slashResist * multiply;
         result.fireDamage = a.fireDamage * multiply;
-        result.iceDamage = a.iceDamage * multiply;
+        result.waterDamage = a.waterDamage * multiply;
+        result.airDamage = a.airDamage * multiply;
+        result.earthDamage = a.earthDamage * multiply;
+        result.poisonDamage = a.poisonDamage * multiply;
+        result.necroDamage = a.necroDamage * multiply;
         result.arcaneDamage = a.arcaneDamage * multiply;
         result.holyDamage = a.holyDamage * multiply;
         result.fireResist = a.fireResist * multiply;
-        result.iceResist = a.iceResist * multiply;
+        result.waterResist = a.waterResist * multiply;
+        result.airResist = a.airResist * multiply;
+        result.earthResist = a.earthResist * multiply;
+        result.poisonResist = a.poisonResist * multiply;
+        result.necroResist = a.necroResist * multiply;
         result.arcaneResist = a.arcaneResist * multiply;
         result.holyResist = a.holyResist * multiply;
         result.visionRadius = a.visionRadius * multiply;
@@ -240,11 +266,15 @@ public class Parameter
         result.bluntResist = a.bluntResist - b.bluntResist;
         result.slashResist = a.slashResist - b.slashResist;
         result.fireDamage = a.fireDamage - b.fireDamage;
-        result.iceDamage = a.iceDamage - b.iceDamage;
+        result.waterDamage = a.waterDamage - b.waterDamage;
         result.arcaneDamage = a.arcaneDamage - b.arcaneDamage;
         result.holyDamage = a.holyDamage - b.holyDamage;
         result.fireResist = a.fireResist - b.fireResist;
-        result.iceResist = a.iceResist - b.iceResist;
+        result.waterResist = a.waterResist - b.waterResist;
+        result.airResist = a.airResist - b.airResist;
+        result.earthResist = a.earthResist - b.earthResist;
+        result.poisonResist = a.poisonResist - b.poisonResist;
+        result.necroResist = a.necroResist - b.necroResist;
         result.arcaneResist = a.arcaneResist - b.arcaneResist;
         result.holyResist = a.holyResist - b.holyResist;
         result.visionRadius = a.visionRadius - b.visionRadius;

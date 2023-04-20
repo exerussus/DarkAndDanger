@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     private bool _isAlive = true;
     [SerializeField] private int userID;
     [SerializeField] private Personality personality;
+    public Personality Personality => personality;
     public Parameter Parameter => personality.Parameter;
     private CharacterResource _currentHealth;
     private CharacterResource _currentStamina;
@@ -58,8 +59,19 @@ public class Character : MonoBehaviour
         currentHealth = Health;
         currentStamina = Stamina;
     }
+        
+    public void TakeMagicalDamage(MagicalDamage damage)
+    {
+        _currentHealth.Value -= damage.Fire + damage.Water + damage.Air 
+                                + damage.Earth + damage.Poison + damage.Holy 
+                                + damage.Necro + damage.Arcane;
+        _isAlive = _currentHealth.Value > 0;
+        if(!_isAlive) Dead();
+        OnTakeDamage?.Invoke();
+        currentHealth = Health;
+    }
     
-    public void TakeDamage(PhysicalDamage damage)
+    public void TakePhysicalDamage(PhysicalDamage damage)
     {
         _currentHealth.Value -= damage.Blunt + damage.Pierce + damage.Slash;
         _isAlive = _currentHealth.Value > 0;

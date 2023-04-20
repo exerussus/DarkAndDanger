@@ -75,7 +75,7 @@ public class PlayerResourceController : MonoBehaviour
             character.Parameter.pierceResist,
             character.Parameter.slashResist);
 
-        character.TakeDamage(damage.GetDamageWithArmor(damageResist));
+        character.TakePhysicalDamage(damage.GetDamageWithArmor(damageResist));
     }
 
     private void DrainStaminaToStartParry()

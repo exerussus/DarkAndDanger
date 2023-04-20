@@ -15,51 +15,59 @@ MonoBehaviour:
   UserID: 0
   CharacterName: 
   parameter:
-    health: 0
-    stamina: 0
-    mana: 0
-    staminaRegeneration: 0
-    staminaAttackCost: 0
-    staminaWeaponWeightMultiply: 0
-    staminaMissAttackCost: 0
-    staminaCrouchCost: 0
-    staminaSprintCost: 0
-    staminaParryCost: 0
-    timeAfterDrainStaminaCount: 0
-    criticalDamageMultiply: 0
-    criticalChance: 0
-    weakSpotChance: 0
-    backStabMultiply: 0
-    attackSpeed: 0
+    health: 41.25
+    stamina: 40
+    mana: 17.5
+    staminaRegeneration: 7.5
+    staminaAttackCost: 5
+    staminaWeaponWeightMultiply: 1
+    staminaMissAttackCost: 5
+    staminaCrouchCost: 0.5
+    staminaSprintCost: 5
+    staminaParryCost: 5
+    timeAfterDrainStaminaCount: 2
+    criticalDamageMultiply: 1.3000001
+    criticalChance: 5.05
+    weakSpotChance: 3.05
+    backStabMultiply: 10.15
+    attackSpeed: 117.5
     rechargeAttackSpeed: 0
     rechargeSpeedAfterHitCollision: 0
     rechargeSpeedAfterHitPhysicalObject: 0
     rechargeSpeedAfterMissAttack: 0
-    weaponWeightMultiply: 0
-    moveSpeed: 0
-    sprintSpeedMultiply: 0
-    crouchSpeedMultiply: 0
-    actionSpeed: 0
-    rotationSpeed: 0
-    minRotationSpeed: 0
-    pierceDamage: 0
-    bluntDamage: 0
-    slashDamage: 0
+    weaponWeightMultiply: 1
+    moveSpeed: 200
+    sprintSpeedMultiply: 1.45
+    crouchSpeedMultiply: 0.3
+    actionSpeed: 110
+    rotationSpeed: 405
+    minRotationSpeed: 202.5
+    pierceDamage: 4
+    bluntDamage: 4
+    slashDamage: 4
     pierceResist: 0
-    bluntResist: 0
+    bluntResist: 1.5
     slashResist: 0
-    fireDamage: 0
-    iceDamage: 0
-    arcaneDamage: 0
-    holyDamage: 0
+    fireDamage: 1.5
+    arcaneDamage: 1.5
+    holyDamage: 1.5
+    waterDamage: 0
+    airDamage: 0
+    earthDamage: 0
+    poisonDamage: 0
+    necroDamage: 0
     fireResist: 0
-    iceResist: 0
     arcaneResist: 0
     holyResist: 0
-    visionRadius: 0
+    waterResist: 0
+    airResist: 0
+    earthResist: 0
+    poisonResist: 0
+    necroResist: 0
+    visionRadius: 15
     stepNoise: 0
     stepNoiseCrouchMultiply: 0
     magicCastSpeed: 0
-    memory: 0
+    memory: 1.25
   StandardParameter: {fileID: 11400000, guid: 06e90d689df1aa94db8521e0f196e08e, type: 2}
   characterAttributes: {fileID: 11400000, guid: 864090b7967675848b4c3012a255f03d, type: 2}

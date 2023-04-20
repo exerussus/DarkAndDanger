@@ -1,5 +1,4 @@
 
-using System;
 using UnityEngine;
 
 public class Vision : MonoBehaviour
@@ -26,7 +25,6 @@ public class Vision : MonoBehaviour
     
     private void GetRaycast(Vector2 direction)
     {
-        bool result = false;
         RaycastHit2D hit = Physics2D.Raycast(visionRayDirection.UnitTransform.position, direction, distance, visibleLayer);
         Vector3 position = transform.position + offset;
 
