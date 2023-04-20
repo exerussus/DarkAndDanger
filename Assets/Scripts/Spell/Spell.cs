@@ -6,9 +6,7 @@ using UnityEngine;
 public class Spell : ScriptableObject
 {
     [SerializeField] private string spellName;
-    [TextArea]
-    [SerializeField] private string description;
-
+    [TextArea][SerializeField] private string description;
     [SerializeField] private CastType castType;
     [SerializeField] private int area;
     [SerializeField] private float projectileSpeed;
@@ -16,8 +14,11 @@ public class Spell : ScriptableObject
     [SerializeField] private float healthCost;
     [SerializeField] private float staminaCost;
     [SerializeField] private float manaCost;
+    [SerializeField] private float timeCastCost;
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private LayerMask layerTargets;
+    [SerializeField] private GameObject castEffect;
+    [SerializeField] private GameObject mainEffect;
     [SerializeField] private GameObject additionalEffect;
     [SerializeField] private List<SpellTick> spellTicks;
 
@@ -31,8 +32,11 @@ public class Spell : ScriptableObject
     public float HealthCost => healthCost;
     public float StaminaCost => staminaCost;
     public float ManaCost => manaCost;
+    public float TimeCastCost => timeCastCost;
     public GameObject ProjectilePrefab => projectilePrefab;
     public LayerMask LayerTargets => layerTargets;
+    public GameObject CastEffect => castEffect;
+    public GameObject MainEffect => mainEffect;
     public GameObject AdditionalEffect => additionalEffect;
     public List<SpellTick> SpellTicks => spellTicks;
 

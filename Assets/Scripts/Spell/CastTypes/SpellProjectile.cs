@@ -65,8 +65,15 @@ public class SpellProjectile : MonoBehaviour
     {
         _isProjectileLifeEnd = true;
         GetDirection();
+        BlowEffect();
         AddSpellEffects();
         Destroy(projectilePrefab.gameObject);
+    }
+
+    private void BlowEffect()
+    {
+        var mainEffect = Instantiate(_spell.MainEffect);
+        mainEffect.transform.position = transform.position;
     }
     
     private void OnTriggerEnter2D(Collider2D collider)
