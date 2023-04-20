@@ -25,6 +25,7 @@ MonoBehaviour:
   layerTargets:
     serializedVersion: 2
     m_Bits: 128
+  additionalEffect: {fileID: 7687887212366134314, guid: e95ecc7477a066b4c937c528896f3987, type: 3}
   spellTicks:
   - restoreHealth: 0
     restoreStamina: 3

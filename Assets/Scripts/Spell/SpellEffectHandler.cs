@@ -6,7 +6,7 @@ public class SpellEffectHandler : MonoBehaviour
 {
     [SerializeField] private Character character; 
     private List<SpellAndCount> spellList = new List<SpellAndCount>();
-    public const float DamageDivisor = 50f;
+    private const float DamageDivisor = 50f;
     
     private void OnEnable()
     {
@@ -21,6 +21,7 @@ public class SpellEffectHandler : MonoBehaviour
     public void AddSpell(Spell spell, Parameter casterParameter)
     {
         var spellAndCount = new SpellAndCount(spell: spell, actuallyIndex: spell.SpellTicks.Count, casterParameter);
+        spellAndCount.CreateEffects(transform);
         DoEffect(spellAndCount);
         if(spellAndCount.ActuallyIndex > 0) spellList.Add(spellAndCount);
         else EndEffect(spellAndCount);
@@ -95,6 +96,7 @@ public class SpellEffectHandler : MonoBehaviour
 
     private void RemoveSpell(SpellAndCount spellAndCount, int index)
     {
+        spellAndCount.DestroyEffects();
         EndEffect(spellAndCount);
         spellList.RemoveAt(index);
     }
@@ -105,6 +107,7 @@ public class SpellAndCount
     public Spell Spell { get; }
     public int ActuallyIndex { get; private set; }
     public Parameter CasterParameter { get; private set; }
+    public GameObject AdditionalEffect { get; private set; }
 
     public SpellAndCount(Spell spell, int actuallyIndex, Parameter casterParameter)
     {
@@ -113,6 +116,17 @@ public class SpellAndCount
         CasterParameter = casterParameter;
     }
 
+    public void CreateEffects(Transform handlerTransform)
+    {
+        AdditionalEffect = Object.Instantiate(original:Spell.AdditionalEffect, parent: handlerTransform);
+        AdditionalEffect.transform.SetLocalPositionAndRotation(Vector3.zero, new Quaternion());
+    }
+
+    public void DestroyEffects()
+    {
+        Object.Destroy(AdditionalEffect);
+    }
+    
     public int GetIndexBefore()
     {
         return ActuallyIndex + 1;
@@ -132,4 +146,5 @@ public class SpellAndCount
     {
         return count;
     }
+    
 }

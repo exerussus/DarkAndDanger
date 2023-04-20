@@ -148,6 +148,7 @@
      <Folder Include="Assets\Animations\Weapon\TwoHandsSword" />
      <Folder Include="Assets\Sounds\Steps\Moving" />
      <Folder Include="Assets\Scripts\Character" />
+     <Folder Include="Assets\Mechanics\AdditionalEffects" />
      <Folder Include="Assets\Scripts\Camera" />
      <Folder Include="Assets\Scripts\Sounds" />
      <Folder Include="Assets\Sounds" />
