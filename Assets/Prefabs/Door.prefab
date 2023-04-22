@@ -198,7 +198,7 @@ MonoBehaviour:
   - {x: 0.86563784, y: -0.027626276, z: 0}
   m_ShapePathHash: -1265900825
   m_Mesh: {fileID: 0}
-  m_InstanceId: 95426
+  m_InstanceId: 122126
   m_LocalBounds:
     m_Center: {x: -0.03706938, y: 0.041516975, z: 0}
     m_Extent: {x: 0.9067023, y: 0.06914325, z: 0}
@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 1237544052567752905}
   - component: {fileID: 3407465202745135395}
   - component: {fileID: 190827678918792792}
-  - component: {fileID: 8535434248557246088}
+  - component: {fileID: 5736870614438464645}
   m_Layer: 10
   m_Name: Interaction
   m_TagString: Untagged
@@ -423,10 +423,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeCost: 2
-  actionInteraction: {fileID: 8535434248557246088}
-  gameObject: {fileID: 1638203052307211043}
+  actionInteraction: {fileID: 5736870614438464645}
   audioClip: {fileID: 8300000, guid: 4c76a42317f266c46974f383e92d88aa, type: 3}
---- !u!114 &8535434248557246088
+--- !u!114 &5736870614438464645
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -435,12 +434,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4253592636272482539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f625d92483e342b9acce8d95d62b48a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 20cacef8a8ac4e98b672b98b86dc856f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  openedDoor: {fileID: 947773835365916758}
-  closedDoor: {fileID: 1592957529163685492}
-  isOpenedOnStart: 0
+  firstGameObject: {fileID: 947773835365916758}
+  secondGameObject: {fileID: 1592957529163685492}
+  isFirstOnStart: 0
 --- !u!1 &6102220820577071189
 GameObject:
   m_ObjectHideFlags: 0
