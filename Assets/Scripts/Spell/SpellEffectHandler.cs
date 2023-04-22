@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpellEffectHandler : MonoBehaviour
+public abstract class SpellEffectHandler : MonoBehaviour
 {
-    [SerializeField] private Character character; 
     private List<SpellAndCount> spellList = new List<SpellAndCount>();
-    private const float DamageDivisor = 50f;
+    protected const float DamageDivisor = 50f;
     
     private void OnEnable()
     {
@@ -45,54 +44,43 @@ public class SpellEffectHandler : MonoBehaviour
             }
         }
     }
-
-    private void DoEffect(SpellAndCount spellAndCount)
+    
+    protected MagicalDamage GetMagicalDamage(SpellTick spellTick, Parameter characterParameter)
     {
-        if (!GetIsFirstTick(spellAndCount)) EndEffect(spellAndCount);
-        
-        SpellTick spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.ActuallyIndex];
-        spellAndCount.NextIndex();
-
-        if(spellTick.RestoreHealth > 0) character.RestoreHealth(spellTick.RestoreHealth);
-        if(spellTick.RestoreStamina > 0) character.RestoreStamina(spellTick.RestoreStamina);
-        if(spellTick.RestoreMana > 0) character.RestoreMana(spellTick.RestoreMana);
-
-        var magicResistance = new MagicalDamage(
-            fire: character.Parameter.fireResist,
-            water: character.Parameter.waterResist,
-            air: character.Parameter.airResist,
-            earth: character.Parameter.earthResist,
-            poison:character.Parameter.poisonResist,
-            holy: character.Parameter.holyResist,
-            necro: character.Parameter.necroResist,
-            arcane:character.Parameter.arcaneResist
+        return new MagicalDamage(
+            fire: spellTick.Fire + spellTick.Fire / DamageDivisor * characterParameter.fireDamage,
+            water: spellTick.Water + spellTick.Water / DamageDivisor * characterParameter.waterDamage,
+            air: spellTick.Air + spellTick.Air / DamageDivisor * characterParameter.airDamage,
+            earth: spellTick.Earth + spellTick.Earth / DamageDivisor * characterParameter.earthDamage,
+            poison: spellTick.Poison + spellTick.Poison / DamageDivisor * characterParameter.poisonDamage,
+            holy: spellTick.Holy + spellTick.Holy / DamageDivisor * characterParameter.holyDamage,
+            necro: spellTick.Necro + spellTick.Necro / DamageDivisor * characterParameter.necroDamage,
+            arcane: spellTick.Arcane + spellTick.Arcane / DamageDivisor * characterParameter.arcaneDamage
         );
-        
-        var magicDamage = new MagicalDamage(
-            fire: spellTick.Fire + spellTick.Fire / DamageDivisor * spellAndCount.CasterParameter.fireDamage,
-            water: spellTick.Water + spellTick.Water / DamageDivisor * spellAndCount.CasterParameter.waterDamage,
-            air: spellTick.Air + spellTick.Air / DamageDivisor * spellAndCount.CasterParameter.airDamage,
-            earth: spellTick.Earth + spellTick.Earth / DamageDivisor * spellAndCount.CasterParameter.earthDamage,
-            poison: spellTick.Poison + spellTick.Poison / DamageDivisor * spellAndCount.CasterParameter.poisonDamage,
-            holy: spellTick.Holy + spellTick.Holy / DamageDivisor * spellAndCount.CasterParameter.holyDamage,
-            necro: spellTick.Necro + spellTick.Necro / DamageDivisor * spellAndCount.CasterParameter.necroDamage,
-            arcane: spellTick.Arcane + spellTick.Arcane / DamageDivisor * spellAndCount.CasterParameter.arcaneDamage
-        );
-        
-        character.TakeMagicalDamage(magicDamage.GetDamageWithResistance(magicResistance));
-        character.Personality.AddParameterToCharacter(spellTick.Parameter);
     }
+    
+    protected MagicalDamage GetMagicalResistance(Parameter characterParameter)
+    {
+        return new MagicalDamage(
+            fire: characterParameter.fireResist,
+            water: characterParameter.waterResist,
+            air: characterParameter.airResist,
+            earth: characterParameter.earthResist,
+            poison: characterParameter.poisonResist,
+            holy: characterParameter.holyResist,
+            necro: characterParameter.necroResist,
+            arcane: characterParameter.arcaneResist
+        );
+    }
+    
+    protected abstract void DoEffect(SpellAndCount spellAndCount);
 
-    private bool GetIsFirstTick(SpellAndCount spellAndCount)
+    protected bool GetIsFirstTick(SpellAndCount spellAndCount)
     {
         return spellAndCount.ActuallyIndex == spellAndCount.Spell.SpellTicks.Count;
     }
-    
-    private void EndEffect(SpellAndCount spellAndCount)
-    {
-        var spellTick = spellAndCount.Spell.SpellTicks[^spellAndCount.GetIndexBefore()];
-        character.Personality.SubtractParameterFromCharacter(spellTick.Parameter);
-    }
+
+    protected abstract void EndEffect(SpellAndCount spellAndCount);
 
     private void RemoveSpell(SpellAndCount spellAndCount, int index)
     {

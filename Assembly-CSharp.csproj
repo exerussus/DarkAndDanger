@@ -85,6 +85,7 @@
      <Compile Include="Assets\Scripts\Spell\MainEffect.cs" />
      <Compile Include="Assets\Scripts\Spell\TestingSpellCasting.cs" />
      <Compile Include="Assets\Scripts\Spell\CharacterSpellEffectHandler.cs" />
+     <Compile Include="Assets\Scripts\Spell\DestructibleSpellEffectHandler.cs" />
      <Compile Include="Assets\FogWar\Scripts\FogOfWar.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
      <Compile Include="Assets\Scripts\Interaction\ActionAfterInteraction\DoorActionInteraction.cs" />

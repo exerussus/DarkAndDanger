@@ -1058,7 +1058,7 @@ GameObject:
   - component: {fileID: 6404306331877026719}
   - component: {fileID: 6127340631398969102}
   - component: {fileID: 4304104758304684818}
-  - component: {fileID: 1141744452875636148}
+  - component: {fileID: 3239639598251749893}
   m_Layer: 7
   m_Name: HitBox
   m_TagString: HitBox
@@ -1128,7 +1128,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0.026648847, y: 0.0000010762506}
   m_Size: {x: 0.86413, y: 2.4589965}
   m_Direction: 0
---- !u!114 &1141744452875636148
+--- !u!114 &3239639598251749893
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6404306331877026712}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 130c3d990e0841d8a4963517a2ffbf29, type: 3}
+  m_Script: {fileID: 11500000, guid: fbc7589ef2514d9d9cb40d60d5b81443, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 6404306331663602763}
@@ -1414,7 +1414,7 @@ Transform:
   - {fileID: 8058790848011800753}
   - {fileID: 252531695234868883}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.673}
 --- !u!58 &6404306332229754900
 CircleCollider2D:
@@ -1592,7 +1592,7 @@ MonoBehaviour:
   spell: {fileID: 11400000, guid: 643022cdbddc13a449cdc65ab51ef4a7, type: 2}
   caster: {fileID: 6404306331663602763}
   casterTransform: {fileID: 6404306332229754896}
-  casterSpellEffectHandler: {fileID: 1141744452875636148}
+  casterSpellEffectHandler: {fileID: 0}
 --- !u!114 &2381389391042735736
 MonoBehaviour:
   m_ObjectHideFlags: 0
