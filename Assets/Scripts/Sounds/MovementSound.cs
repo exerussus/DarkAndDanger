@@ -18,10 +18,10 @@ public class MovementSound : PlaySound
     private void PlayStepSound()
     {
         if (playerMovement.IsSprinting)
-            PlayAudio(SoundSO.SoundName.Sprinting);
+            PlayAudioFromList(SoundSO.SoundName.Sprinting);
         else if(playerMovement.IsCrouching)
-            PlayAudio(SoundSO.SoundName.Crouching);
-        else PlayAudio(SoundSO.SoundName.Moving);
+            PlayAudioFromList(SoundSO.SoundName.Crouching);
+        else PlayAudioFromList(SoundSO.SoundName.Moving);
             
     }
 }

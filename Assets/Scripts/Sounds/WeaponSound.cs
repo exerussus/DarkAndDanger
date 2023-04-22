@@ -25,27 +25,27 @@ public class WeaponSound : PlaySound
     
     private void Parry()
     {
-        PlayAudio(SoundSO.SoundName.Parring);
+        PlayAudioFromList(SoundSO.SoundName.Parring);
     }
     
     private void Attack()
     {
-        PlayAudio(SoundSO.SoundName.TwoHandsSwordAttack);
+        PlayAudioFromList(SoundSO.SoundName.TwoHandsSwordAttack);
     }
     
     private void DestructibleObjectTouch()
     {
-        PlayAudio(SoundSO.SoundName.DestructibleObjectTouch);
+        PlayAudioFromList(SoundSO.SoundName.DestructibleObjectTouch);
     }
     
     private void WallTouch()
     {
-        PlayAudio(SoundSO.SoundName.WallTouch);
+        PlayAudioFromList(SoundSO.SoundName.WallTouch);
     }
 
     private void Hit()
     {
-        PlayAudio(SoundSO.SoundName.HitTouch);
+        PlayAudioFromList(SoundSO.SoundName.HitTouch);
     }
     
 }

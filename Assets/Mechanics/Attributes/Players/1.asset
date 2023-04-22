@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   attributesScalingParameter: {fileID: 11400000, guid: 85bdf51facdfb6b47bd40af2f751a964, type: 2}
-  strength: 5
-  dexterity: 5
+  strength: 21
+  dexterity: 8
   intelligence: 5
-  constitution: 5
+  constitution: 14

@@ -24,7 +24,7 @@ public class PlayerKeyboardController : KeyboardController
 
     protected override bool IsPressJump()
     {
-        return Input.GetKey(KeyCode.Space);
+        return Input.GetKeyDown(KeyCode.Space);
     }
 
     protected override bool IsPressInteract()

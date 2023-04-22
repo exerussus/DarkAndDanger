@@ -60,6 +60,11 @@ public class Interaction : MonoBehaviour
         
     }
 
+    public AudioClip GetAudioClip()
+    {
+        return _interactionObject.AudioClip;
+    }
+    
     private void IsPlayerMoving()
     {
         isPlayerMoving = true;

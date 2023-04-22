@@ -1,6 +1,4 @@
 ﻿
-
-using System;
 using UnityEngine;
 
 public class InteractionSound : PlaySound
@@ -16,10 +14,10 @@ public class InteractionSound : PlaySound
     {
         interaction.OnInteraction -= Interact;
     }
-
-
+    
     private void Interact()
     {
-        PlayAudio(SoundSO.SoundName.Interaction);
+        var audioClip = interaction.GetAudioClip();
+        if (audioClip != null) PlaySingleShot(audioClip);
     }
 }
