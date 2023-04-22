@@ -1,5 +1,4 @@
 
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +9,10 @@ public class PlayerResourcesBar : MonoBehaviour
     [SerializeField] private Slider StaminaSlider;
     [SerializeField] private Slider ManaSlider;
     
-    
     public Resource Health;
     public Resource Stamina;
     public Resource Mana;
-
-
+    
     private void OnEnable()
     {
         character.OnRestoreHealth += UpdateHealth;
@@ -88,5 +85,4 @@ public class PlayerResourcesBar : MonoBehaviour
             _slider.value = value;
         }
     }
-    
 }
