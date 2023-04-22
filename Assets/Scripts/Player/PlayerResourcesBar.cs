@@ -24,6 +24,7 @@ public class PlayerResourcesBar : MonoBehaviour
         character.OnDrainStamina += UpdateStamina;
         character.OnRestoreMana += UpdateMana;
         character.OnDrainMana += UpdateMana;
+        character.OnRecalculateParameter += SetMaxAfterRecalculate;
     }
     private void OnDisable()
     {
@@ -33,6 +34,7 @@ public class PlayerResourcesBar : MonoBehaviour
         character.OnDrainStamina -= UpdateStamina;
         character.OnRestoreMana -= UpdateMana;
         character.OnDrainMana -= UpdateMana;
+        character.OnRecalculateParameter -= SetMaxAfterRecalculate;
     }
 
     private void Start()
@@ -55,6 +57,13 @@ public class PlayerResourcesBar : MonoBehaviour
     private void UpdateHealth()
     {
         Health.SetValue(character.Health);
+    }
+
+    private void SetMaxAfterRecalculate()
+    {
+        Health.SetMaxValue(character.Parameter.health);
+        Stamina.SetMaxValue(character.Parameter.stamina);
+        Mana.SetMaxValue(character.Parameter.mana);
     }
     
     public struct Resource

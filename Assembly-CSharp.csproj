@@ -52,12 +52,9 @@
      <Compile Include="Assets\Scripts\Player\Attack.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\CastingProjectile.cs" />
-     <Compile Include="Assets\Scripts\Character\WeaponParameter.cs" />
      <Compile Include="Assets\Scripts\Sounds\CharacterSound.cs" />
      <Compile Include="Assets\Scripts\Spell\SpellCaster.cs" />
      <Compile Include="Assets\Scripts\Sounds\WeaponSound.cs" />
-     <Compile Include="Assets\Scripts\Inventory\Inventories.cs" />
-     <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Item\Weapon.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerKeyboardController.cs" />
      <Compile Include="Assets\Scripts\Player\SpeedChanger.cs" />
@@ -97,7 +94,6 @@
      <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Spell\SpellTick.cs" />
      <Compile Include="Assets\Scripts\Parameter\AttributesScalingParameter.cs" />
-     <Compile Include="Assets\Scripts\Movement\IMove.cs" />
      <Compile Include="Assets\Scripts\Interaction\InteractionObject.cs" />
      <Compile Include="Assets\Scripts\Character\Personality.cs" />
      <Compile Include="Assets\Scripts\Perk\Perks.cs" />
@@ -149,7 +145,6 @@
      <Folder Include="Assets\Sounds\Effects" />
      <Folder Include="Assets\Scripts\Interaction" />
      <Folder Include="Assets\Mechanics\Personalities" />
-     <Folder Include="Assets\Scripts\Inventory" />
      <Folder Include="Assets\Sprites\Effects\Animations" />
      <Folder Include="Assets\FogWar\Scripts" />
      <Folder Include="Assets\Prefabs" />

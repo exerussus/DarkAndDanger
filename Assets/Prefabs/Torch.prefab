@@ -241,7 +241,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstGameObject: {fileID: 7045676313219897137}
   secondGameObject: {fileID: 3111601801001825488}
-  isFirstOnStart: 0
+  isFirstOnStart: 1
+  isSwitchOnlyOnce: 0
 --- !u!1 &7045676313219897137
 GameObject:
   m_ObjectHideFlags: 0
