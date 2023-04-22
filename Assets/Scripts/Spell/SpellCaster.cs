@@ -7,7 +7,7 @@ public static class SpellCaster
     {
         if (spell.CastingType == Spell.CastType.Self) CastToSelf(casterSpellEffectHandler, casterCharacter, spell);
         else if (spell.CastingType == Spell.CastType.Projectile) CastProjectile(casterTransform, casterCharacter, spell);
-        else CastRaycast(casterTransform, casterCharacter, spell);
+        else if (spell.CastingType == Spell.CastType.RayCast) CastRaycast(casterTransform, casterCharacter, spell);
     }
     
     private static void CastProjectile(Transform casterTransform, Character caster, Spell spell)
