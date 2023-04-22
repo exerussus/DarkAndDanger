@@ -133,9 +133,16 @@ public class SpellProjectile : MonoBehaviour
         if (_detectedCollidersList.Count == 0) return;
         foreach (var collider in _detectedCollidersList)
         {
-            var spellEffectHandler = collider.GetComponent<SpellEffectHandler>();
-            OnAddSpellToHandler?.Invoke(_caster, spellEffectHandler, _spell);
-            spellEffectHandler.AddSpell(_spell, _caster.Parameter);
+            if(collider.IsTouchingLayers(LayerMask.NameToLayer("HitBox")))
+            {
+                var spellEffectHandler = collider.GetComponent<SpellEffectHandler>();
+                OnAddSpellToHandler?.Invoke(_caster, spellEffectHandler, _spell);
+                spellEffectHandler.AddSpell(_spell, _caster.Parameter);
+            }
+            else if (collider.IsTouchingLayers(LayerMask.NameToLayer("DestructibleObject")))
+            {
+                
+            }
         }
         
     }

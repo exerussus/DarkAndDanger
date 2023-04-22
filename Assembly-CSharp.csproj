@@ -84,6 +84,7 @@
      <Compile Include="Assets\Scripts\Player\ColliderObserver.cs" />
      <Compile Include="Assets\Scripts\Spell\MainEffect.cs" />
      <Compile Include="Assets\Scripts\Spell\TestingSpellCasting.cs" />
+     <Compile Include="Assets\Scripts\Spell\CharacterSpellEffectHandler.cs" />
      <Compile Include="Assets\FogWar\Scripts\FogOfWar.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
      <Compile Include="Assets\Scripts\Interaction\ActionAfterInteraction\DoorActionInteraction.cs" />
@@ -126,16 +127,19 @@
      <Folder Include="Assets\Scripts\Perk" />
      <Folder Include="Assets\Sprites\UI" />
      <Folder Include="Assets\Scenes" />
+     <Folder Include="Assets\Animations\Environment\TorchLight" />
      <Folder Include="Assets\Mechanics\Parameters" />
      <Folder Include="Assets\Scripts" />
      <Folder Include="Assets\Sprites" />
      <Folder Include="Assets\Scripts\Damage" />
+     <Folder Include="Assets\Sounds\Interaction" />
      <Folder Include="Assets\Mechanics\Effects\Sounds" />
      <Folder Include="Assets\Light2D" />
      <Folder Include="Assets\Scripts\Item" />
      <Folder Include="Assets\Sounds\Steps\Crouching" />
      <Folder Include="Assets\Settings" />
      <Folder Include="Assets\Sprites\Map\Materials" />
+     <Folder Include="Assets\Animations\Environment" />
      <Folder Include="Assets\Sprites\Weapon" />
      <Folder Include="Assets\Scripts\Interaction\ActionAfterInteraction" />
      <Folder Include="Assets\FogWar" />
