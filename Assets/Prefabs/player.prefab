@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds: {fileID: 11400000, guid: 64580d8bea29bc84c8264db94eccb5f0, type: 2}
   audioSource: {fileID: 2474252926579962488}
-  attack: {fileID: 6404306331838828539}
+  attack: {fileID: 2849643315850336732}
 --- !u!114 &6943310610642335812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,14 +328,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6404306330373969541}
-  m_LocalRotation: {x: -0, y: -0, z: 0.15734197, w: 0.98754424}
-  m_LocalPosition: {x: -0.207, y: 0.403, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: 0.097110376, w: 0.9952736}
+  m_LocalPosition: {x: -0.257, y: 0.375, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6404306331620189710}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 18.105}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 11.146}
 --- !u!212 &6705833479844751891
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -497,7 +497,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6404306330915238606}
   m_LocalRotation: {x: 0.49370313, y: -0, z: -0, w: 0.8696305}
-  m_LocalPosition: {x: -0.172, y: 0.19, z: 0.91}
+  m_LocalPosition: {x: -0.26900053, y: 0.08900012, z: 0.91}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponAnimator: {fileID: 6404306331838828534}
-  weaponAttack: {fileID: 6404306331838828539}
+  weaponAttack: {fileID: 2849643315850336732}
   character: {fileID: 6404306331663602763}
 --- !u!1 &6404306331547332555
 GameObject:
@@ -658,14 +658,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6404306331556804272}
-  m_LocalRotation: {x: -0, y: -0, z: -0.1881637, w: 0.9821377}
-  m_LocalPosition: {x: 0.19200006, y: 0.40099978, z: 3}
+  m_LocalRotation: {x: -0, y: -0, z: -0.164165, w: 0.98643297}
+  m_LocalPosition: {x: 0.171, y: 0.398, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6404306331620189710}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -21.691}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.897}
 --- !u!212 &6879235520564802340
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -871,7 +871,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 6404306331663602763}
-  weaponAttack: {fileID: 6404306331838828539}
+  weaponAttack: {fileID: 2849643315850336732}
   playerMovement: {fileID: 6404306332229754903}
   stepObserver: {fileID: 1184122939}
   hitObserver: {fileID: 6127340631398969102}
@@ -886,9 +886,9 @@ GameObject:
   - component: {fileID: 6404306331838828535}
   - component: {fileID: 7748745412930485117}
   - component: {fileID: 6404306331838828534}
-  - component: {fileID: 6404306331838828539}
   - component: {fileID: 6404306331838828532}
   - component: {fileID: 1574940564}
+  - component: {fileID: 2849643315850336732}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Weapon
@@ -984,27 +984,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6404306331838828539
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6404306331838828528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f751f4bd15aede4eb5677109041cd76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyboardController: {fileID: 3991527420401088533}
-  colliderObserver: {fileID: 1574940564}
-  weapon: {fileID: 11400000, guid: 5adc23a2a4d0c2540ae38f2aa61af2ef, type: 2}
-  attackType: 0
-  isStaminaEnough: 1
-  isParring: 0
-  isBlocking: 0
-  attackCooldownTimer: 0
-  parryCooldownTimer: 0
 --- !u!70 &6404306331838828532
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1053,6 +1032,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponCollider: {fileID: 6404306331838828532}
+--- !u!114 &2849643315850336732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404306331838828528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a98396fc3c470dbca049f26522a8f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardController: {fileID: 3991527420401088533}
+  colliderObserver: {fileID: 1574940564}
+  weapon: {fileID: 11400000, guid: 3cf545d4c4c6d56439c17d61904b5354, type: 2}
+  attackType: 1
+  isStaminaEnough: 0
+  isParring: 0
+  isBlocking: 0
+  attackCooldownTimer: 0
+  parryCooldownTimer: 0
 --- !u!1 &6404306331877026712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,7 +1309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6404306332201341104}
   m_LocalRotation: {x: 0.49370313, y: -0, z: -0, w: 0.8696305}
-  m_LocalPosition: {x: 0.18699972, y: 0.20199937, z: 0.9100001}
+  m_LocalPosition: {x: 0.194, y: 0.121, z: 0.9100001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1416,7 +1416,7 @@ Transform:
   - {fileID: 8058790848011800753}
   - {fileID: 252531695234868883}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.673}
 --- !u!58 &6404306332229754900
 CircleCollider2D:

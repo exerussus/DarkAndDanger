@@ -1,35 +1,29 @@
-using System;
+﻿
 using UnityEngine;
-using UnityEngine.Serialization;
 
-[CreateAssetMenu(menuName = "Items/Weapon", fileName = "Weapon",order = 51)]
-public class Weapon : ScriptableObject
+[CreateAssetMenu(menuName = "Items/Weapon", fileName = "PhysicalWeapon",order = 51)]
+public class PhysicalWeapon : ScriptableObject
 {
-    [SerializeField] private string weaponName;
-    [SerializeField] private float weight;
-    [SerializeField] private int level;
+    [SerializeField] private Item item;
     [SerializeField] private WeaponHandType handType;
     [SerializeField] private AttackType firstAttack;
     [SerializeField] private AttackType secondAttack;
     [SerializeField] private AttackType thirdAttack;
-    [SerializeField] private Item item;
-
-
-    public string WeaponName => weaponName;
-    public float Weight => weight;
-    public int Level => level;
+    [SerializeField] private GameObject prefab;
+    
+    public Item Item => item;
     public WeaponHandType HandType => handType;
     public AttackType FirstAttack => firstAttack;
     public AttackType SecondAttack => secondAttack;
     public AttackType ThirdAttack => thirdAttack;
-    public Item Item => item;
+    
 }
 
 public enum AttackType
 {
     Pierce,
     BluntPierce,
-    BluntSlash
+    BluntSlash,
 }
 
 public struct WeaponPattern

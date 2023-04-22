@@ -49,13 +49,11 @@
      <Compile Include="Assets\Scripts\Player\PlayerResourceController.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\SpellProjectile.cs" />
      <Compile Include="Assets\Scripts\Sounds\InteractionSound.cs" />
-     <Compile Include="Assets\Scripts\Player\Attack.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\CastingProjectile.cs" />
      <Compile Include="Assets\Scripts\Sounds\CharacterSound.cs" />
      <Compile Include="Assets\Scripts\Spell\SpellCaster.cs" />
      <Compile Include="Assets\Scripts\Sounds\WeaponSound.cs" />
-     <Compile Include="Assets\Scripts\Item\Weapon.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerKeyboardController.cs" />
      <Compile Include="Assets\Scripts\Player\SpeedChanger.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
@@ -81,6 +79,7 @@
      <Compile Include="Assets\Scripts\Spell\MainEffect.cs" />
      <Compile Include="Assets\Scripts\Spell\TestingSpellCasting.cs" />
      <Compile Include="Assets\Scripts\Spell\CharacterSpellEffectHandler.cs" />
+     <Compile Include="Assets\Scripts\Item\PhysicalWeapon.cs" />
      <Compile Include="Assets\Scripts\Spell\DestructibleSpellEffectHandler.cs" />
      <Compile Include="Assets\FogWar\Scripts\FogOfWar.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
@@ -97,6 +96,7 @@
      <Compile Include="Assets\Scripts\Interaction\InteractionObject.cs" />
      <Compile Include="Assets\Scripts\Character\Personality.cs" />
      <Compile Include="Assets\Scripts\Perk\Perks.cs" />
+     <Compile Include="Assets\Scripts\Player\PhysicalAttack.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\CastingRaycast.cs" />
      <Compile Include="Assets\Scripts\Sounds\PlaySound.cs" />
      <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />
@@ -157,9 +157,11 @@
      <Folder Include="Assets\Mechanics\Effects\AdditionalEffects" />
      <Folder Include="Assets\Sounds\Effects\fireball" />
      <Folder Include="Assets\Scripts\Camera" />
+     <Folder Include="Assets\Mechanics\Items" />
      <Folder Include="Assets\Scripts\Sounds" />
      <Folder Include="Assets\Sounds" />
      <Folder Include="Assets\Mechanics\Attributes\ParameterScaling" />
+     <Folder Include="Assets\Mechanics\Items\Weapon" />
      <Folder Include="Assets\Sounds\Weapon" />
      <Folder Include="Assets\Mechanics\Effects" />
      <Folder Include="Assets\Scripts\Spell" />

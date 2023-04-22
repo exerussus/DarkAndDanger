@@ -6,7 +6,7 @@ public class PlayerResourceController : MonoBehaviour
 {
     [Header("Компоненты")] 
     [SerializeField] private Character character;
-    [SerializeField] private Attack weaponAttack;
+    [SerializeField] private PhysicalAttack weaponAttack;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private StepObserver stepObserver;
     [SerializeField] private HitsObserver hitObserver;
@@ -80,12 +80,12 @@ public class PlayerResourceController : MonoBehaviour
 
     private void DrainStaminaToStartParry()
     {
-        character.DrainStamina(weaponAttack.Weapon.Weight);
+        character.DrainStamina(weaponAttack.Weapon.Item.Weight);
     }
 
     private void AttackStaminaIsEnough()
     {
-        weaponAttack.isStaminaEnough = character.isEnoughStamina(weaponAttack.Weapon.Weight * character.Parameter.staminaAttackCost);
+        weaponAttack.isStaminaEnough = character.isEnoughStamina(weaponAttack.Weapon.Item.Weight * character.Parameter.staminaAttackCost);
     }
 
 
@@ -131,11 +131,11 @@ public class PlayerResourceController : MonoBehaviour
     
     private void DrainStaminaToTouchWall()
     {
-        character.DrainStamina(weaponAttack.Weapon.Weight * character.Parameter.staminaMissAttackCost);
+        character.DrainStamina(weaponAttack.Weapon.Item.Weight * character.Parameter.staminaMissAttackCost);
     }
     
     private void DrainStaminaToAttack()
     {
-        character.DrainStamina(weaponAttack.Weapon.Weight * character.Parameter.staminaAttackCost);
+        character.DrainStamina(weaponAttack.Weapon.Item.Weight * character.Parameter.staminaAttackCost);
     }
 }

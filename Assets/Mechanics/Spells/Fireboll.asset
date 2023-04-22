@@ -21,7 +21,7 @@ MonoBehaviour:
   healthCost: 0
   staminaCost: 0
   manaCost: 15
-  timeCastCost: 0
+  timeCastCost: 1
   projectilePrefab: {fileID: 5593806421433547110, guid: 1309a26d1f916744aa46ceefe4882014, type: 3}
   layerTargets:
     serializedVersion: 2

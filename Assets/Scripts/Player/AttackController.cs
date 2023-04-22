@@ -5,7 +5,7 @@ using UnityEngine;
 public class AttackController : MonoBehaviour
 {
     [SerializeField] private Animator weaponAnimator;
-    [SerializeField] private Attack weaponAttack;
+    [SerializeField] private PhysicalAttack weaponAttack;
     [SerializeField] private Character character;
 
     private const float StandardAttackSpeed = 100f;
@@ -125,7 +125,7 @@ public class AttackController : MonoBehaviour
     {
         var weightMultiply = 0.5f;
         var speed = (MinAnimationSpeed / StandardAttackSpeed * character.Parameter.attackSpeed)
-                    - (MinAnimationSpeed * weaponAttack.Weapon.Weight * weightMultiply);
+                    - (MinAnimationSpeed * weaponAttack.Weapon.Item.Weight * weightMultiply);
 
         if (speed < MinAnimationSpeed) return MinAnimationSpeed;
         if (speed > MaxAnimationSpeed) return MaxAnimationSpeed;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class WeaponSound : PlaySound
 {
-    [SerializeField] private Attack attack;
+    [SerializeField] private PhysicalAttack attack;
 
     private void OnEnable()
     {

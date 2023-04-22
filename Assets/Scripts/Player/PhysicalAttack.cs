@@ -1,15 +1,15 @@
-
+﻿
 using UnityEngine;
 using System;
 
-public class Attack : MonoBehaviour
+public class PhysicalAttack : MonoBehaviour
 {
     [SerializeField] private KeyboardController keyboardController;
     [SerializeField] private ColliderObserver colliderObserver;
-    [SerializeField] private Weapon weapon;
+    [SerializeField] private PhysicalWeapon weapon;
     private const float AttackCooldown = 0.2f;
     private const float ParryCooldown = 0.25f;
-    public Weapon Weapon => weapon;
+    public PhysicalWeapon Weapon => weapon;
     public WeaponPattern WeaponPattern { get; private set; }
     public PhysicalDamage Damage;
     public AttackType attackType;
@@ -110,13 +110,7 @@ public class Attack : MonoBehaviour
     {
         if (_isAttacking || !IsCooldownAttack()) return false;
         OnTryAttack?.Invoke();
-        
-        if (isStaminaEnough)
-        {
-            return true;
-        }
-        
-        return false;
+        return isStaminaEnough;
     }
 
     public void FirstAttack()
@@ -220,10 +214,10 @@ public class Attack : MonoBehaviour
         colliderObserver.DeactivateCollider();
         if (_isAttacking)
         {
-            Attack enemyAttackSystem = touchedCollider.GetComponent<Attack>();
+            PhysicalAttack enemyAttackSystem = touchedCollider.GetComponent<PhysicalAttack>();
             if (enemyAttackSystem.isBlocking)
             {
-                enemyAttackSystem.HitInBlock(Damage, Weapon.Weight);
+                enemyAttackSystem.HitInBlock(Damage, Weapon.Item.Weight);
                 AttackEnd();
             }
             else if (enemyAttackSystem.isParring)
@@ -240,7 +234,7 @@ public class Attack : MonoBehaviour
         if (_isParryProcessing) return;
         colliderObserver.DeactivateCollider();
         var enemyAttackSystem = touchedCollider.gameObject.GetComponent<HitsObserver>();
-        enemyAttackSystem.PhysicalHit(Damage, Weapon.Weight);
+        enemyAttackSystem.PhysicalHit(Damage, Weapon.Item.Weight);
         OnTouchEnemy?.Invoke();
         AttackEnd();
     }
