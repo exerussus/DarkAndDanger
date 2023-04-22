@@ -212,6 +212,7 @@ MonoBehaviour:
   timeCost: 1
   actionInteraction: {fileID: 0}
   gameObject: {fileID: 2084949216894071828}
+  audioClip: {fileID: 8300000, guid: aeb47e4580a280849a42d1f4dff2461f, type: 3}
 --- !u!61 &7550384535616159765
 BoxCollider2D:
   m_ObjectHideFlags: 0

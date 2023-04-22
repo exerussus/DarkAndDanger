@@ -17,6 +17,6 @@ public class CharacterSound : PlaySound
 
     private void Dead()
     {
-        PlayAudio(SoundSO.SoundName.Dying);
+        PlayAudioFromList(SoundSO.SoundName.Dying);
     }
 }

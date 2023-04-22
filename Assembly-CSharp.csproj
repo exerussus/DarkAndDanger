@@ -102,6 +102,7 @@
      <Compile Include="Assets\Scripts\Character\Personality.cs" />
      <Compile Include="Assets\Scripts\Perk\Perks.cs" />
      <Compile Include="Assets\Scripts\Interaction\ActionAfterInteraction\ChestActionInteraction.cs" />
+     <Compile Include="Assets\Scripts\Interaction\ActionAfterInteraction\LightActionInteraction.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\CastingRaycast.cs" />
      <Compile Include="Assets\Scripts\Sounds\PlaySound.cs" />
      <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />

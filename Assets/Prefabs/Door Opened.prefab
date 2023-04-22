@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 610271065626440873}
   - component: {fileID: 7823902051131415312}
-  - component: {fileID: 3191118588126711396}
+  - component: {fileID: 5564199548626359219}
   m_Layer: 6
   m_Name: Door Opened
   m_TagString: PhysicalObject
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3191118588126711396
+--- !u!114 &5564199548626359219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,7 @@ MonoBehaviour:
   - {x: -0.41137484, y: 0.14885664, z: 0}
   m_ShapePathHash: 161590754
   m_Mesh: {fileID: 0}
-  m_InstanceId: 28192
+  m_InstanceId: 28216
   m_LocalBounds:
     m_Center: {x: -0.7229662, y: 0.25755644, z: 0}
     m_Extent: {x: 0.3115914, y: 0.12677367, z: 0}
@@ -213,6 +213,7 @@ MonoBehaviour:
   timeCost: 2
   actionInteraction: {fileID: 8535434248557246088}
   gameObject: {fileID: 1638203052307211043}
+  audioClip: {fileID: 8300000, guid: 4c76a42317f266c46974f383e92d88aa, type: 3}
 --- !u!114 &8535434248557246088
 MonoBehaviour:
   m_ObjectHideFlags: 0

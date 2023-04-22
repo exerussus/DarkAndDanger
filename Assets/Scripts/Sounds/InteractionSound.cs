@@ -20,6 +20,7 @@ public class InteractionSound : PlaySound
 
     private void Interact()
     {
-        PlayAudio(SoundSO.SoundName.Interaction);
+        var audioClip = interaction.GetAudioClip();
+        if (audioClip != null) PlaySingleShot(audioClip);
     }
 }

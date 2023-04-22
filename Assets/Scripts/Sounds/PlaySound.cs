@@ -6,9 +6,14 @@ public class PlaySound : MonoBehaviour
     [SerializeField] protected SoundsSO sounds;
     [SerializeField] protected AudioSource audioSource;
     private int _lastSoundIndex;
+
+
+    protected void PlaySingleShot(AudioClip audioClip)
+    {
+        audioSource.PlayOneShot(audioClip);
+    }
     
-    
-    protected void PlayAudio(SoundSO.SoundName soundName)
+    protected void PlayAudioFromList(SoundSO.SoundName soundName)
     {
         AudioClip audioClip = GetAudioClip(soundName);
         audioSource.PlayOneShot(audioClip);
