@@ -414,7 +414,7 @@ Transform:
   m_GameObject: {fileID: 6404306330507225993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6404306332052837925}
@@ -461,7 +461,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3319182118378863843, guid: 39e650475f71e064da0eda20632d01a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d9b2c566912628c4185b8e7c92d90c05, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1414,7 +1414,7 @@ Transform:
   - {fileID: 8058790848011800753}
   - {fileID: 252531695234868883}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.673}
 --- !u!58 &6404306332229754900
 CircleCollider2D:
@@ -1592,7 +1592,7 @@ MonoBehaviour:
   spell: {fileID: 11400000, guid: 643022cdbddc13a449cdc65ab51ef4a7, type: 2}
   caster: {fileID: 6404306331663602763}
   casterTransform: {fileID: 6404306332229754896}
-  casterSpellEffectHandler: {fileID: 0}
+  casterSpellEffectHandler: {fileID: 3239639598251749893}
 --- !u!114 &2381389391042735736
 MonoBehaviour:
   m_ObjectHideFlags: 0

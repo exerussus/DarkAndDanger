@@ -3,24 +3,33 @@ using UnityEngine;
 
 public class DoorActionInteraction : IActionAfterInterection
 {
-    [SerializeField] private ReplacementObject replacementObject;
-    
+    [SerializeField] private GameObject openedDoor;
+    [SerializeField] private GameObject closedDoor;
+    [SerializeField] private bool isOpenedOnStart;
+    private bool isOpened;
+
     private void Start()
     {
-        replacementObject = replacementObject == null?  gameObject.GetComponent<ReplacementObject>() : replacementObject;
+        if (isOpenedOnStart) ChangeDoorMode();
     }
 
     public override void Action(GameObject gameObject)
     {
-        Transform oldTransform = gameObject.GetComponent<Transform>();
-        Transform parentTransform = oldTransform.parent;
-        GameObject newGameObject = replacementObject.NewGameObject;
-        Vector3 oldPosition = oldTransform.localPosition;
-        var resultPosition = parentTransform.position + oldPosition + replacementObject.CorrectionVector;
-        Quaternion oldQuaternion = oldTransform.rotation;
+        ChangeDoorMode();
+    }
 
-        Destroy(gameObject);
-        Instantiate(original: newGameObject, position: resultPosition,
-            rotation: oldQuaternion, parent: parentTransform);
+    private void ChangeDoorMode()
+    {
+        if (isOpened)
+        {
+            closedDoor.SetActive(true);
+            openedDoor.SetActive(false);
+        }
+        else
+        {
+            closedDoor.SetActive(false);
+            openedDoor.SetActive(true);
+        }
+        isOpened = !isOpened;
     }
 }
