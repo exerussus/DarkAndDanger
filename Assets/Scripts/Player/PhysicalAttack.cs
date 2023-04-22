@@ -56,11 +56,7 @@ public class PhysicalAttack : MonoBehaviour
         colliderObserver.OnTouchDestructibleObject -= TouchDestructibleObject;
         colliderObserver.OnTouchEnemyWeapon -= TouchEnemyWeapon;
         colliderObserver.OnTouchHitBox -= TouchHitBox;
-        keyboardController.OnFirstAttack -= FirstAttack;
-        keyboardController.OnSecondAttack -= SecondAttack;
-        keyboardController.OnThirdAttack -= ThirdAttack;
-        keyboardController.OnParry -= TryParry;
-        keyboardController.OnStopParry -= StopParry;
+        if (keyboardController != null) UnsubscribeKeyboardController();
     }
 
     private void Start()
@@ -119,6 +115,15 @@ public class PhysicalAttack : MonoBehaviour
     {
         this.weapon = weapon;
         WeaponPattern = new WeaponPattern(Weapon.FirstAttack, Weapon.SecondAttack, Weapon.ThirdAttack);
+    }
+
+    public void UnsubscribeKeyboardController()
+    {
+        keyboardController.OnFirstAttack -= FirstAttack;
+        keyboardController.OnSecondAttack -= SecondAttack;
+        keyboardController.OnThirdAttack -= ThirdAttack;
+        keyboardController.OnParry -= TryParry;
+        keyboardController.OnStopParry -= StopParry;
     }
     
     public void SetKeyboardController(KeyboardController keyboardController)

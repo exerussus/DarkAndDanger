@@ -13,6 +13,7 @@ public class WeaponHandler : MonoBehaviour
     public Weapon ActuallyWeapon => actuallyWeapon;
     public GameObject WeaponGameObject { get; private set; }
 
+    public Action OnBeforeWeaponChange;
     public Action OnWeaponChange;
     
     public void Start()
@@ -23,6 +24,7 @@ public class WeaponHandler : MonoBehaviour
 
     private void ChangeWeapon(Weapon newWeapon)
     {
+        OnBeforeWeaponChange?.Invoke();
         Destroy(WeaponGameObject);
         actuallyWeapon = newWeapon;
         CreateNewWeapon();

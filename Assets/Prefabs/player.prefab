@@ -777,7 +777,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 6404306331663602763}
-  weaponAttack: {fileID: 0}
   playerMovement: {fileID: 6404306332229754903}
   stepObserver: {fileID: 1184122939}
   hitObserver: {fileID: 6127340631398969102}
@@ -807,7 +806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6404306331838828528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.636, y: 0.93, z: -1.29}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -826,7 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9d25c37ab9f42ee98512ddfa8a42dee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  physicalWeapon: {fileID: 11400000, guid: 3cf545d4c4c6d56439c17d61904b5354, type: 2}
+  physicalWeapon: {fileID: 0}
   magicalWeapon: {fileID: 0}
 --- !u!114 &5567985347144110950
 MonoBehaviour:
@@ -843,6 +842,7 @@ MonoBehaviour:
   weaponHandler: {fileID: 2998377291901316839}
   character: {fileID: 6404306331663602763}
   keyboardController: {fileID: 3991527420401088533}
+  playerResourceController: {fileID: 5185030529051776782}
 --- !u!1 &6404306331877026712
 GameObject:
   m_ObjectHideFlags: 0

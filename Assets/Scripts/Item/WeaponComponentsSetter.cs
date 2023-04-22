@@ -12,11 +12,13 @@ public class WeaponComponentsSetter : MonoBehaviour
     private void OnEnable()
     {
         weaponHandler.OnWeaponChange += SetComponents;
+        weaponHandler.OnBeforeWeaponChange += UnsubscribeComponents;
     }
 
     private void OnDisable()
     {
         weaponHandler.OnWeaponChange -= SetComponents;
+        weaponHandler.OnBeforeWeaponChange -= UnsubscribeComponents;
     }
     
     private void SetComponents()
@@ -34,5 +36,10 @@ public class WeaponComponentsSetter : MonoBehaviour
         {
             
         }
+    }
+
+    private void UnsubscribeComponents()
+    {
+        PhysicalAttack.UnsubscribeKeyboardController();
     }
 }

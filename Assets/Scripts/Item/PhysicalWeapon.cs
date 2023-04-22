@@ -1,7 +1,7 @@
 ﻿
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Items/Weapon", fileName = "PhysicalWeapon",order = 51)]
+[CreateAssetMenu(menuName = "Items/Weapon/PhysicalWeapon", fileName = "PhysicalWeapon",order = 51)]
 public class PhysicalWeapon : Weapon
 {
     [SerializeField] private WeaponHandType handType;
