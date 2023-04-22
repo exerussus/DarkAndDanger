@@ -49,14 +49,22 @@ MonoBehaviour:
     bluntResist: 4.2000003
     slashResist: 0
     fireDamage: 1.5
-    iceDamage: 1.5
     arcaneDamage: 1.5
     holyDamage: 1.5
+    waterDamage: 0
+    airDamage: 0
+    earthDamage: 0
+    poisonDamage: 0
+    necroDamage: 0
     fireResist: 0
-    iceResist: 0
     arcaneResist: 0
     holyResist: 0
-    visionRadius: 15
+    waterResist: 0
+    airResist: 0
+    earthResist: 0
+    poisonResist: 0
+    necroResist: 0
+    visionRadius: 60
     stepNoise: 0
     stepNoiseCrouchMultiply: 0
     magicCastSpeed: 0
