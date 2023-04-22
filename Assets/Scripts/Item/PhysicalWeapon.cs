@@ -2,21 +2,16 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/Weapon", fileName = "PhysicalWeapon",order = 51)]
-public class PhysicalWeapon : ScriptableObject
+public class PhysicalWeapon : Weapon
 {
-    [SerializeField] private Item item;
     [SerializeField] private WeaponHandType handType;
     [SerializeField] private AttackType firstAttack;
     [SerializeField] private AttackType secondAttack;
     [SerializeField] private AttackType thirdAttack;
-    [SerializeField] private GameObject prefab;
-    
-    public Item Item => item;
     public WeaponHandType HandType => handType;
     public AttackType FirstAttack => firstAttack;
     public AttackType SecondAttack => secondAttack;
     public AttackType ThirdAttack => thirdAttack;
-    
 }
 
 public enum AttackType

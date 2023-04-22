@@ -50,10 +50,12 @@
      <Compile Include="Assets\Scripts\Spell\CastTypes\SpellProjectile.cs" />
      <Compile Include="Assets\Scripts\Sounds\InteractionSound.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
+     <Compile Include="Assets\Scripts\Item\WeaponHandler.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\CastingProjectile.cs" />
      <Compile Include="Assets\Scripts\Sounds\CharacterSound.cs" />
      <Compile Include="Assets\Scripts\Spell\SpellCaster.cs" />
      <Compile Include="Assets\Scripts\Sounds\WeaponSound.cs" />
+     <Compile Include="Assets\Scripts\Item\Weapon.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerKeyboardController.cs" />
      <Compile Include="Assets\Scripts\Player\SpeedChanger.cs" />
      <Compile Include="Assets\Scripts\Movement\PlayerMovement.cs" />
@@ -63,6 +65,7 @@
      <Compile Include="Assets\Scripts\Perk\Perk.cs" />
      <Compile Include="Assets\Scripts\Parameter\StandardParameter.cs" />
      <Compile Include="Assets\Scripts\Destructible\DestructibleObject.cs" />
+     <Compile Include="Assets\Scripts\Item\WeaponComponentsSetter.cs" />
      <Compile Include="Assets\Scripts\Spell\SpellEffectHandler.cs" />
      <Compile Include="Assets\Scripts\Damage\HitsObserver.cs" />
      <Compile Include="Assets\Scripts\Damage\MagicalDamage.cs" />
@@ -80,6 +83,7 @@
      <Compile Include="Assets\Scripts\Spell\TestingSpellCasting.cs" />
      <Compile Include="Assets\Scripts\Spell\CharacterSpellEffectHandler.cs" />
      <Compile Include="Assets\Scripts\Item\PhysicalWeapon.cs" />
+     <Compile Include="Assets\Scripts\Item\MagicalWeapon.cs" />
      <Compile Include="Assets\Scripts\Spell\DestructibleSpellEffectHandler.cs" />
      <Compile Include="Assets\FogWar\Scripts\FogOfWar.cs" />
      <Compile Include="Assets\Scripts\Character\Character.cs" />
@@ -112,6 +116,7 @@
      <Folder Include="Assets\Scripts\Movement" />
      <Folder Include="Assets\Managers" />
      <Folder Include="Assets\Scripts\Destructible" />
+     <Folder Include="Assets\Prefabs\Weapons" />
      <Folder Include="Assets\Sounds\Steps\Sprinting" />
      <Folder Include="Assets\Mechanics\Attributes\Players" />
      <Folder Include="Assets\Sounds\Character" />
@@ -134,6 +139,7 @@
      <Folder Include="Assets\Sprites\Map\Materials" />
      <Folder Include="Assets\Animations\Environment" />
      <Folder Include="Assets\Sprites\Weapon" />
+     <Folder Include="Assets\Prefabs\Weapons\TwoHand" />
      <Folder Include="Assets\Scripts\Interaction\ActionAfterInteraction" />
      <Folder Include="Assets\FogWar" />
      <Folder Include="Assets\Mechanics\Spells" />

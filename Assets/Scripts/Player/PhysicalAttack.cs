@@ -4,9 +4,9 @@ using System;
 
 public class PhysicalAttack : MonoBehaviour
 {
-    [SerializeField] private KeyboardController keyboardController;
     [SerializeField] private ColliderObserver colliderObserver;
     [SerializeField] private PhysicalWeapon weapon;
+    private KeyboardController keyboardController;
     private const float AttackCooldown = 0.2f;
     private const float ParryCooldown = 0.25f;
     public PhysicalWeapon Weapon => weapon;
@@ -44,15 +44,10 @@ public class PhysicalAttack : MonoBehaviour
 
     private void OnEnable()
     {
+        colliderObserver.OnTouchHitBox += TouchHitBox;
         colliderObserver.OnTouchPhysicalObject += TouchPhysicalObject;
         colliderObserver.OnTouchDestructibleObject += TouchDestructibleObject;
         colliderObserver.OnTouchEnemyWeapon += TouchEnemyWeapon;
-        colliderObserver.OnTouchHitBox += TouchHitBox;
-        keyboardController.OnFirstAttack += FirstAttack;
-        keyboardController.OnSecondAttack += SecondAttack;
-        keyboardController.OnThirdAttack += ThirdAttack;
-        keyboardController.OnParry += TryParry;
-        keyboardController.OnStopParry += StopParry;
     }
 
     private void OnDisable()
@@ -70,7 +65,6 @@ public class PhysicalAttack : MonoBehaviour
 
     private void Start()
     {
-        WeaponPattern = new WeaponPattern(Weapon.FirstAttack, Weapon.SecondAttack, Weapon.ThirdAttack);
         colliderObserver = colliderObserver == null ? GetComponent<ColliderObserver>() : colliderObserver;
     }
 
@@ -119,7 +113,22 @@ public class PhysicalAttack : MonoBehaviour
         _isAttacking = true;
         OnStartAttack?.Invoke();
         OnFirstAttack?.Invoke();
-        
+    }
+
+    public void SetWeapon(PhysicalWeapon weapon)
+    {
+        this.weapon = weapon;
+        WeaponPattern = new WeaponPattern(Weapon.FirstAttack, Weapon.SecondAttack, Weapon.ThirdAttack);
+    }
+    
+    public void SetKeyboardController(KeyboardController keyboardController)
+    {
+        this.keyboardController = keyboardController;
+        keyboardController.OnFirstAttack += FirstAttack;
+        keyboardController.OnSecondAttack += SecondAttack;
+        keyboardController.OnThirdAttack += ThirdAttack;
+        keyboardController.OnParry += TryParry;
+        keyboardController.OnStopParry += StopParry;
     }
     
     public void SecondAttack()

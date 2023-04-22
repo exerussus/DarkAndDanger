@@ -5,14 +5,14 @@ using UnityEngine;
 public class ColliderObserver : MonoBehaviour
 {
     [SerializeField] private Collider2D weaponCollider;
-
+    
 
     public Action OnTouchPhysicalObject;
     public Action<Collider2D> OnTouchDestructibleObject;
     public Action<Collider2D> OnTouchEnemyWeapon;
     public Action<Collider2D> OnTouchHitBox;
 
-    private void Start()
+    private void OnEnable()
     {
         DeactivateCollider();
     }

@@ -3242,6 +3242,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1609469601 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5185030529051776782, guid: a852b76052b1dc4408601704afc44f03, type: 3}
+  m_PrefabInstance: {fileID: 6404306331649370643}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49e297ddaf974c0080806e808ed077bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1630063129
 Mesh:
   m_ObjectHideFlags: 0
@@ -4293,6 +4304,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 828307873}
+    - target: {fileID: 5567985347144110950, guid: a852b76052b1dc4408601704afc44f03, type: 3}
+      propertyPath: playerResourceController
+      value: 
+      objectReference: {fileID: 1609469601}
+    - target: {fileID: 6404306331838828535, guid: a852b76052b1dc4408601704afc44f03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404306331838828535, guid: a852b76052b1dc4408601704afc44f03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6404306331838828535, guid: a852b76052b1dc4408601704afc44f03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6404306332229754896, guid: a852b76052b1dc4408601704afc44f03, type: 3}
       propertyPath: m_RootOrder
       value: 3

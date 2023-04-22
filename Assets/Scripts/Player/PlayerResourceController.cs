@@ -6,10 +6,10 @@ public class PlayerResourceController : MonoBehaviour
 {
     [Header("Компоненты")] 
     [SerializeField] private Character character;
-    [SerializeField] private PhysicalAttack weaponAttack;
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private StepObserver stepObserver;
     [SerializeField] private HitsObserver hitObserver;
+    private PhysicalAttack weaponAttack;
 
     private void Start()
     {
@@ -19,14 +19,7 @@ public class PlayerResourceController : MonoBehaviour
 
     private void OnEnable()
     {
-        if (weaponAttack != null)
-        {
-            weaponAttack.OnStartAttack += DrainStaminaToAttack;
-            weaponAttack.OnTouchPhysicalObject += DrainStaminaToTouchWall;
-            weaponAttack.OnTryAttack += AttackStaminaIsEnough;
-            weaponAttack.BeforeParryStart += CheckAndDrainStaminaBeforeParry;
-            weaponAttack.OnStartParry += DrainStaminaToStartParry;
-        }
+
         if (playerMovement != null)
         {
             playerMovement.OnTrySprinting += IsStaminaEnoughForSprint;
@@ -60,7 +53,19 @@ public class PlayerResourceController : MonoBehaviour
         }
         if (hitObserver != null) hitObserver.OnTakingPhysicalDamage -= TakePhysicalDamage;
     }
-    
+
+    public void SetPhysicalAttack(PhysicalAttack physicalAttack)
+    {
+        weaponAttack = physicalAttack;
+        if (weaponAttack != null)
+        {
+            weaponAttack.OnStartAttack += DrainStaminaToAttack;
+            weaponAttack.OnTouchPhysicalObject += DrainStaminaToTouchWall;
+            weaponAttack.OnTryAttack += AttackStaminaIsEnough;
+            weaponAttack.BeforeParryStart += CheckAndDrainStaminaBeforeParry;
+            weaponAttack.OnStartParry += DrainStaminaToStartParry;
+        }
+    }
     
     private void CheckAndDrainStaminaBeforeParry()
     {

@@ -73,8 +73,8 @@ MonoBehaviour:
       stepNoiseCrouchMultiply: 0
       magicCastSpeed: 0
       memory: 0
+  prefab: {fileID: 2631680461222386294, guid: b543a1f346ef51940bd331427bc9276d, type: 3}
   handType: 2
   firstAttack: 2
   secondAttack: 2
   thirdAttack: 0
-  prefab: {fileID: 0}

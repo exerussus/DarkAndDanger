@@ -6,8 +6,8 @@ public class AttackController : MonoBehaviour
 {
     [SerializeField] private Animator weaponAnimator;
     [SerializeField] private PhysicalAttack weaponAttack;
-    [SerializeField] private Character character;
-
+    private Character character;
+    
     private const float StandardAttackSpeed = 100f;
     private const float MinAnimationSpeed = 1f;
     private const float MaxAnimationSpeed = 3f;
@@ -49,6 +49,11 @@ public class AttackController : MonoBehaviour
         weaponAttack.OnNoDamage -= SetNoDamage;
     }
 
+    public void SetCharacter(Character character)
+    {
+        this.character = character;
+    }
+    
     private void SetNoDamage()
     {
         weaponAttack.Damage.Zero();
