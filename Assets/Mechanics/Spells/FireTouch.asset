@@ -17,7 +17,7 @@ MonoBehaviour:
   castType: 2
   area: 0
   projectileSpeed: 0
-  distance: 15
+  distance: 1
   healthCost: 0
   staminaCost: 0
   manaCost: 15
