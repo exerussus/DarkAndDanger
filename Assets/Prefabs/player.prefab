@@ -791,6 +791,7 @@ GameObject:
   - component: {fileID: 6404306331838828535}
   - component: {fileID: 2998377291901316839}
   - component: {fileID: 5567985347144110950}
+  - component: {fileID: 2275980530685282984}
   m_Layer: 0
   m_Name: Weapon
   m_TagString: Weapon
@@ -826,7 +827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physicalWeapon: {fileID: 0}
-  magicalWeapon: {fileID: 11400000, guid: d0586209e70e6264da42b183c9c9b35b, type: 2}
+  magicalWeapon: {fileID: 0}
 --- !u!114 &5567985347144110950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -844,6 +845,22 @@ MonoBehaviour:
   character: {fileID: 6404306331663602763}
   keyboardController: {fileID: 3991527420401088533}
   playerResourceController: {fileID: 5185030529051776782}
+--- !u!114 &2275980530685282984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6404306331838828528}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12c9d3de9fe1498a80ea9503406fa36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyboardController: {fileID: 3991527420401088533}
+  weaponHandler: {fileID: 2998377291901316839}
+  firstWeapon: {fileID: 11400000, guid: 3cf545d4c4c6d56439c17d61904b5354, type: 2}
+  secondWeapon: {fileID: 11400000, guid: d0586209e70e6264da42b183c9c9b35b, type: 2}
 --- !u!1 &6404306331877026712
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,7 +1193,6 @@ GameObject:
   - component: {fileID: 907267041}
   - component: {fileID: 8403932409699787258}
   - component: {fileID: 5356699585307939900}
-  - component: {fileID: 4373374711212375293}
   - component: {fileID: 2381389391042735736}
   - component: {fileID: 7857692761721177608}
   m_Layer: 0
@@ -1367,23 +1383,6 @@ MonoBehaviour:
   offset: {x: 0, y: 0, z: 0}
   distance: 10
   visionRayDirection: {fileID: 8403932409699787258}
---- !u!114 &4373374711212375293
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6404306332229754899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3107fa1e1b9c4c5bb8088c7c7624fdce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keyboardController: {fileID: 3991527420401088533}
-  spell: {fileID: 11400000, guid: 643022cdbddc13a449cdc65ab51ef4a7, type: 2}
-  caster: {fileID: 6404306331663602763}
-  casterTransform: {fileID: 6404306332229754896}
-  casterSpellEffectHandler: {fileID: 3239639598251749893}
 --- !u!114 &2381389391042735736
 MonoBehaviour:
   m_ObjectHideFlags: 0

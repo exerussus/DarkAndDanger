@@ -71,4 +71,9 @@ public class PlayerKeyboardController : KeyboardController
     {
         return Input.GetMouseButtonUp(0);
     }
+
+    protected override bool IsChangeWeapon()
+    {
+        return Input.GetKeyDown(KeyCode.X);
+    }
 }

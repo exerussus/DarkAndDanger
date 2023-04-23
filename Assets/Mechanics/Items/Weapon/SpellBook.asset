@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item:
     itemName: 
-    weight: 0
+    weight: 0.4
     price: 0
-    level: 0
+    level: 1
     image: {fileID: 0}
     parameter:
       health: 0
@@ -74,6 +74,7 @@ MonoBehaviour:
       magicCastSpeed: 0
       memory: 0
   prefab: {fileID: 8226192796118685388, guid: 524f198bb495db44087605ad45e848ec, type: 3}
+  typeOfWeapon: 0
   spellList:
   - {fileID: 11400000, guid: 643022cdbddc13a449cdc65ab51ef4a7, type: 2}
   - {fileID: 11400000, guid: 932e2d644963a95439999d9dc1bbb059, type: 2}

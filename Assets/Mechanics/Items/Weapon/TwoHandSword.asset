@@ -74,6 +74,7 @@ MonoBehaviour:
       magicCastSpeed: 0
       memory: 0
   prefab: {fileID: 2631680461222386294, guid: b543a1f346ef51940bd331427bc9276d, type: 3}
+  typeOfWeapon: 1
   handType: 2
   firstAttack: 2
   secondAttack: 2

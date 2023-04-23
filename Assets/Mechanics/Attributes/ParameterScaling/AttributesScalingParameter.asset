@@ -47,13 +47,21 @@ MonoBehaviour:
     bluntResist: 0
     slashResist: 0
     fireDamage: 0
-    iceDamage: 0
     arcaneDamage: 0
     holyDamage: 0
+    waterDamage: 0
+    airDamage: 0
+    earthDamage: 0
+    poisonDamage: 0
+    necroDamage: 0
     fireResist: 0
-    iceResist: 0
     arcaneResist: 0
     holyResist: 0
+    waterResist: 0
+    airResist: 0
+    earthResist: 0
+    poisonResist: 0
+    necroResist: 0
     visionRadius: 0
     stepNoise: 0
     stepNoiseCrouchMultiply: 0
@@ -94,13 +102,21 @@ MonoBehaviour:
     bluntResist: 0
     slashResist: 0
     fireDamage: 0
-    iceDamage: 0
     arcaneDamage: 0
     holyDamage: 0
+    waterDamage: 0
+    airDamage: 0
+    earthDamage: 0
+    poisonDamage: 0
+    necroDamage: 0
     fireResist: 0
-    iceResist: 0
     arcaneResist: 0
     holyResist: 0
+    waterResist: 0
+    airResist: 0
+    earthResist: 0
+    poisonResist: 0
+    necroResist: 0
     visionRadius: 0
     stepNoise: 0
     stepNoiseCrouchMultiply: 0
@@ -141,13 +157,21 @@ MonoBehaviour:
     bluntResist: 0.3
     slashResist: 0
     fireDamage: 0
-    iceDamage: 0
     arcaneDamage: 0
     holyDamage: 0
+    waterDamage: 0
+    airDamage: 0
+    earthDamage: 0
+    poisonDamage: 0
+    necroDamage: 0
     fireResist: 0
-    iceResist: 0
     arcaneResist: 0
     holyResist: 0
+    waterResist: 0
+    airResist: 0
+    earthResist: 0
+    poisonResist: 0
+    necroResist: 0
     visionRadius: 0
     stepNoise: 0
     stepNoiseCrouchMultiply: 0
@@ -156,7 +180,7 @@ MonoBehaviour:
   intelligenceParameterScale:
     health: 0
     stamina: 0
-    mana: 3.5
+    mana: 5.5
     staminaRegeneration: 0
     staminaAttackCost: 0
     staminaWeaponWeightMultiply: 0
@@ -188,13 +212,21 @@ MonoBehaviour:
     bluntResist: 0
     slashResist: 0
     fireDamage: 0.3
-    iceDamage: 0.3
     arcaneDamage: 0.3
     holyDamage: 0.3
+    waterDamage: 0
+    airDamage: 0
+    earthDamage: 0
+    poisonDamage: 0
+    necroDamage: 0
     fireResist: 0
-    iceResist: 0
     arcaneResist: 0
     holyResist: 0
+    waterResist: 0
+    airResist: 0
+    earthResist: 0
+    poisonResist: 0
+    necroResist: 0
     visionRadius: 0
     stepNoise: 0
     stepNoiseCrouchMultiply: 0
