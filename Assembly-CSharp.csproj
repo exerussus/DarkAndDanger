@@ -107,6 +107,7 @@
      <Compile Include="Assets\Scripts\Movement\KeyboardController.cs" />
      <Compile Include="Assets\Scripts\Sounds\SoundsSO.cs" />
      <Compile Include="Assets\Scripts\Interaction\Interaction.cs" />
+     <Compile Include="Assets\Scripts\Player\MagicSpellBar.cs" />
      <Compile Include="Assets\Scripts\Character\CharacterAttributes.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets\Items\Weapons" />
@@ -122,6 +123,7 @@
      <Folder Include="Assets\Mechanics\Attributes\Players" />
      <Folder Include="Assets\Sounds\Character" />
      <Folder Include="Assets\Scripts\Vision" />
+     <Folder Include="Assets\Sprites\Icons" />
      <Folder Include="Assets\Mechanics\Attributes" />
      <Folder Include="Assets\Scripts\Perk" />
      <Folder Include="Assets\Sprites\UI" />
@@ -150,6 +152,7 @@
      <Folder Include="Assets\Scripts\Managers" />
      <Folder Include="Assets\Mechanics\Effects\MainEffects" />
      <Folder Include="Assets\Scripts\Parameter" />
+     <Folder Include="Assets\Sprites\Icons\Spells" />
      <Folder Include="Assets\Sounds\Effects" />
      <Folder Include="Assets\Scripts\Interaction" />
      <Folder Include="Assets\Mechanics\Personalities" />

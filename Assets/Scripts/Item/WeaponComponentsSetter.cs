@@ -8,18 +8,19 @@ public class WeaponComponentsSetter : MonoBehaviour
     [SerializeField] private Character character;
     [SerializeField] private KeyboardController keyboardController;
     [SerializeField] private PlayerResourceController playerResourceController;
+    [SerializeField] private MagicSpellBar magicSpellBar;
     public PhysicalAttack PhysicalAttack { get; private set; }
     public MagicalAttack MagicalAttack { get; private set; }
 
     private void OnEnable()
     {
-        weaponHandler.OnWeaponChange += SetComponents;
+        weaponHandler.OnEndWeaponChange += SetComponents;
         weaponHandler.OnBeforeWeaponChange += UnsubscribeComponents;
     }
 
     private void OnDisable()
     {
-        weaponHandler.OnWeaponChange -= SetComponents;
+        weaponHandler.OnEndWeaponChange -= SetComponents;
         weaponHandler.OnBeforeWeaponChange -= UnsubscribeComponents;
     }
     
@@ -44,6 +45,7 @@ public class WeaponComponentsSetter : MonoBehaviour
             MagicalAttack.SetCharacter(character);
             MagicalAttack.SetCasterSpellEffectHandler(spellEffectHandler);
             playerResourceController.SetMagicalAttack(MagicalAttack);
+            magicSpellBar.SetMagicalAttack(MagicalAttack);
         }
     }
 

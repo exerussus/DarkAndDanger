@@ -15,7 +15,8 @@ public class WeaponHandler : MonoBehaviour
     private float _putOnTime;
 
     public Action OnBeforeWeaponChange;
-    public Action OnWeaponChange;
+    public Action OnStartWeaponChange;
+    public Action OnEndWeaponChange;
 
     private void ChangeWeapon(Weapon newWeapon)
     {
@@ -24,6 +25,7 @@ public class WeaponHandler : MonoBehaviour
         actuallyWeapon = newWeapon;
         _putOnTime = actuallyWeapon.Item.Weight + Time.fixedTime;
         Tick.OnFixedUpdate += SetNewWeapon;
+        OnStartWeaponChange?.Invoke();
     }
 
     private void SetNewWeapon()
@@ -31,7 +33,7 @@ public class WeaponHandler : MonoBehaviour
         if (_putOnTime > Time.fixedTime) return;
         Tick.OnFixedUpdate -= SetNewWeapon;
         CreateNewWeapon();
-        OnWeaponChange?.Invoke();
+        OnEndWeaponChange?.Invoke();
     }
     
     public void SetPhysicalWeapon(PhysicalWeapon physicalWeapon)

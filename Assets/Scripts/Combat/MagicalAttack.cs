@@ -17,6 +17,7 @@ public class MagicalAttack : MonoBehaviour
     public Action OnTryToCast;
     public Action OnStartCast;
     public Action OnEndCast;
+    public Action OnSwitchSpell;
     
     public void SetWeapon(MagicalWeapon magicalWeapon)
     {
@@ -65,6 +66,7 @@ public class MagicalAttack : MonoBehaviour
             _actuallySpell = _weapon.SpellList[0];
             _actuallySpellIndex = 0;
         }
+        OnSwitchSpell?.Invoke();
     }
     
     private void CastSpell()

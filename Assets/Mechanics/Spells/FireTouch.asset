@@ -23,6 +23,7 @@ MonoBehaviour:
   manaCost: 6
   timeCastCost: 0.6
   projectilePrefab: {fileID: 5593806421433547110, guid: 1309a26d1f916744aa46ceefe4882014, type: 3}
+  icon: {fileID: 21300000, guid: c0f41c2c986b0ff43bece4f6c0512644, type: 3}
   layerTargets:
     serializedVersion: 2
     m_Bits: 384
