@@ -4,10 +4,12 @@ using UnityEngine;
 public class WeaponComponentsSetter : MonoBehaviour
 {
     [SerializeField] private WeaponHandler weaponHandler;
+    [SerializeField] private SpellEffectHandler spellEffectHandler;
     [SerializeField] private Character character;
     [SerializeField] private KeyboardController keyboardController;
     [SerializeField] private PlayerResourceController playerResourceController;
     public PhysicalAttack PhysicalAttack { get; private set; }
+    public MagicalAttack MagicalAttack { get; private set; }
 
     private void OnEnable()
     {
@@ -25,6 +27,7 @@ public class WeaponComponentsSetter : MonoBehaviour
     {   
         if(weaponHandler.PhysicalWeapon != null)
         {
+            MagicalAttack = null;
             PhysicalAttack = weaponHandler.WeaponGameObject.GetComponent<PhysicalAttack>();
             PhysicalAttack.SetKeyboardController(keyboardController);
             PhysicalAttack.SetWeapon(weaponHandler.PhysicalWeapon);
@@ -32,14 +35,21 @@ public class WeaponComponentsSetter : MonoBehaviour
             attackController.SetCharacter(character);
             playerResourceController.SetPhysicalAttack(PhysicalAttack);
         }
-        else if (weaponHandler.MagicalWeapon != null)
+        if (weaponHandler.MagicalWeapon != null)
         {
-            
+            PhysicalAttack = null;
+            MagicalAttack = weaponHandler.WeaponGameObject.GetComponent<MagicalAttack>();
+            MagicalAttack.SetKeyboardController(keyboardController);
+            MagicalAttack.SetWeapon(weaponHandler.MagicalWeapon);
+            MagicalAttack.SetCharacter(character);
+            MagicalAttack.SetCasterSpellEffectHandler(spellEffectHandler);
+            playerResourceController.SetMagicalAttack(MagicalAttack);
         }
     }
 
     private void UnsubscribeComponents()
     {
-        PhysicalAttack.UnsubscribeKeyboardController();
+        if(PhysicalAttack != null) PhysicalAttack.UnsubscribeKeyboardController();
+        if(MagicalAttack != null) MagicalAttack.UnsubscribeKeyboardController();
     }
 }

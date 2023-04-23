@@ -826,7 +826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   physicalWeapon: {fileID: 0}
-  magicalWeapon: {fileID: 0}
+  magicalWeapon: {fileID: 11400000, guid: d0586209e70e6264da42b183c9c9b35b, type: 2}
 --- !u!114 &5567985347144110950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponHandler: {fileID: 2998377291901316839}
+  spellEffectHandler: {fileID: 3239639598251749893}
   character: {fileID: 6404306331663602763}
   keyboardController: {fileID: 3991527420401088533}
   playerResourceController: {fileID: 5185030529051776782}

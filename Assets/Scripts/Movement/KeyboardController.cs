@@ -21,6 +21,7 @@ public abstract class KeyboardController : MonoBehaviour
     public Action OnStopParry;
     public Action OnSlowdown;
     public Action OnRotation;
+    public Action OnReleaseSpell;
 
     private struct OrderTypes
     {
@@ -37,6 +38,7 @@ public abstract class KeyboardController : MonoBehaviour
         public bool Crouch;
         public bool Parry;
         public bool StopParry;
+        public bool ReleaseSpell;
 
         public void Zero()
         {
@@ -53,6 +55,8 @@ public abstract class KeyboardController : MonoBehaviour
             Crouch  = false;
             Parry  = false;
             StopParry  = false;
+            ReleaseSpell = false;
+
         }
     }
 
@@ -74,6 +78,7 @@ public abstract class KeyboardController : MonoBehaviour
     protected abstract bool IsPressThirdAttack();
     protected abstract bool IsDownParry();
     protected abstract bool IsUpParry();
+    protected abstract bool IsReleasedSpell();
     
     
     private void Update()
@@ -89,6 +94,7 @@ public abstract class KeyboardController : MonoBehaviour
         if (IsPressThirdAttack()) orderTypes.ThirdAttack = true;
         else if (IsPressFirstAttack()) orderTypes.FirstAttack = true;
         else if (IsPressSecondAttack()) orderTypes.SecondAttack = true;
+        if (IsReleasedSpell()) orderTypes.ReleaseSpell = true;
         if (IsDownParry()) orderTypes.Parry = true;
         if (IsUpParry()) orderTypes.StopParry = true;
     }
@@ -106,6 +112,7 @@ public abstract class KeyboardController : MonoBehaviour
         if (orderTypes.Sprint && IsPressMove()) OnSprint?.Invoke();
         else if (orderTypes.Crouch && IsPressMove()) OnCrouch?.Invoke();
         else OnStandardMove?.Invoke();
+        if(orderTypes.ReleaseSpell) OnReleaseSpell?.Invoke();
         if (orderTypes.Parry) OnParry?.Invoke();
         else if (orderTypes.StopParry) OnStopParry?.Invoke();
         if (orderTypes.Interact && !IsPressMove()) OnInteract?.Invoke();

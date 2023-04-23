@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Player\PlayerResourceController.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\SpellProjectile.cs" />
      <Compile Include="Assets\Scripts\Sounds\InteractionSound.cs" />
+     <Compile Include="Assets\Scripts\Combat\MagicalAttack.cs" />
      <Compile Include="Assets\Scripts\Animation\AnimationController.cs" />
      <Compile Include="Assets\Scripts\Item\WeaponHandler.cs" />
      <Compile Include="Assets\Scripts\Spell\CastTypes\CastingProjectile.cs" />
@@ -136,6 +137,7 @@
      <Folder Include="Assets\Scripts\Item" />
      <Folder Include="Assets\Sounds\Steps\Crouching" />
      <Folder Include="Assets\Settings" />
+     <Folder Include="Assets\Animations\Weapon\SpellBook" />
      <Folder Include="Assets\Sprites\Map\Materials" />
      <Folder Include="Assets\Animations\Environment" />
      <Folder Include="Assets\Sprites\Weapon" />
@@ -170,6 +172,7 @@
      <Folder Include="Assets\Mechanics\Items\Weapon" />
      <Folder Include="Assets\Sounds\Weapon" />
      <Folder Include="Assets\Mechanics\Effects" />
+     <Folder Include="Assets\Scripts\Combat" />
      <Folder Include="Assets\Scripts\Spell" />
      <Folder Include="Assets\Scripts\Player" />
      <Folder Include="Assets\Animations\Weapon" />
@@ -177,6 +180,7 @@
      <Folder Include="Assets\Scripts\Animation" />
      <Folder Include="Assets\Sprites\Character" />
      <Folder Include="Assets\Animations\Player" />
+     <Folder Include="Assets\Prefabs\Weapons\MagicBook" />
      <Folder Include="Assets\Sprites\Map" />
      <Reference Include="UnityEngine">
      <HintPath>D:\Unity\2022.2.14f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

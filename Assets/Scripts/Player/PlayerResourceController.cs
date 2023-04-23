@@ -9,7 +9,8 @@ public class PlayerResourceController : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private StepObserver stepObserver;
     [SerializeField] private HitsObserver hitObserver;
-    private PhysicalAttack weaponAttack;
+    private PhysicalAttack _physicalAttack;
+    private MagicalAttack _magicalAttack;
 
     private void Start()
     {
@@ -34,14 +35,7 @@ public class PlayerResourceController : MonoBehaviour
 
     private void OnDisable()
     {
-        if (weaponAttack != null)
-        {
-            weaponAttack.OnStartAttack -= DrainStaminaToAttack;
-            weaponAttack.OnTouchPhysicalObject -= DrainStaminaToTouchWall;
-            weaponAttack.OnTryAttack -= AttackStaminaIsEnough;
-            weaponAttack.BeforeParryStart -= CheckAndDrainStaminaBeforeParry;
-            weaponAttack.OnStartParry -= DrainStaminaToStartParry;
-        }
+        UnsubscribeAttacks();
         if (playerMovement != null)
         {
             playerMovement.OnTrySprinting -= IsStaminaEnoughForSprint;
@@ -54,23 +48,60 @@ public class PlayerResourceController : MonoBehaviour
         if (hitObserver != null) hitObserver.OnTakingPhysicalDamage -= TakePhysicalDamage;
     }
 
-    public void SetPhysicalAttack(PhysicalAttack physicalAttack)
+    private void UnsubscribeAttacks()
     {
-        weaponAttack = physicalAttack;
-        if (weaponAttack != null)
+        if (_physicalAttack != null)
         {
-            weaponAttack.OnStartAttack += DrainStaminaToAttack;
-            weaponAttack.OnTouchPhysicalObject += DrainStaminaToTouchWall;
-            weaponAttack.OnTryAttack += AttackStaminaIsEnough;
-            weaponAttack.BeforeParryStart += CheckAndDrainStaminaBeforeParry;
-            weaponAttack.OnStartParry += DrainStaminaToStartParry;
+            _physicalAttack.OnStartAttack -= DrainStaminaToAttack;
+            _physicalAttack.OnTouchPhysicalObject -= DrainStaminaToTouchWall;
+            _physicalAttack.OnTryAttack -= AttackStaminaIsEnough;
+            _physicalAttack.BeforeParryStart -= CheckAndDrainStaminaBeforeParry;
+            _physicalAttack.OnStartParry -= DrainStaminaToStartParry;
+            _physicalAttack = null;
+        }
+        if (_magicalAttack != null)
+        {
+            _magicalAttack.OnTryToCast -= CastManaIsEnough;
+            _magicalAttack.OnEndCast -= DrainManaToCast;
+            _magicalAttack = null;
         }
     }
     
+    public void SetMagicalAttack(MagicalAttack magicalAttack)
+    {
+        UnsubscribeAttacks();
+        _magicalAttack = magicalAttack;
+        _magicalAttack.OnTryToCast += CastManaIsEnough;
+        _magicalAttack.OnEndCast += DrainManaToCast;
+    }
+    
+    public void SetPhysicalAttack(PhysicalAttack physicalAttack)
+    {
+        UnsubscribeAttacks();
+        _physicalAttack = physicalAttack;
+        _physicalAttack.OnStartAttack += DrainStaminaToAttack;
+        _physicalAttack.OnTouchPhysicalObject += DrainStaminaToTouchWall;
+        _physicalAttack.OnTryAttack += AttackStaminaIsEnough;
+        _physicalAttack.BeforeParryStart += CheckAndDrainStaminaBeforeParry;
+        _physicalAttack.OnStartParry += DrainStaminaToStartParry;
+        
+    }
+
+    private void DrainManaToCast()
+    {
+        character.DrainMana(_magicalAttack.ActuallySpell.ManaCost);
+    }
+    
+    private void CastManaIsEnough()
+    {
+        _magicalAttack.SetManaEnough(character.isEnoughMana(_magicalAttack.ActuallySpell.ManaCost));
+    }
+
+    
     private void CheckAndDrainStaminaBeforeParry()
     {
-        weaponAttack.isStaminaEnough = character.isEnoughStamina(character.Parameter.staminaParryCost);
-        if(weaponAttack.isStaminaEnough) character.DrainStamina(character.Parameter.staminaParryCost);
+        _physicalAttack.isStaminaEnough = character.isEnoughStamina(character.Parameter.staminaParryCost);
+        if(_physicalAttack.isStaminaEnough) character.DrainStamina(character.Parameter.staminaParryCost);
     }
 
     private void TakePhysicalDamage(PhysicalDamage damage, float weaponWeight)
@@ -85,14 +116,13 @@ public class PlayerResourceController : MonoBehaviour
 
     private void DrainStaminaToStartParry()
     {
-        character.DrainStamina(weaponAttack.Weapon.Item.Weight);
+        character.DrainStamina(_physicalAttack.Weapon.Item.Weight);
     }
 
     private void AttackStaminaIsEnough()
     {
-        weaponAttack.isStaminaEnough = character.isEnoughStamina(weaponAttack.Weapon.Item.Weight * character.Parameter.staminaAttackCost);
+        _physicalAttack.isStaminaEnough = character.isEnoughStamina(_physicalAttack.Weapon.Item.Weight * character.Parameter.staminaAttackCost);
     }
-
 
     private void StopToCrouch()
     {
@@ -136,11 +166,11 @@ public class PlayerResourceController : MonoBehaviour
     
     private void DrainStaminaToTouchWall()
     {
-        character.DrainStamina(weaponAttack.Weapon.Item.Weight * character.Parameter.staminaMissAttackCost);
+        character.DrainStamina(_physicalAttack.Weapon.Item.Weight * character.Parameter.staminaMissAttackCost);
     }
     
     private void DrainStaminaToAttack()
     {
-        character.DrainStamina(weaponAttack.Weapon.Item.Weight * character.Parameter.staminaAttackCost);
+        character.DrainStamina(_physicalAttack.Weapon.Item.Weight * character.Parameter.staminaAttackCost);
     }
 }
