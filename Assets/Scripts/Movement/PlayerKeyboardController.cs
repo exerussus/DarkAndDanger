@@ -54,7 +54,7 @@ public class PlayerKeyboardController : KeyboardController
 
     protected override bool IsPressThirdAttack()
     {
-        return Input.GetMouseButton(0);
+        return Input.GetMouseButtonDown(0);
     }
 
     protected override bool IsDownParry()
@@ -65,5 +65,15 @@ public class PlayerKeyboardController : KeyboardController
     protected override bool IsUpParry()
     {
         return Input.GetMouseButtonUp(1);
+    }
+
+    protected override bool IsReleasedSpell()
+    {
+        return Input.GetMouseButtonUp(0);
+    }
+
+    protected override bool IsChangeWeapon()
+    {
+        return Input.GetKeyDown(KeyCode.X);
     }
 }

@@ -1,5 +1,4 @@
 
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,12 +9,10 @@ public class PlayerResourcesBar : MonoBehaviour
     [SerializeField] private Slider StaminaSlider;
     [SerializeField] private Slider ManaSlider;
     
-    
     public Resource Health;
     public Resource Stamina;
     public Resource Mana;
-
-
+    
     private void OnEnable()
     {
         character.OnRestoreHealth += UpdateHealth;
@@ -24,6 +21,7 @@ public class PlayerResourcesBar : MonoBehaviour
         character.OnDrainStamina += UpdateStamina;
         character.OnRestoreMana += UpdateMana;
         character.OnDrainMana += UpdateMana;
+        character.OnRecalculateParameter += SetMaxAfterRecalculate;
     }
     private void OnDisable()
     {
@@ -33,6 +31,7 @@ public class PlayerResourcesBar : MonoBehaviour
         character.OnDrainStamina -= UpdateStamina;
         character.OnRestoreMana -= UpdateMana;
         character.OnDrainMana -= UpdateMana;
+        character.OnRecalculateParameter -= SetMaxAfterRecalculate;
     }
 
     private void Start()
@@ -55,6 +54,13 @@ public class PlayerResourcesBar : MonoBehaviour
     private void UpdateHealth()
     {
         Health.SetValue(character.Health);
+    }
+
+    private void SetMaxAfterRecalculate()
+    {
+        Health.SetMaxValue(character.Parameter.health);
+        Stamina.SetMaxValue(character.Parameter.stamina);
+        Mana.SetMaxValue(character.Parameter.mana);
     }
     
     public struct Resource
@@ -79,5 +85,4 @@ public class PlayerResourcesBar : MonoBehaviour
             _slider.value = value;
         }
     }
-    
 }

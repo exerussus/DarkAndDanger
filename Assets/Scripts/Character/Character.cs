@@ -25,6 +25,7 @@ public class Character : MonoBehaviour
     public Action OnDrainMana;
     public Action OnRestoreMana;
     public Action OnDead;
+    public Action OnRecalculateParameter;
 
     public float Health => _currentHealth.Value;
     public float Stamina => _currentStamina.Value;
@@ -33,7 +34,7 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         personality ??= GetComponent<Personality>();
-        personality.RecalculateParameter();
+        RecalculateParameter();
     }
 
     private void OnEnable()
@@ -59,7 +60,13 @@ public class Character : MonoBehaviour
         currentHealth = Health;
         currentStamina = Stamina;
     }
-        
+
+    public void RecalculateParameter()
+    {
+        personality.RecalculateParameter();
+        OnRecalculateParameter?.Invoke();
+    }
+    
     public void TakeMagicalDamage(MagicalDamage damage)
     {
         _currentHealth.Value -= damage.Fire + damage.Water + damage.Air 

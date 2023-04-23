@@ -16,6 +16,7 @@ public class Spell : ScriptableObject
     [SerializeField] private float manaCost;
     [SerializeField] private float timeCastCost;
     [SerializeField] private GameObject projectilePrefab;
+    [SerializeField] private Sprite icon;
     [SerializeField] private LayerMask layerTargets;
     [SerializeField] private GameObject castEffect;
     [SerializeField] private GameObject mainEffect;
@@ -34,6 +35,7 @@ public class Spell : ScriptableObject
     public float ManaCost => manaCost;
     public float TimeCastCost => timeCastCost;
     public GameObject ProjectilePrefab => projectilePrefab;
+    public Sprite Icon => icon;
     public LayerMask LayerTargets => layerTargets;
     public GameObject CastEffect => castEffect;
     public GameObject MainEffect => mainEffect;

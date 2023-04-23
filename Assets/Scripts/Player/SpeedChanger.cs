@@ -4,7 +4,7 @@ using UnityEngine;
 public class SpeedChanger : MonoBehaviour
 {
     [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private Attack weaponAttack;
+    [SerializeField] private PhysicalAttack weaponAttack;
     [SerializeField] private Character character;
     
     private void OnEnable()

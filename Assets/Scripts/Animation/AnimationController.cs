@@ -51,11 +51,11 @@ public class AnimationController : MonoBehaviour
         
         if (resultDirection is { x: < -0.5f, y: > 0.5f } or { x: < -0.5f, y: < -0.5f } or 
             { x: > 0.5f, y: < 0.5f and > -0.5f } or { x: < 0.5f and > -0.5f, y: > 1.1f })
-            return MoveLeft;
+            return MoveRight;
         
         if (resultDirection is { x: > 0.5f, y: > 0.5f } or { x: > 0.5f, y: < -0.5f } or
             { x: < -0.5f, y: < 0.5f and > -0.5f } or { x: < 0.5f and > -0.5f, y: < -1.1f })
-            return MoveRight;
+            return MoveLeft;
         
         return MoveForward;
     }
